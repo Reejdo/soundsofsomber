@@ -22,6 +22,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "E Button",
+                    "type": "Button",
+                    "id": "d4eb2201-6a31-4048-8c9f-1a7e0d5757f8",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -90,6 +99,17 @@
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "710360b6-46f2-4e26-8b3d-9f2ef9681d60",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "E Button",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }

@@ -35,7 +35,7 @@ public class TestPlayerControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(IsGrounded()); 
+        //Debug.Log(IsGrounded()); 
 
         myRigidBody.velocity = new Vector2(horizontalValue * playerSpeed, myRigidBody.velocity.y);
 
