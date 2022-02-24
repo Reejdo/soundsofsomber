@@ -7,8 +7,7 @@ public class InteractDialogue : MonoBehaviour
 {
     [SerializeField] private DialogueManager dialogueManager;
     [SerializeField] private DialogueTrigger[] dialogueTrigger;
-    
-    private PlayerNPCInteract npcInteract;
+    private PlayerNPCInteract npcInteract; 
     
     [SerializeField] private GameObject buttonDisplay;
     [SerializeField] private int typesOfDialogue;
@@ -30,7 +29,8 @@ public class InteractDialogue : MonoBehaviour
 
     void DialogueInteract()
     {
-        if (npcInteract.inRange && !dialogueManager.talking)
+        Debug.Log("Dialogue Interact Called"); 
+        if (npcInteract.inRange && !dialogueManager.talking && gameObject.name == npcInteract.npcName)
         {
             if (!hasFinalDialogue && dialogueCounter > 0)
             {
@@ -74,13 +74,19 @@ public class InteractDialogue : MonoBehaviour
 
     public void OnInteractKey(InputAction.CallbackContext context)
     {
-        if (context.performed && isPressed == false)
+        //We need to check if this is the NPC being talked to so 
+        //multiple NPCs work
+        if (context.performed && gameObject.name == npcInteract.npcName)
         {
-            isPressed = true; 
-            DialogueInteract();
+            if (isPressed == false)
+            {
+                isPressed = true;
+                Debug.Log("pressed");
+                DialogueInteract();
+            }
         }
 
-        if (context.canceled)
+        if (context.canceled && gameObject.name == npcInteract.npcName)
         {
             isPressed = false; 
         }
@@ -91,8 +97,7 @@ public class InteractDialogue : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // && gameObject.name == npcInteract.npcName if we want to check for a name
-        if (npcInteract.inRange)
+        if (npcInteract.inRange && gameObject.name == npcInteract.npcName)
         {
             buttonDisplay.SetActive(true);
         }
@@ -103,6 +108,5 @@ public class InteractDialogue : MonoBehaviour
             dialogueManager.EndDialogue();
         }
 
-        //DialogueInteract(); 
     }
 }

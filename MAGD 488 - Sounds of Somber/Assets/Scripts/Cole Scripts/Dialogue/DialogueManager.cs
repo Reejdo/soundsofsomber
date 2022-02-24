@@ -8,7 +8,7 @@ public class DialogueManager : MonoBehaviour
 {
     //public TMP_Text nameText;
     public TMP_Text dialogueText;
-    private Queue<string> sentences;
+    public Queue<string> sentences;
     private Queue<Sprite> portraits;
     [SerializeField] private GameObject[] UIElements;
     public bool talking;
@@ -72,6 +72,8 @@ public class DialogueManager : MonoBehaviour
 
     public void DisplayNextSentence()
     {
+        Debug.Log("sentence count: " + sentences.Count); 
+
         //if there are no more sentences
         if (sentences.Count == 0)
         {
