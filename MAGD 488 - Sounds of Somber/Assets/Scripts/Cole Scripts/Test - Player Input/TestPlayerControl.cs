@@ -24,7 +24,8 @@ public class TestPlayerControl : MonoBehaviour
     private bool groundedPlayer;
 
     [SerializeField]
-    private bool canJump = true;
+    private bool canJump = true; 
+    //interactPressed = false; 
 
 
     // Start is called before the first frame update
@@ -82,6 +83,22 @@ public class TestPlayerControl : MonoBehaviour
             myRigidBody.velocity = new Vector2(myRigidBody.velocity.x, 0); 
         }
     }
+
+    /*
+    public void OnInteractKey(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            interactPressed = true; 
+            Debug.Log("pressed");
+        }
+
+        if (context.canceled)
+        {
+            interactPressed = false; 
+        }
+    }
+    */ 
 
     IEnumerator WaitToJump()
     {

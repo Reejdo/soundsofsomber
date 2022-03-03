@@ -1,44 +1,44 @@
 {
-    "name": "Test-NPCActions",
+    "name": "BlockInteract",
     "maps": [
         {
-            "name": "NPC",
-            "id": "31d3b5a0-5395-4e8b-aff0-fe2380480846",
+            "name": "MoveBlock",
+            "id": "b34ff9df-7cb3-4a0b-ad3c-ed777cae0704",
             "actions": [
                 {
-                    "name": "Interact - E",
+                    "name": "Interact  - E",
                     "type": "Button",
-                    "id": "c12f6c35-c379-4e30-a108-3c2015e2082c",
+                    "id": "ce44959c-3fbe-47a3-9d8e-da2220097bce",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "Press",
+                    "interactions": "",
                     "initialStateCheck": false
                 },
                 {
                     "name": "Interact - Gamepad Right",
                     "type": "Button",
-                    "id": "61d0c862-fdea-4f09-a51c-57d3d2ab693e",
+                    "id": "46b67b9e-ac82-4285-a668-861bcd94158d",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "Press",
+                    "interactions": "",
                     "initialStateCheck": false
                 }
             ],
             "bindings": [
                 {
                     "name": "",
-                    "id": "4e8e3a4c-0937-4e5a-97d4-7515e69db34d",
+                    "id": "9e8e74be-4260-4f68-98e9-199a357f7a6d",
                     "path": "<Keyboard>/e",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Interact - E",
+                    "action": "Interact  - E",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "1da1ed23-fa19-490a-9e1e-476d62ac598f",
+                    "id": "a8151b9e-6532-4ab2-b826-61e2ed6f4e1e",
                     "path": "<Gamepad>/buttonEast",
                     "interactions": "",
                     "processors": "",
