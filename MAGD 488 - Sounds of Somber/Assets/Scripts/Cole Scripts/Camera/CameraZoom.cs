@@ -8,7 +8,7 @@ public class CameraZoom : MonoBehaviour
     [SerializeField] private float zoom;
     [SerializeField] private float normal = 11.68882f;
     [SerializeField] private float smooth = 5;
-    [SerializeField] private DialogueManager dManager;
+    private DialogueManager dManager;
     private Camera cam;
     // Start is called before the first frame update
     void Start()

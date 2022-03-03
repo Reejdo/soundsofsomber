@@ -9,7 +9,7 @@ public class TestPlayerControl : MonoBehaviour
     private float playerSpeed = 2.0f;
     private float horizontalValue; 
     [SerializeField]
-    private float jumpSpeed = 1.0f;
+    private float jumpSpeed = 1.0f, timeBetweenJumps = 0.5f;
     [SerializeField]
     private Transform groundCheck; 
     [SerializeField]
@@ -23,7 +23,9 @@ public class TestPlayerControl : MonoBehaviour
     private Vector2 playerVelocity;
     private bool groundedPlayer;
 
-    private bool hasJumped = false; 
+    [SerializeField]
+    private bool canJump = true;
+
 
     // Start is called before the first frame update
     void Start()
@@ -69,14 +71,24 @@ public class TestPlayerControl : MonoBehaviour
 
     public void OnJump(InputAction.CallbackContext context)
     {
-        if (context.performed && IsGrounded())
+        if (context.performed && IsGrounded() && canJump)
         {
-            myRigidBody.velocity = new Vector2(myRigidBody.velocity.x, jumpSpeed); 
+            myRigidBody.velocity = new Vector2(myRigidBody.velocity.x, jumpSpeed);
+            StartCoroutine(WaitToJump()); 
         }
 
         if (context.canceled && myRigidBody.velocity.y > 0f)
         {
             myRigidBody.velocity = new Vector2(myRigidBody.velocity.x, 0); 
         }
+    }
+
+    IEnumerator WaitToJump()
+    {
+        Debug.Log("Wait to Jump"); 
+        canJump = false; 
+        yield return new WaitForSeconds(timeBetweenJumps);
+        canJump = true;
+        Debug.Log("Jump returned"); 
     }
 }
