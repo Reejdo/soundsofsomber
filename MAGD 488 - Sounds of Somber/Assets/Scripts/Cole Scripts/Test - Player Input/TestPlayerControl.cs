@@ -7,7 +7,7 @@ public class TestPlayerControl : MonoBehaviour
 {
     [SerializeField]
     private float playerSpeed = 2.0f;
-    private float horizontalValue; 
+    private float horizontalValue;
     [SerializeField]
     private float jumpSpeed = 1.0f, timeBetweenJumps = 0.5f;
     [SerializeField]
@@ -24,8 +24,8 @@ public class TestPlayerControl : MonoBehaviour
     private bool groundedPlayer;
 
     [SerializeField]
-    private bool canJump = true; 
-    //interactPressed = false; 
+    private bool canJump = true;
+    public bool hasJumped = false; //used in other scripts
 
 
     // Start is called before the first frame update
@@ -38,7 +38,6 @@ public class TestPlayerControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Debug.Log(IsGrounded()); 
 
         myRigidBody.velocity = new Vector2(horizontalValue * playerSpeed, myRigidBody.velocity.y);
 
@@ -84,28 +83,16 @@ public class TestPlayerControl : MonoBehaviour
         }
     }
 
-    /*
-    public void OnInteractKey(InputAction.CallbackContext context)
-    {
-        if (context.performed)
-        {
-            interactPressed = true; 
-            Debug.Log("pressed");
-        }
 
-        if (context.canceled)
-        {
-            interactPressed = false; 
-        }
-    }
-    */ 
 
     IEnumerator WaitToJump()
     {
+        hasJumped = true; 
         Debug.Log("Wait to Jump"); 
         canJump = false; 
         yield return new WaitForSeconds(timeBetweenJumps);
         canJump = true;
+        hasJumped = false; 
         Debug.Log("Jump returned"); 
     }
 }
