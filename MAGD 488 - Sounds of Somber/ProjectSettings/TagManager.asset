@@ -6,6 +6,7 @@ TagManager:
   tags:
   - NPCTrigger
   - CameraFollow
+  - Hurt
   layers:
   - Default
   - TransparentFX

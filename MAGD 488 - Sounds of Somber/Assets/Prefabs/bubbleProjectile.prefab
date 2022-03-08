@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 335628583}
   m_Layer: 0
   m_Name: bubbleProjectile
-  m_TagString: Untagged
+  m_TagString: Hurt
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -96,7 +96,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ab996126e55a03409c09f83e98493ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
+  speed: 3
 --- !u!58 &335628583
 CircleCollider2D:
   m_ObjectHideFlags: 0

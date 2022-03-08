@@ -8,6 +8,7 @@ public class AimedProjectile : MonoBehaviour
 
     private Transform player;
     private Vector2 target;
+   
 
     void Start(){
     	player = GameObject.FindGameObjectWithTag("Player").transform;
@@ -25,6 +26,8 @@ public class AimedProjectile : MonoBehaviour
     	if(other.CompareTag("Player")){
     		DestroyProjectile();
     	}
+    	
+    	
     }
 
     void DestroyProjectile(){
