@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem; 
 
-public class TestPlayerControl : MonoBehaviour
+public class PlayerControl : MonoBehaviour
 {
     [SerializeField]
     private float playerSpeed = 2.0f;
@@ -38,9 +38,9 @@ public class TestPlayerControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         myRigidBody.velocity = new Vector2(horizontalValue * playerSpeed, myRigidBody.velocity.y);
 
+        /*
         if (!isFacingRight && horizontalValue > 0f)
         {
             Flip();
@@ -49,6 +49,7 @@ public class TestPlayerControl : MonoBehaviour
         {
             Flip(); 
         }
+        */ 
     }
 
     private bool IsGrounded()
@@ -56,6 +57,7 @@ public class TestPlayerControl : MonoBehaviour
         return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
     }
 
+    /*
     private void Flip()
     {
         isFacingRight = !isFacingRight;
@@ -63,6 +65,7 @@ public class TestPlayerControl : MonoBehaviour
         localScale.x = -1f;
         transform.localScale = localScale;
     }
+    */ 
 
     public void OnMove(InputAction.CallbackContext context)
     {

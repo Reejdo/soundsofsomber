@@ -6,15 +6,20 @@ public class BlockFollow : MonoBehaviour
 {
     public float maxDistance;
     public float snapForce;
-    public float additionalJumpSpeed; 
+    public float additionalJumpSpeed;
+
+    public float yVelocity; 
+
     public Transform playerTransform;
     public Rigidbody2D playerRigidBody;
     private Rigidbody2D myRigidBody;
-    private TestPlayerControl myPlayerControl; 
+    private PlayerControl myPlayerControl; 
 
     public Color c1;
     public Color c2;
     public int lengthOfLineRenderer = 2;
+
+    public bool snapPlayer; 
 
     // Start is called before the first frame update
 
@@ -27,28 +32,17 @@ public class BlockFollow : MonoBehaviour
         {
             playerTransform = userPlayer.transform;  
             playerRigidBody = userPlayer.GetComponent<Rigidbody2D>();
-            myPlayerControl = userPlayer.GetComponent<TestPlayerControl>(); 
+            myPlayerControl = userPlayer.GetComponent<PlayerControl>(); 
         }
 
-        //Everything below here is line initiation
-        LineRenderer lineRenderer = gameObject.AddComponent<LineRenderer>();
-        lineRenderer.material = new Material(Shader.Find("Sprites/Default"));
-        lineRenderer.widthMultiplier = 0.2f;
-        lineRenderer.positionCount = lengthOfLineRenderer;
-        // A simple 2 color gradient with a fixed alpha of 1.0f.
-        float alpha = 1.0f;
-        Gradient gradient = new Gradient();
-        
-        gradient.SetKeys(
-            new GradientColorKey[] { new GradientColorKey(c1, 0.0f), new GradientColorKey(c2, 1.0f) },
-            new GradientAlphaKey[] { new GradientAlphaKey(alpha, 0.0f), new GradientAlphaKey(alpha, 1.0f) }
-        );
-        lineRenderer.colorGradient = gradient;
+        LineSettings(); 
     }
 
     // Update is called once per frame
     void Update()
     {
+        yVelocity = myRigidBody.velocity.y; 
+
         BlockMove(); 
         
         LineRenderer lineRenderer = GetComponent<LineRenderer>();
@@ -61,10 +55,32 @@ public class BlockFollow : MonoBehaviour
 
         if (Vector3.Distance(gameObject.transform.position, playerTransform.position) > maxDistance)
         {
+            snapPlayer = true; 
             SnapBack(distX, distY); 
+        }
+        else
+        {
+            snapPlayer = false; 
         }
     }
 
+    void LineSettings()
+    {
+        //Everything below here is line initiation
+        LineRenderer lineRenderer = gameObject.AddComponent<LineRenderer>();
+        lineRenderer.material = new Material(Shader.Find("Sprites/Default"));
+        lineRenderer.widthMultiplier = 0.2f;
+        lineRenderer.positionCount = lengthOfLineRenderer;
+        // A simple 2 color gradient with a fixed alpha of 1.0f.
+        float alpha = 1.0f;
+        Gradient gradient = new Gradient();
+
+        gradient.SetKeys(
+            new GradientColorKey[] { new GradientColorKey(c1, 0.0f), new GradientColorKey(c2, 1.0f) },
+            new GradientAlphaKey[] { new GradientAlphaKey(alpha, 0.0f), new GradientAlphaKey(alpha, 1.0f) }
+        );
+        lineRenderer.colorGradient = gradient;
+    }
 
     void SnapBack(float distX, float distY)
     {
@@ -105,11 +121,24 @@ public class BlockFollow : MonoBehaviour
 
     void BlockMove()
     {
-        myRigidBody.velocity = new Vector2(playerRigidBody.velocity.x, myRigidBody.velocity.y);
-
-        if (myPlayerControl.hasJumped)
+        if (!snapPlayer)
         {
-            myRigidBody.velocity = new Vector2(playerRigidBody.velocity.x, playerRigidBody.velocity.y + additionalJumpSpeed); 
+            myRigidBody.velocity = new Vector2(playerRigidBody.velocity.x, myRigidBody.velocity.y);
+            if (myPlayerControl.hasJumped)
+            {
+                myRigidBody.velocity = new Vector2(playerRigidBody.velocity.x, playerRigidBody.velocity.y + additionalJumpSpeed);
+                Debug.Log("adding extra jump");
+
+            }
+            else
+            {
+                myRigidBody.velocity = new Vector2(playerRigidBody.velocity.x, playerRigidBody.velocity.y);
+            }
         }
+        else
+        {
+            myRigidBody.velocity = new Vector2(0, 0);
+        }
+
     }
 }
