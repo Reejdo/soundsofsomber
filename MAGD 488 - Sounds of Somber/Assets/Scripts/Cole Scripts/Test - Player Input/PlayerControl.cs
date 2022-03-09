@@ -7,17 +7,21 @@ public class PlayerControl : MonoBehaviour
 {
     [SerializeField]
     private float playerSpeed = 2.0f;
+    [SerializeField] 
     private float horizontalValue;
     [SerializeField]
-    private float jumpSpeed = 1.0f, timeBetweenJumps = 0.5f;
+    private float jumpSpeed = 1.0f, timeBetweenJumps = 0.5f, groundCheckRadius = 0.2f;
     [SerializeField]
     private Transform groundCheck; 
     [SerializeField]
-    private LayerMask groundLayer; 
-    
+    private LayerMask groundLayer;
+
+    //Used for inspector
+    [SerializeField] private bool displayIsGrounded; 
+
     private Rigidbody2D myRigidBody;
 
-    private bool isFacingRight = true; 
+    //private bool isFacingRight = true; 
     
     
     private Vector2 playerVelocity;
@@ -38,34 +42,25 @@ public class PlayerControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        myRigidBody.velocity = new Vector2(horizontalValue * playerSpeed, myRigidBody.velocity.y);
+        //Used for inspector
+        displayIsGrounded = IsGrounded(); 
 
-        /*
-        if (!isFacingRight && horizontalValue > 0f)
+        if (IsGrounded() && Mathf.Abs(horizontalValue) < 1 && !hasJumped)
         {
-            Flip();
-        }
-        else if (isFacingRight && horizontalValue < 0f)
+            myRigidBody.velocity = new Vector2(0f, 0f);
+            myRigidBody.isKinematic = true; 
+        } else
         {
-            Flip(); 
+            myRigidBody.velocity = new Vector2(horizontalValue * playerSpeed, myRigidBody.velocity.y);
+            myRigidBody.isKinematic = false; 
         }
-        */ 
+
     }
 
-    private bool IsGrounded()
+    public bool IsGrounded()
     {
-        return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
+        return Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
     }
-
-    /*
-    private void Flip()
-    {
-        isFacingRight = !isFacingRight;
-        Vector2 localScale = transform.localScale;
-        localScale.x = -1f;
-        transform.localScale = localScale;
-    }
-    */ 
 
     public void OnMove(InputAction.CallbackContext context)
     {

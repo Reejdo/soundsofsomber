@@ -10,30 +10,57 @@ public class BlockInteract : MonoBehaviour
     [SerializeField]
     private bool playerInRange = false;
     public string playerTag = "Player";
+    private Transform playerTransform; 
+    [SerializeField]
+    private Rigidbody2D playerRigidBody; 
+    [SerializeField]
+    private PlayerControl myPlayerControl; 
+
     private Rigidbody2D myRigidBody; 
 
     // Start is called before the first frame update
     void Start()
     {
-        myRigidBody = gameObject.GetComponent<Rigidbody2D>(); 
+        myRigidBody = gameObject.GetComponent<Rigidbody2D>();
+        playerRigidBody = GameObject.FindGameObjectWithTag(playerTag).GetComponent<Rigidbody2D>();
+        myPlayerControl = GameObject.FindGameObjectWithTag(playerTag).GetComponent<PlayerControl>();
+        playerTransform = GameObject.FindGameObjectWithTag(playerTag).GetComponent<Transform>(); 
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (interactPressed && playerInRange)
+        BoxInteraction();
+
+        myRigidBody.velocity = new Vector2(myRigidBody.velocity.x, -5f); 
+    }
+
+    void BoxInteraction()
+    {
+        if (myPlayerControl.IsGrounded())
         {
-            myRigidBody.constraints = RigidbodyConstraints2D.FreezeRotation; 
+            if (playerTransform.position.y <= gameObject.transform.position.y)
+            {
+                if (interactPressed && playerInRange)
+                {
+                    myRigidBody.constraints = RigidbodyConstraints2D.FreezeRotation;
+                    gameObject.GetComponent<FixedJoint2D>().enabled = true;
+                    gameObject.GetComponent<FixedJoint2D>().connectedBody = playerRigidBody;
+                }
+                else if (!interactPressed)
+                {
+                    gameObject.GetComponent<FixedJoint2D>().enabled = false;
+                    myRigidBody.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
+                }
+            }
         }
-        else if (interactPressed && !playerInRange)
+        else if (!myPlayerControl.IsGrounded())
         {
+            gameObject.GetComponent<FixedJoint2D>().enabled = false;
             myRigidBody.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
-            //myRigidBody.constraints = RigidbodyConstraints2D.FreezeRotation;
         }
-        else if (!interactPressed)
-        {
-            myRigidBody.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
-        }
+
+
     }
 
     public void OnInteractKey(InputAction.CallbackContext context)
@@ -50,7 +77,7 @@ public class BlockInteract : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag(playerTag))
         {
@@ -58,7 +85,7 @@ public class BlockInteract : MonoBehaviour
         }
     }
 
-    private void OnCollisionExit2D(Collision2D collision)
+    private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag(playerTag))
         {
