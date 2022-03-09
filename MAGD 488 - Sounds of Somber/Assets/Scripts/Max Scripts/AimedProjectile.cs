@@ -5,32 +5,30 @@ using UnityEngine;
 public class AimedProjectile : MonoBehaviour
 {
     public float speed;
-
-    private Transform player;
-    private Vector2 target;
+    
+    private Rigidbody2D rb;
+    private GameObject target;
+    private Vector2 moveDir;
    
 
     void Start(){
-    	player = GameObject.FindGameObjectWithTag("Player").transform;
-    	target = new Vector2(player.position.x, player.position.y);
+    	rb = GetComponent<Rigidbody2D>();
+    	target = GameObject.FindGameObjectWithTag("Player");
+    	moveDir = (target.transform.position - transform.position).normalized * speed;
+    	rb.velocity = new Vector2(moveDir.x, moveDir.y);
+    	Destroy(gameObject, 8f);
     }
 
-    void Update(){
-    	transform.position = Vector2.MoveTowards(transform.position, target, speed * Time.deltaTime);
-    	if(transform.position.x == target.x && transform.position.y == target.y){ //hits player
-    		DestroyProjectile();
-    	}
-    }
 
     void OnTriggerEnter2D(Collider2D other){
     	if(other.CompareTag("Player")){
     		DestroyProjectile();
     	}
     	
-    	
     }
 
     void DestroyProjectile(){
     	Destroy(gameObject);
     }
+
 }

@@ -158,6 +158,8 @@ GameObject:
   - component: {fileID: 6305451382187460671}
   - component: {fileID: 6305451382187460669}
   - component: {fileID: 6305451382187460643}
+  - component: {fileID: 138167185}
+  - component: {fileID: 138167184}
   m_Layer: 0
   m_Name: player
   m_TagString: Player
@@ -360,6 +362,48 @@ MonoBehaviour:
   inRange: 0
   npcTag: NPCTrigger
   npcName: 
+--- !u!61 &138167185
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6305451382187460668}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 1.1281046, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 5.54, y: 6.59}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 3.2837908, y: 6.59}
+  m_EdgeRadius: 0
+--- !u!114 &138167184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6305451382187460668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfb92f993ba34874b96ede6b54de1396, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minHealth: 0
+  maxHealth: 100
+  currentHealth: 0
+  healthBar: {fileID: 0}
 --- !u!1 &6305451382507660897
 GameObject:
   m_ObjectHideFlags: 0
