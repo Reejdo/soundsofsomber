@@ -1316,7 +1316,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f41c323a1bd4de4ba83d287859a8d03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoad: 
 --- !u!1 &1199253237
 GameObject:
   m_ObjectHideFlags: 0
@@ -1614,11 +1613,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7387130249724254457, guid: aa4c0140e76bcab44a3a46607b163c34, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -17.62
+      value: -13.74
       objectReference: {fileID: 0}
     - target: {fileID: 7387130249724254457, guid: aa4c0140e76bcab44a3a46607b163c34, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.36
+      value: 1.26
       objectReference: {fileID: 0}
     - target: {fileID: 7387130249724254457, guid: aa4c0140e76bcab44a3a46607b163c34, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1671,7 +1670,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1314267832214536625, guid: ddb2b794ae90a7e4a9cd443d8dcc511c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.323894
+      value: 19.95
       objectReference: {fileID: 0}
     - target: {fileID: 1314267832214536625, guid: ddb2b794ae90a7e4a9cd443d8dcc511c, type: 3}
       propertyPath: m_LocalPosition.y
