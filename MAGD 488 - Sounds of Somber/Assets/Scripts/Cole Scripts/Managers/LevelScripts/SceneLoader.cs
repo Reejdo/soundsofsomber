@@ -15,7 +15,9 @@ public static class SceneLoader
         ColeTestTether, 
         MainMenuTesting,
         Loading,
-        StartScene, 
+        Tutorial,
+        HouseOne, 
+        HouseTwo,
         LevelOne, 
         LevelTwo,
     }
