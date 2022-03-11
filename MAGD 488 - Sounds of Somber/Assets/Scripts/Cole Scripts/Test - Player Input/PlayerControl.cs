@@ -16,13 +16,15 @@ public class PlayerControl : MonoBehaviour
     [SerializeField]
     private LayerMask groundLayer;
 
+    public bool needKinematicOff = false; 
+
     //Used for inspector
-    [SerializeField] private bool displayIsGrounded; 
+    [SerializeField] private bool displayIsGrounded;
+    [SerializeField] public float playerXVelocitiy; 
 
     private Rigidbody2D myRigidBody;
 
     //private bool isFacingRight = true; 
-    
     
     private Vector2 playerVelocity;
     private bool groundedPlayer;
@@ -42,19 +44,12 @@ public class PlayerControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        playerXVelocitiy = myRigidBody.velocity.x; 
+
         //Used for inspector
-        displayIsGrounded = IsGrounded(); 
+        displayIsGrounded = IsGrounded();
 
-        if (IsGrounded() && Mathf.Abs(horizontalValue) < 1 && !hasJumped)
-        {
-            myRigidBody.velocity = new Vector2(0f, 0f);
-            myRigidBody.isKinematic = true; 
-        } else
-        {
-            myRigidBody.velocity = new Vector2(horizontalValue * playerSpeed, myRigidBody.velocity.y);
-            myRigidBody.isKinematic = false; 
-        }
-
+        KinematicMove(); 
     }
 
     public bool IsGrounded()
@@ -81,16 +76,39 @@ public class PlayerControl : MonoBehaviour
         }
     }
 
+    void KinematicMove()
+    {
+        if (!needKinematicOff)
+        {
+            if (IsGrounded() && Mathf.Abs(horizontalValue) < 1 && !hasJumped)
+            {
+                myRigidBody.velocity = new Vector2(0f, 0f);
+                myRigidBody.isKinematic = true;
+            }
+            else
+            {
+                myRigidBody.velocity = new Vector2(horizontalValue * playerSpeed, myRigidBody.velocity.y);
+                myRigidBody.isKinematic = false;
+            }
+        }
+        if (needKinematicOff)
+        {
+            myRigidBody.isKinematic = false; 
+            myRigidBody.velocity = new Vector2(horizontalValue * playerSpeed, myRigidBody.velocity.y);
+        }
+
+    }
+
 
 
     IEnumerator WaitToJump()
     {
         hasJumped = true; 
-        Debug.Log("Wait to Jump"); 
+        //Debug.Log("Wait to Jump"); 
         canJump = false; 
         yield return new WaitForSeconds(timeBetweenJumps);
         canJump = true;
         hasJumped = false; 
-        Debug.Log("Jump returned"); 
+        //Debug.Log("Jump returned"); 
     }
 }

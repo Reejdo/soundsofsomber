@@ -6,9 +6,7 @@ public class BlockFollow : MonoBehaviour
 {
     public float maxDistance;
     public float snapForce;
-    public float additionalJumpSpeed;
-
-    public float yVelocity; 
+    public float additionalJumpSpeed, additionalMoveSpeed;
 
     public Transform playerTransform;
     public Rigidbody2D playerRigidBody;
@@ -19,7 +17,7 @@ public class BlockFollow : MonoBehaviour
     public Color c2;
     public int lengthOfLineRenderer = 2;
 
-    public bool snapPlayer; 
+    public bool snapPlayer;
 
     // Start is called before the first frame update
 
@@ -41,10 +39,7 @@ public class BlockFollow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        yVelocity = myRigidBody.velocity.y; 
 
-        BlockMove(); 
-        
         LineRenderer lineRenderer = GetComponent<LineRenderer>();
 
         lineRenderer.SetPosition(0, gameObject.transform.position);
@@ -53,14 +48,18 @@ public class BlockFollow : MonoBehaviour
         float distY = Mathf.Abs(playerTransform.position.y - gameObject.transform.position.y);
         float distX = Mathf.Abs(playerTransform.position.x - gameObject.transform.position.x); 
 
-        if (Vector3.Distance(gameObject.transform.position, playerTransform.position) > maxDistance)
+        if (CheckPlayerOverDistance())
         {
+            myPlayerControl.needKinematicOff = true; 
+            BlockMoveReverse(); 
             snapPlayer = true; 
             SnapBack(distX, distY); 
         }
-        else
+        else if (!CheckPlayerOverDistance())
         {
-            snapPlayer = false; 
+            myPlayerControl.needKinematicOff = false; 
+            snapPlayer = false;
+            BlockMove();
         }
     }
 
@@ -82,6 +81,18 @@ public class BlockFollow : MonoBehaviour
         lineRenderer.colorGradient = gradient;
     }
 
+    bool CheckPlayerOverDistance()
+    {
+        if (Vector3.Distance(gameObject.transform.position, playerTransform.position) >= maxDistance)
+        {
+            return true;
+        }
+        else
+        {
+            return false; 
+        }
+    }
+
     void SnapBack(float distX, float distY)
     {
         //more to the right than to the left
@@ -90,13 +101,13 @@ public class BlockFollow : MonoBehaviour
             //box is to the left
             if (gameObject.transform.position.x < playerTransform.position.x)
             {
-                Debug.Log("Add force left");
+                //Debug.Log("Add force left");
                 playerRigidBody.AddForce(transform.right * -1 * snapForce);
             }
             //box is to the right
             else
             {
-                Debug.Log("Add force right");
+                //Debug.Log("Add force right");
                 playerRigidBody.AddForce(transform.right * snapForce);
             }
 
@@ -107,13 +118,13 @@ public class BlockFollow : MonoBehaviour
             //box is below
             if (gameObject.transform.position.y < playerTransform.position.y)
             {
-                Debug.Log("Add force down");
+                //Debug.Log("Add force down");
                 playerRigidBody.AddForce(transform.up * -1 * snapForce);
             }
             //box is above
             else
             {
-                Debug.Log("Add force up");
+                //Debug.Log("Add force up");
                 playerRigidBody.AddForce(transform.up * snapForce);
             }
         }
@@ -123,22 +134,69 @@ public class BlockFollow : MonoBehaviour
     {
         if (!snapPlayer)
         {
-            myRigidBody.velocity = new Vector2(playerRigidBody.velocity.x, myRigidBody.velocity.y);
-            if (myPlayerControl.hasJumped)
+            if (playerRigidBody.velocity.x > 1)
             {
-                myRigidBody.velocity = new Vector2(playerRigidBody.velocity.x, playerRigidBody.velocity.y + additionalJumpSpeed);
-                Debug.Log("adding extra jump");
-
+                myRigidBody.velocity = new Vector2(playerRigidBody.velocity.x + additionalMoveSpeed, playerRigidBody.velocity.y);
+            }
+            else if (playerRigidBody.velocity.x < -1)
+            {
+                myRigidBody.velocity = new Vector2(playerRigidBody.velocity.x - additionalMoveSpeed, playerRigidBody.velocity.y);
             }
             else
             {
                 myRigidBody.velocity = new Vector2(playerRigidBody.velocity.x, playerRigidBody.velocity.y);
             }
+
+            if (myPlayerControl.hasJumped)
+            {
+                myRigidBody.velocity = new Vector2(myRigidBody.velocity.x, playerRigidBody.velocity.y + additionalJumpSpeed);
+
+            }
         }
         else
         {
-            myRigidBody.velocity = new Vector2(0, 0);
+            ZeroVelocity();
+        }
+    }
+
+    void BlockMoveReverse()
+    {
+        float directionSpeed = 5f;
+        float moveYSpeed, moveXSpeed; 
+        
+        
+        if (playerTransform.position.x < gameObject.transform.position.x)
+        {
+            moveXSpeed = directionSpeed * -1; 
+        }
+        else if (playerTransform.position.x > gameObject.transform.position.x)
+        {
+            moveXSpeed = directionSpeed;
+        }
+        else
+        {
+            moveXSpeed = 0; 
         }
 
+        if (playerTransform.position.y < gameObject.transform.position.y)
+        {
+            moveYSpeed = directionSpeed * -1;
+        }
+        else if (playerTransform.position.y > gameObject.transform.position.y)
+        {
+            moveYSpeed = directionSpeed;
+        }
+        else
+        {
+            moveYSpeed = 0; 
+        }
+
+        myRigidBody.velocity = new Vector2(moveXSpeed, moveYSpeed); 
+
+    }
+
+    void ZeroVelocity()
+    {
+        myRigidBody.velocity = new Vector2(0, 0);
     }
 }
