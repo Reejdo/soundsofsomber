@@ -7,10 +7,10 @@ using TMPro;
 public class DialogueManager : MonoBehaviour
 {
     //public TMP_Text nameText;
-    public TMP_Text dialogueText;
+    [SerializeField] private TMP_Text dialogueText;
     public Queue<string> sentences;
     private Queue<Sprite> portraits;
-    [SerializeField] private GameObject[] UIElements;
+    [SerializeField] private List<GameObject> UIElements;
     public bool talking;
     //private LevelManager lvlManage;
 
@@ -21,13 +21,16 @@ public class DialogueManager : MonoBehaviour
         talking = false;
         sentences = new Queue<string>();
         portraits = new Queue<Sprite>();
+
+        /*
         foreach (GameObject obj in UIElements)
         {
             obj.SetActive(false);
         }
+        */ 
     }
 
-    public void StartDialogue(Dialogue dialogue)
+    public void StartDialogue(Dialogue dialogue, List<GameObject> newUIElements, TMP_Text newDialogueText)
     {
         /* Eventually, make it so player can't move
         if (lvlManage.playerBeginner)
@@ -42,8 +45,15 @@ public class DialogueManager : MonoBehaviour
         }
         */ 
 
-        Debug.Log("Starting conversation");
+        //Debug.Log("Starting conversation");
         talking = true;
+
+        for (int i = 0; i < newUIElements.Count; i++)
+        {
+            UIElements.Add(newUIElements[i]);
+        }
+
+        dialogueText = newDialogueText; 
 
         foreach (GameObject obj in UIElements)
         {
@@ -72,7 +82,7 @@ public class DialogueManager : MonoBehaviour
 
     public void DisplayNextSentence()
     {
-        Debug.Log("sentence count: " + sentences.Count); 
+        //Debug.Log("sentence count: " + sentences.Count); 
 
         //if there are no more sentences
         if (sentences.Count == 0)
@@ -99,6 +109,8 @@ public class DialogueManager : MonoBehaviour
             obj.SetActive(false);
         }
 
+        UIElements.Clear();
+
         talking = false;
 
         /* Eventually, make it so player can move
@@ -114,7 +126,7 @@ public class DialogueManager : MonoBehaviour
         }
         */
 
-        Debug.Log("End of Conversation"); 
+        //Debug.Log("End of Conversation"); 
     }
 
 }

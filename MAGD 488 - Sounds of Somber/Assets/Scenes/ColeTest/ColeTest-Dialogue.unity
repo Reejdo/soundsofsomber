@@ -661,53 +661,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &512774278
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 512774280}
-  - component: {fileID: 512774279}
-  m_Layer: 0
-  m_Name: DialogueManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &512774279
+--- !u!114 &512774279 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 1681856906147037902, guid: cd113a2f46ea8fd4ca41f114e06cc15e, type: 3}
+  m_PrefabInstance: {fileID: 1681856905703510601}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 512774278}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: edaf16a67e581eb45a115be200f64763, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueText: {fileID: 143593062}
-  UIElements:
-  - {fileID: 165213071}
-  talking: 0
---- !u!4 &512774280
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 512774278}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.7256704, y: -1.0249532, z: -0.67188543}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &601040412
 GameObject:
   m_ObjectHideFlags: 0
@@ -2266,6 +2230,71 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1681856905703510601
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1681856906147037889, guid: cd113a2f46ea8fd4ca41f114e06cc15e, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1681856906147037889, guid: cd113a2f46ea8fd4ca41f114e06cc15e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.7256704
+      objectReference: {fileID: 0}
+    - target: {fileID: 1681856906147037889, guid: cd113a2f46ea8fd4ca41f114e06cc15e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.0249532
+      objectReference: {fileID: 0}
+    - target: {fileID: 1681856906147037889, guid: cd113a2f46ea8fd4ca41f114e06cc15e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.67188543
+      objectReference: {fileID: 0}
+    - target: {fileID: 1681856906147037889, guid: cd113a2f46ea8fd4ca41f114e06cc15e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1681856906147037889, guid: cd113a2f46ea8fd4ca41f114e06cc15e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1681856906147037889, guid: cd113a2f46ea8fd4ca41f114e06cc15e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1681856906147037889, guid: cd113a2f46ea8fd4ca41f114e06cc15e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1681856906147037889, guid: cd113a2f46ea8fd4ca41f114e06cc15e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1681856906147037889, guid: cd113a2f46ea8fd4ca41f114e06cc15e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1681856906147037889, guid: cd113a2f46ea8fd4ca41f114e06cc15e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1681856906147037902, guid: cd113a2f46ea8fd4ca41f114e06cc15e, type: 3}
+      propertyPath: dialogueText
+      value: 
+      objectReference: {fileID: 143593062}
+    - target: {fileID: 1681856906147037902, guid: cd113a2f46ea8fd4ca41f114e06cc15e, type: 3}
+      propertyPath: UIElements.Array.data[0]
+      value: 
+      objectReference: {fileID: 165213071}
+    - target: {fileID: 1681856906147037903, guid: cd113a2f46ea8fd4ca41f114e06cc15e, type: 3}
+      propertyPath: m_Name
+      value: DialogueManager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: cd113a2f46ea8fd4ca41f114e06cc15e, type: 3}
 --- !u!1001 &6305451381741165104
 PrefabInstance:
   m_ObjectHideFlags: 0

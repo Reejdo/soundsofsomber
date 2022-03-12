@@ -4,15 +4,15 @@ using UnityEngine;
 using TMPro; 
 public class ReactionDialogue : MonoBehaviour
 {
-    public TextMeshProUGUI textComponent;
     public List<string> lines;
 
     public float textSpeed = 0.15f;
     public float autoSpeed = 1.5f;
     private int index;
 
-    private bool isTalking = false; 
+    private bool isTalking = false;
 
+    public TextMeshProUGUI textComponent;
     [SerializeField]
     private GameObject dialogueObject; 
 
@@ -35,7 +35,7 @@ public class ReactionDialogue : MonoBehaviour
 
         Debug.Log(linesToSet.Count); 
 
-        for (int i = 1; i < linesToSet.Count; i++)
+        for (int i = 0; i < linesToSet.Count; i++)
         {
             lines.Add(linesToSet[i]); 
         }
