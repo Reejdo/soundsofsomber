@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class DisappearingBlock : MonoBehaviour
 {
+    public int counter = 0;
+    public int blockCount;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -13,6 +16,9 @@ public class DisappearingBlock : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+       if (counter >= blockCount)
+        {
+            gameObject.SetActive(false);   
+        } 
     }
 }

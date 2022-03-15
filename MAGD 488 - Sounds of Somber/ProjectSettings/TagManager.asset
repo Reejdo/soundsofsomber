@@ -8,6 +8,7 @@ TagManager:
   - CameraFollow
   - Hurt
   - Button
+  - MoveBlock
   layers:
   - Default
   - TransparentFX

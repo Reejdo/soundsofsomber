@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1314267831110948973}
   m_Layer: 0
   m_Name: defaultCollider
-  m_TagString: Untagged
+  m_TagString: MoveBlock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -130,7 +130,7 @@ GameObject:
   - component: {fileID: 1314267832214536631}
   m_Layer: 6
   m_Name: moveBlock
-  m_TagString: Untagged
+  m_TagString: MoveBlock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
