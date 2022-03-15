@@ -13,6 +13,7 @@ public class CameraZoom : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
         if (GameObject.Find("DialogueManager") != null)
         {
             dManager = GameObject.Find("DialogueManager").GetComponent<DialogueManager>();
@@ -33,6 +34,7 @@ public class CameraZoom : MonoBehaviour
                 isZoomed = false;
             }
         }
+
 
         if (isZoomed)
         {

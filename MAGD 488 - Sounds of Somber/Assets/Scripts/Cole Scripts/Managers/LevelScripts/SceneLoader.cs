@@ -8,7 +8,7 @@ public static class SceneLoader
 {
     // Dummy class since the script is static
     // Need to load coroutine
-    private class LoadingMonoBehaviour : MonoBehaviour { } 
+    private class LoadingMonoBehaviour : MonoBehaviour { }
 
     public enum Scene
     {
@@ -41,6 +41,8 @@ public static class SceneLoader
 
     private static IEnumerator LoadSceneAsync(Scene scene)
     {
+        yield return new WaitForSeconds(2f); //wait 2 second before continuing
+
         yield return null; 
 
         loadingAsyncOperation = SceneManager.LoadSceneAsync(scene.ToString()); 
