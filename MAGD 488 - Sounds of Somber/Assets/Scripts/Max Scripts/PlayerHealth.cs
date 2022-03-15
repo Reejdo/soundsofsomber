@@ -65,7 +65,7 @@ public class PlayerHealth : MonoBehaviour
 
     	while(calm == true){
     		yield return new WaitForSeconds(1f);
-    		DecreaseStress(2);
+    		DecreaseStress(5);
     	}
     }
 

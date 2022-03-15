@@ -1,0 +1,54 @@
+{
+    "name": "Test-NPCActions",
+    "maps": [
+        {
+            "name": "NPC",
+            "id": "31d3b5a0-5395-4e8b-aff0-fe2380480846",
+            "actions": [
+                {
+                    "name": "Interact - E",
+                    "type": "Button",
+                    "id": "c12f6c35-c379-4e30-a108-3c2015e2082c",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Interact - Gamepad Right",
+                    "type": "Button",
+                    "id": "61d0c862-fdea-4f09-a51c-57d3d2ab693e",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "4e8e3a4c-0937-4e5a-97d4-7515e69db34d",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Interact - E",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1da1ed23-fa19-490a-9e1e-476d62ac598f",
+                    "path": "<Gamepad>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Interact - Gamepad Right",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
