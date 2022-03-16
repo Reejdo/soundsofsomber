@@ -4,12 +4,6 @@ using UnityEngine;
 
 public class LoadScene : MonoBehaviour
 {
-    /*  Loading,
-        Tutorial,
-        HouseOne, 
-        HouseTwo,
-        LevelOne, 
-        LevelTwo,*/
 
     public void LoadMainMenu()
     {
