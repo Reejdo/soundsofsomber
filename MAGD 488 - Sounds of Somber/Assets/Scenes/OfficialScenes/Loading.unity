@@ -577,7 +577,7 @@ GameObject:
   - component: {fileID: 899157338}
   - component: {fileID: 899157339}
   m_Layer: 0
-  m_Name: Menu_Loop
+  m_Name: LoadingLoop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -605,7 +605,7 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 899157337}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: 2f8bd1937f9207a49a45abed56aec87a, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: 69c33ba01131ea249a4f701c4b12bb2d, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 1876786103}
@@ -628,7 +628,7 @@ VideoPlayer:
   m_ControlledAudioTrackCount: 1
   m_PlayOnAwake: 1
   m_SkipOnDrop: 1
-  m_Looping: 1
+  m_Looping: 0
   m_WaitForFirstFrame: 1
   m_FrameReadyEventEnabled: 0
   m_VideoShaders: []

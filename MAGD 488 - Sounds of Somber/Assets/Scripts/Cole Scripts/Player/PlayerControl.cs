@@ -29,6 +29,7 @@ public class PlayerControl : MonoBehaviour
     private Vector2 playerVelocity;
     private bool groundedPlayer;
 
+    public bool canMove;
     [SerializeField]
     private bool canJump = true;
     public bool hasJumped = false; //used in other scripts
@@ -37,7 +38,8 @@ public class PlayerControl : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        myRigidBody = GetComponent<Rigidbody2D>(); 
+        myRigidBody = GetComponent<Rigidbody2D>();
+        canMove = true; 
     }
 
 
@@ -49,7 +51,7 @@ public class PlayerControl : MonoBehaviour
         //Used for inspector
         displayIsGrounded = IsGrounded();
 
-        KinematicMove(); 
+        PlayerMove(); 
     }
 
     public bool IsGrounded()
@@ -59,12 +61,19 @@ public class PlayerControl : MonoBehaviour
 
     public void OnMove(InputAction.CallbackContext context)
     {
-        horizontalValue = context.ReadValue<Vector2>().x;
+        if (canMove)
+        {
+            horizontalValue = context.ReadValue<Vector2>().x;
+        }
+        else
+        {
+            horizontalValue = 0; 
+        }
     }
 
     public void OnJump(InputAction.CallbackContext context)
     {
-        if (context.performed && IsGrounded() && canJump)
+        if (context.performed && IsGrounded() && canJump && canMove)
         {
             myRigidBody.velocity = new Vector2(myRigidBody.velocity.x, jumpSpeed);
             StartCoroutine(WaitToJump()); 
@@ -76,25 +85,33 @@ public class PlayerControl : MonoBehaviour
         }
     }
 
-    void KinematicMove()
+    void PlayerMove()
     {
-        if (!needKinematicOff)
+        if (canMove)
         {
-            if (IsGrounded() && Mathf.Abs(horizontalValue) < 1 && !hasJumped)
+            if (!needKinematicOff)
             {
-                myRigidBody.velocity = new Vector2(0f, 0f);
-                myRigidBody.isKinematic = true;
+                if (IsGrounded() && Mathf.Abs(horizontalValue) < 1 && !hasJumped)
+                {
+                    myRigidBody.velocity = new Vector2(0f, 0f);
+                    myRigidBody.isKinematic = true;
+                }
+                else
+                {
+                    myRigidBody.velocity = new Vector2(horizontalValue * playerSpeed, myRigidBody.velocity.y);
+                    myRigidBody.isKinematic = false;
+                }
             }
-            else
+            if (needKinematicOff)
             {
-                myRigidBody.velocity = new Vector2(horizontalValue * playerSpeed, myRigidBody.velocity.y);
                 myRigidBody.isKinematic = false;
+                myRigidBody.velocity = new Vector2(horizontalValue * playerSpeed, myRigidBody.velocity.y);
             }
         }
-        if (needKinematicOff)
+        else
         {
-            myRigidBody.isKinematic = false; 
-            myRigidBody.velocity = new Vector2(horizontalValue * playerSpeed, myRigidBody.velocity.y);
+            myRigidBody.isKinematic = false;
+            myRigidBody.velocity = new Vector2(0f, myRigidBody.velocity.y);
         }
 
     }

@@ -9,9 +9,11 @@ public class DialogueManager : MonoBehaviour
     //public TMP_Text nameText;
     [SerializeField] private TMP_Text dialogueText;
     public Queue<string> sentences;
-    private Queue<Sprite> portraits;
+    //private Queue<Sprite> portraits;
     [SerializeField] private List<GameObject> UIElements;
     public bool talking;
+    private PlayerControl myPlayerControl; 
+
     //private LevelManager lvlManage;
 
 
@@ -20,7 +22,9 @@ public class DialogueManager : MonoBehaviour
         //lvlManage = GameObject.Find("LevelManager").GetComponent<LevelManager>();
         talking = false;
         sentences = new Queue<string>();
-        portraits = new Queue<Sprite>();
+        //portraits = new Queue<Sprite>();
+
+        myPlayerControl = GameObject.FindObjectOfType<PlayerControl>().GetComponent<PlayerControl>(); 
 
         /*
         foreach (GameObject obj in UIElements)
@@ -32,18 +36,7 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue(Dialogue dialogue, List<GameObject> newUIElements, TMP_Text newDialogueText)
     {
-        /* Eventually, make it so player can't move
-        if (lvlManage.playerBeginner)
-        {
-            UncloakedMovement ucMove = GameObject.FindGameObjectWithTag("Player").GetComponent<UncloakedMovement>();
-            ucMove.canMove = false;
-        }
-        else
-        {
-            PlayerMovement plrMove = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
-            plrMove.canMove = false;
-        }
-        */ 
+        myPlayerControl.canMove = false; 
 
         //Debug.Log("Starting conversation");
         talking = true;
@@ -113,20 +106,8 @@ public class DialogueManager : MonoBehaviour
 
         talking = false;
 
-        /* Eventually, make it so player can move
-        if (lvlManage.playerBeginner)
-        {
-            UncloakedMovement ucMove = GameObject.FindGameObjectWithTag("Player").GetComponent<UncloakedMovement>();
-            ucMove.canMove = true;
-        }
-        else
-        {
-            PlayerMovement plrMove = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
-            plrMove.canMove = true;
-        }
-        */
+        myPlayerControl.canMove = true;
 
-        //Debug.Log("End of Conversation"); 
     }
 
 }

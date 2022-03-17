@@ -17,10 +17,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/OfficialScenes/Loading.unity
     guid: e562c305053fde24fa613dbb86bcb28e
+  - enabled: 1
+    path: Assets/Scenes/OfficialScenes/HouseOne.unity
+    guid: e728b5de41e059e43a0880c680af3359
   - enabled: 0
     path: Assets/Scenes/ColeTest/ColeTest-Dialogue.unity
     guid: 98b63ee644e898e47add1060e8c76f66
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/ColeTest/ColeTestTether.unity
     guid: 84c9817f42299d442aac137e08a26624
+  - enabled: 1
+    path: Assets/Scenes/OfficialScenes/Tutorial.unity
+    guid: 6bf7dc949e533444f9571d14f304a6d5
   m_configObjects: {}
