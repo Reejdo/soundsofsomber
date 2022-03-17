@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/MaxTest/MainMenu.unity
     guid: 0dfd00ac0d5ad8f4fb71a3b971cab2a0
   - enabled: 1
-    path: Assets/Scenes/ColeTest/MainMenuTesting.unity
+    path: Assets/Scenes/OfficialScenes/MainMenuOfficial.unity
     guid: 4c31e1d6b60555244b9fec2c28412572
   - enabled: 1
     path: Assets/Scenes/OfficialScenes/Loading.unity

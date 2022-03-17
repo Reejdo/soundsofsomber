@@ -13,7 +13,7 @@ public static class SceneLoader
     public enum Scene
     {
         ColeTestTether, 
-        MainMenuTesting,
+        MainMenuOfficial,
         Loading,
         Tutorial,
         HouseOne, 

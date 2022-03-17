@@ -12,7 +12,7 @@ public class DialogueManager : MonoBehaviour
     //private Queue<Sprite> portraits;
     [SerializeField] private List<GameObject> UIElements;
     public bool talking;
-    private PlayerControl myPlayerControl; 
+    private PlayerControl myPlayerControl;
 
     //private LevelManager lvlManage;
 
@@ -24,7 +24,7 @@ public class DialogueManager : MonoBehaviour
         sentences = new Queue<string>();
         //portraits = new Queue<Sprite>();
 
-        myPlayerControl = GameObject.FindObjectOfType<PlayerControl>().GetComponent<PlayerControl>(); 
+        myPlayerControl = GameObject.FindObjectOfType<PlayerControl>().GetComponent<PlayerControl>();
 
         /*
         foreach (GameObject obj in UIElements)
