@@ -12,6 +12,7 @@ public class DataManager : MonoBehaviour
     [SerializeField]
     private LoadScene myLoadScene;
     [SerializeField]
+    //LoadScene MUST be put in the same order as the enum are listed!!
     private UnityEvent[] LoadScene;
 
     void Awake()
@@ -30,16 +31,24 @@ public class DataManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    void ContinueGame()
+    public void ContinueGame()
     {
         string[] sceneNames = System.Enum.GetNames(typeof(SceneLoader.Scene));
         for (int i = 0; i < sceneNames.Length; i++)
         {
             if (lastLevelLoaded == sceneNames[i])
             {
-                LoadScene[i].Invoke(); 
+                Debug.Log(lastLevelLoaded + " matches " + sceneNames[i]); 
+                LoadScene[i - 1].Invoke();
+                break; 
             }
         }
+    }
+
+    public void SaveGame(string levelName, int checkPoint)
+    {
+        lastLevelLoaded = levelName;
+        lastCheckpoint = checkPoint; 
     }
 
 

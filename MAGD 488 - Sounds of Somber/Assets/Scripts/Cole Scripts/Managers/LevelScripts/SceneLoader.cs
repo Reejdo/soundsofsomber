@@ -12,7 +12,6 @@ public static class SceneLoader
 
     public enum Scene
     {
-        ColeTestTether, 
         MainMenuOfficial,
         Loading,
         Tutorial,
@@ -20,6 +19,7 @@ public static class SceneLoader
         HouseTwo,
         LevelOne, 
         LevelTwo,
+        ColeTestTether,
     }
 
     private static Action onLoaderCallback; //delegate that returns void
