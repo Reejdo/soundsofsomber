@@ -10,7 +10,7 @@ public class ReactionDialogue : MonoBehaviour
     public float autoSpeed = 1.5f;
     private int index;
 
-    private bool isTalking = false;
+    public bool isTalking = false;
 
     public TextMeshProUGUI textComponent;
     [SerializeField]
@@ -30,7 +30,10 @@ public class ReactionDialogue : MonoBehaviour
     }
 
     public void StartDialogue(List<string> linesToSet)
-    { 
+    {
+        lines.Clear();
+        textComponent.text = string.Empty; 
+
         index = 0;
 
         Debug.Log(linesToSet.Count); 
@@ -74,6 +77,7 @@ public class ReactionDialogue : MonoBehaviour
         else
         {
             lines.Clear();
+            textComponent.text = string.Empty; 
             isTalking = false; 
             dialogueObject.SetActive(false); 
         }

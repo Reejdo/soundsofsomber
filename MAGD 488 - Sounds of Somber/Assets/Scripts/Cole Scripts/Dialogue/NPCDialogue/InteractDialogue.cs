@@ -7,7 +7,8 @@ public class InteractDialogue : MonoBehaviour
 {
     [SerializeField] private DialogueManager dialogueManager;
     [SerializeField] private DialogueTrigger[] dialogueTrigger;
-    private PlayerNPCInteract npcInteract; 
+    private PlayerNPCInteract npcInteract;
+    private ReactionDialogue myReactionDialogue; 
     
     [SerializeField] private GameObject buttonDisplay;
     [SerializeField] private int typesOfDialogue;
@@ -24,6 +25,8 @@ public class InteractDialogue : MonoBehaviour
         dialogueManager = FindObjectOfType<DialogueManager>();
         npcInteract = FindObjectOfType<PlayerNPCInteract>();
         buttonDisplay.SetActive(false);
+
+        myReactionDialogue = GameObject.FindObjectOfType<ReactionDialogue>().GetComponent<ReactionDialogue>();
 
     }
 
@@ -76,7 +79,7 @@ public class InteractDialogue : MonoBehaviour
     {
         //We need to check if this is the NPC being talked to so 
         //multiple NPCs work
-        if (context.performed && gameObject.name == npcInteract.npcName)
+        if (context.performed && gameObject.name == npcInteract.npcName && !myReactionDialogue.isTalking)
         {
             if (isPressed == false)
             {

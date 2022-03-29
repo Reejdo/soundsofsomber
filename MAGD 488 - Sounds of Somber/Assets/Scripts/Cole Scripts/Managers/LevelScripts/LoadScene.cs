@@ -4,17 +4,11 @@ using UnityEngine;
 
 public class LoadScene : MonoBehaviour
 {
-    /*  Loading,
-        Tutorial,
-        HouseOne, 
-        HouseTwo,
-        LevelOne, 
-        LevelTwo,*/
 
     public void LoadMainMenu()
     {
         Debug.Log("Load Main Menu");
-        SceneLoader.Load(SceneLoader.Scene.MainMenuTesting);
+        SceneLoader.Load(SceneLoader.Scene.MainMenuOfficial);
     }
 
     public void StartGame()
