@@ -17,6 +17,8 @@ public class PlayerHealth : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+    	if(healthBar == null)
+    		this.enabled = false;
     	//hitbox = GetComponent<BoxCollider2D>();
     	calm = true;
         currentHealth = minHealth;
@@ -29,11 +31,8 @@ public class PlayerHealth : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other){
     	if(other.CompareTag("Hurt")){
-    		if (hit == false){
-    			hit = true;
-    			IncreaseStress(20);
-    			Debug.Log("Damage Dealt");
-    		}
+    		
+    		
     		hit = false;
     		if (calm == true){
     			StartCoroutine(CalmCooldown(5));
@@ -43,9 +42,11 @@ public class PlayerHealth : MonoBehaviour
     	
     }
 
+
+    //this still needs some work...
     public void IncreaseStress(float stress){
     	currentHealth += stress;
-
+    	Debug.Log("Damage Dealt");
     	healthBar.SetHealth(currentHealth);
     	if(currentHealth >= 100)
     		currentHealth = 100;
