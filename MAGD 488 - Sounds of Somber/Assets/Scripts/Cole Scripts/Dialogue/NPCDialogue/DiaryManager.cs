@@ -12,10 +12,13 @@ public class DiaryManager : MonoBehaviour
     [SerializeField] private GameObject[] clickablePages; 
     [SerializeField] private bool[] pageStates;
     private bool enabledLastPage = false;
+    private DialogueManager myDialogueManager; 
 
     // Start is called before the first frame update
     void Start()
     {
+        myDialogueManager = GameObject.FindObjectOfType<DialogueManager>().GetComponent<DialogueManager>(); 
+
         if (pageCount == maxPageNumber)
         {
             diaryPages[maxPageNumber - 1].SetActive(true);
@@ -84,15 +87,18 @@ public class DiaryManager : MonoBehaviour
 
     public void ClickBookButton()
     {
-        if (diaryBookUI.activeSelf)
+        if (!myDialogueManager.talking)
         {
-            diaryBookUI.SetActive(false);
-            diaryPageUI.SetActive(false); 
-        }
-        else
-        {
-            diaryBookUI.SetActive(true);
-            diaryPageUI.SetActive(true); 
+            if (diaryBookUI.activeSelf)
+            {
+                diaryBookUI.SetActive(false);
+                diaryPageUI.SetActive(false);
+            }
+            else
+            {
+                diaryBookUI.SetActive(true);
+                diaryPageUI.SetActive(true);
+            }
         }
     }
 
