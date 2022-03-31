@@ -9,9 +9,11 @@ public class AimedProjectile : MonoBehaviour
     private Rigidbody2D rb;
     private GameObject target;
     private Vector2 moveDir;
+    private PlayerHealth health;
    
 
     void Start(){
+        health = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>();
     	rb = GetComponent<Rigidbody2D>();
     	target = GameObject.FindGameObjectWithTag("Player");
     	moveDir = (target.transform.position - transform.position).normalized * speed;
@@ -22,8 +24,9 @@ public class AimedProjectile : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other){
     	if(other.CompareTag("Player")){
-    		DestroyProjectile();
-    	}
+            health.IncreaseStress(20);
+            Destroy(gameObject);
+        }
     	
     }
 

@@ -74,7 +74,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 4
   m_Sprite: {fileID: 7482667652216324306, guid: bc81fa7203ab9194cb69ad1c740e0aa9, type: 3}
   m_Color: {r: 0.8, g: 0.4736705, b: 0.39607844, a: 1}
   m_FlipX: 0
@@ -210,3 +210,5 @@ MonoBehaviour:
   interactPressed: 0
   playerInRange: 0
   playerTag: Player
+  playerRigidBody: {fileID: 0}
+  myPlayerControl: {fileID: 0}

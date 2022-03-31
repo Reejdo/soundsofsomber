@@ -35,16 +35,16 @@ public class LoadScene : MonoBehaviour
         SceneLoader.Load(SceneLoader.Scene.HouseTwo);
     }
 
-    public void LoadLevelOne()
+    public void LoadChapterOne()
     {
         Debug.Log("Load Level One");
-        SceneLoader.Load(SceneLoader.Scene.LevelOne);
+        SceneLoader.Load(SceneLoader.Scene.ChapterOne);
     }
 
-    public void LoadLevelTwo()
+    public void LoadChapterTwo()
     {
         Debug.Log("Load Level Two");
-        SceneLoader.Load(SceneLoader.Scene.LevelTwo);
+        SceneLoader.Load(SceneLoader.Scene.ChapterTwo);
     }
 
     public void OnButtonQuit()
