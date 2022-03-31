@@ -15,9 +15,13 @@ public class InteractDialogue : MonoBehaviour
 
     public int dialogueCounter;
     public bool hasFinalDialogue;
+    private bool beganDialogue; 
     public int finalDialogueNumber;
 
-    [SerializeField] private bool isPressed; 
+    [SerializeField] private bool isPressed;
+    public bool isDiaryPage;
+    private bool startedReading;
+    private DiaryManager myDiaryManager; 
 
     // Start is called before the first frame update
     void Start()
@@ -27,6 +31,11 @@ public class InteractDialogue : MonoBehaviour
         buttonDisplay.SetActive(false);
 
         myReactionDialogue = GameObject.FindObjectOfType<ReactionDialogue>().GetComponent<ReactionDialogue>();
+        myDiaryManager = GameObject.FindObjectOfType<DiaryManager>(); 
+        if (myDiaryManager != null)
+        {
+            myDiaryManager.GetComponent<DiaryManager>(); 
+        }
 
     }
 
@@ -84,6 +93,7 @@ public class InteractDialogue : MonoBehaviour
             if (isPressed == false)
             {
                 isPressed = true;
+                beganDialogue = true; 
                 Debug.Log("pressed");
                 DialogueInteract();
             }
@@ -110,6 +120,18 @@ public class InteractDialogue : MonoBehaviour
             buttonDisplay.SetActive(false);
             dialogueManager.EndDialogue();
         }
+
+        if (isDiaryPage)
+        {
+            if (beganDialogue && !dialogueManager.talking)
+            {
+                myDiaryManager.UpdateDiaryPage(gameObject.name);
+                isDiaryPage = false; //so we don't call twice by accident
+                gameObject.SetActive(false); 
+            }
+
+        }
+
 
     }
 }

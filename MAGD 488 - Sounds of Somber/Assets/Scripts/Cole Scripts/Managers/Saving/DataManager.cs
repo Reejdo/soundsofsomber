@@ -7,7 +7,8 @@ public class DataManager : MonoBehaviour
 {
     public static DataManager instance;
     public string lastLevelLoaded;
-    public int lastCheckpoint; 
+    public int lastCheckpoint;
+    public int pagesCollected; 
 
     [SerializeField]
     private LoadScene myLoadScene;

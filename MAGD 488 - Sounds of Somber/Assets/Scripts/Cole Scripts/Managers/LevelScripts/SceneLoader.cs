@@ -17,8 +17,8 @@ public static class SceneLoader
         Tutorial,
         HouseOne, 
         HouseTwo,
-        LevelOne, 
-        LevelTwo,
+        ChapterOne, 
+        ChapterTwo,
         ColeTestTether,
     }
 
