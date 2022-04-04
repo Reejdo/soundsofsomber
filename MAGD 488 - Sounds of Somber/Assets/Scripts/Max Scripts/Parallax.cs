@@ -13,10 +13,14 @@ public class Parallax : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
+
     	if(toggleOn == false)
     		gameObject.SetActive(false);
         startPos = transform.position.x;
         length = GetComponent<SpriteRenderer>().bounds.size.x;
+        if (GetComponent<SpriteRenderer>() == null)
+        	length = 20;
     }
 
     // Update is called once per frame
