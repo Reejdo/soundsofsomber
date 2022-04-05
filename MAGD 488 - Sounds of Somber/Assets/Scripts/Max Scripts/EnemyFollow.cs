@@ -7,6 +7,7 @@ public class EnemyFollow : MonoBehaviour
     public float speed = 5;
     private Transform target;
     private PlayerHealth health;
+    private bool hit = false;
 
     void Start()
     {
@@ -21,7 +22,8 @@ public class EnemyFollow : MonoBehaviour
     }
 
     void OnTriggerEnter2D(Collider2D other){
-    	if(other.CompareTag("Player")){
+    	if(other.CompareTag("Player") && hit == false){
+    		hit = true;
     		health.IncreaseStress(30);
     		Destroy(gameObject);
     	}

@@ -1,5 +1,5 @@
 {
-    "name": "Test-PlayerControl",
+    "name": "PlayerControl",
     "maps": [
         {
             "name": "Player",
