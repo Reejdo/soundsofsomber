@@ -10,6 +10,7 @@ public class AimedProjectile : MonoBehaviour
     private GameObject target;
     private Vector2 moveDir;
     private PlayerHealth health;
+    private bool hit = false;
    
 
     void Start(){
@@ -23,7 +24,8 @@ public class AimedProjectile : MonoBehaviour
 
 
     void OnTriggerEnter2D(Collider2D other){
-    	if(other.CompareTag("Player")){
+    	if(other.CompareTag("Player") && hit == false){
+            hit = true;
             health.IncreaseStress(20);
             Destroy(gameObject);
         }
