@@ -10,6 +10,8 @@ public class PlayerControl : MonoBehaviour
     [SerializeField] 
     private float horizontalValue;
     [SerializeField]
+    private float lastPosX; 
+    [SerializeField]
     private float jumpSpeed = 1.0f, timeBetweenJumps = 0.5f, groundCheckRadius = 0.2f;
     [SerializeField]
     private Transform groundCheck; 
@@ -23,22 +25,25 @@ public class PlayerControl : MonoBehaviour
     [SerializeField] public float playerXVelocitiy; 
 
     private Rigidbody2D myRigidBody;
+    private Animator myAnim; 
 
-    //private bool isFacingRight = true; 
-    
+
     private Vector2 playerVelocity;
-    private bool groundedPlayer;
-
     public bool canMove;
     [SerializeField]
     private bool canJump = true;
     public bool hasJumped = false; //used in other scripts
+    private bool isMoving; 
 
 
     // Start is called before the first frame update
     void Start()
     {
+        lastPosX = 1; //make sure the animator knows where to start
+
         myRigidBody = GetComponent<Rigidbody2D>();
+        myAnim = GetComponent<Animator>(); 
+
         canMove = true; 
     }
 
@@ -51,7 +56,13 @@ public class PlayerControl : MonoBehaviour
         //Used for inspector
         displayIsGrounded = IsGrounded();
 
-        PlayerMove(); 
+        PlayerMove();
+        SetLastPosition(); 
+
+        myAnim.SetBool("isMoving", isMoving);
+        myAnim.SetFloat("horVal", horizontalValue);
+        myAnim.SetFloat("lastPosX", lastPosX);
+        myAnim.SetBool("isGrounded", IsGrounded()); 
     }
 
     public bool IsGrounded()
@@ -114,9 +125,28 @@ public class PlayerControl : MonoBehaviour
             myRigidBody.velocity = new Vector2(0f, myRigidBody.velocity.y);
         }
 
+        if (horizontalValue > 0 || horizontalValue < 0)
+        {
+            isMoving = true;
+        }
+        else
+        {
+            isMoving = false;
+        }
+
     }
 
-
+    void SetLastPosition()
+    {
+        if (horizontalValue > 0.1)
+        {
+            lastPosX = 1; 
+        }
+        else if (horizontalValue < -0.1)
+        {
+            lastPosX = -1; 
+        }
+    }
 
     IEnumerator WaitToJump()
     {
@@ -127,5 +157,11 @@ public class PlayerControl : MonoBehaviour
         canJump = true;
         hasJumped = false; 
         //Debug.Log("Jump returned"); 
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.white;
+        Gizmos.DrawWireSphere(groundCheck.position, groundCheckRadius); 
     }
 }

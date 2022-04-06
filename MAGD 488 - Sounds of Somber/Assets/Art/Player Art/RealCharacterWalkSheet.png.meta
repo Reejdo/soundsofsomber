@@ -4,7 +4,88 @@ TextureImporter:
   internalIDToNameTable:
   - first:
       213: 3178396981626682285
-    second: RealCharacter_0
+    second: RealCharacterWalkSheet_0
+  - first:
+      213: -9214586787152410279
+    second: RealCharacterWalkSheet_1
+  - first:
+      213: 3556927343824942056
+    second: RealCharacterWalkSheet_2
+  - first:
+      213: 3428346050683065143
+    second: RealCharacterWalkSheet_3
+  - first:
+      213: 1427836977504178454
+    second: RealCharacterWalkSheet_4
+  - first:
+      213: 2072559525034848580
+    second: RealCharacterWalkSheet_5
+  - first:
+      213: 2632235072369053094
+    second: RealCharacterWalkSheet_6
+  - first:
+      213: -5910384545176538306
+    second: RealCharacterWalkSheet_7
+  - first:
+      213: -2521007794770166785
+    second: RealCharacterWalkSheet_8
+  - first:
+      213: -8133591200394193480
+    second: RealCharacterWalkSheet_9
+  - first:
+      213: -8983013473820809588
+    second: RealCharacterWalkSheet_10
+  - first:
+      213: -912726600318979478
+    second: RealCharacterWalkSheet_11
+  - first:
+      213: -8715571398145752193
+    second: RealCharacterWalkSheet_12
+  - first:
+      213: -5836373432883016156
+    second: RealCharacterWalkSheet_13
+  - first:
+      213: -6663159780463963993
+    second: RealCharacterWalkSheet_14
+  - first:
+      213: -4767210037513562542
+    second: RealCharacterWalkSheet_15
+  - first:
+      213: -2366970729068046758
+    second: RealCharacterWalkSheet_16
+  - first:
+      213: -6716251925724693337
+    second: RealCharacterWalkSheet_17
+  - first:
+      213: -7567038825779968819
+    second: RealCharacterWalkSheet_18
+  - first:
+      213: -5067763209061476364
+    second: RealCharacterWalkSheet_19
+  - first:
+      213: 3688719307516868522
+    second: RealCharacterWalkSheet_20
+  - first:
+      213: 3877967722438228041
+    second: RealCharacterWalkSheet_21
+  - first:
+      213: 973146462336773858
+    second: RealCharacterWalkSheet_22
+  - first:
+      213: -2748211026143034423
+    second: RealCharacterWalkSheet_23
+  - first:
+      213: -5359336216534459483
+    second: RealCharacterWalkSheet_24
+  - first:
+      213: -6940170528512764570
+    second: RealCharacterWalkSheet_25
+  - first:
+      213: 4063943812419570822
+    second: RealCharacterWalkSheet_26
+  - first:
+      213: -7848678292925501118
+    second: RealCharacterWalkSheet_27
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -94,12 +175,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: RealCharacter_0
+      name: RealCharacterWalkSheet_0
       rect:
         serializedVersion: 2
         x: 0
         y: 825
-        width: 161
+        width: 255
         height: 255
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -110,6 +191,573 @@ TextureImporter:
       bones: []
       spriteID: dab3805073feb1c20800000000000000
       internalID: 3178396981626682285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RealCharacterWalkSheet_1
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 825
+        width: 255
+        height: 255
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 959c5c753263f1080800000000000000
+      internalID: -9214586787152410279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RealCharacterWalkSheet_2
+      rect:
+        serializedVersion: 2
+        x: 510
+        y: 825
+        width: 255
+        height: 255
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e33f84e29ebc5130800000000000000
+      internalID: 3556927343824942056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RealCharacterWalkSheet_3
+      rect:
+        serializedVersion: 2
+        x: 765
+        y: 825
+        width: 255
+        height: 255
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 733d316a19ee39f20800000000000000
+      internalID: 3428346050683065143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RealCharacterWalkSheet_4
+      rect:
+        serializedVersion: 2
+        x: 1020
+        y: 825
+        width: 255
+        height: 255
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 611dd418a22b0d310800000000000000
+      internalID: 1427836977504178454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RealCharacterWalkSheet_5
+      rect:
+        serializedVersion: 2
+        x: 1275
+        y: 825
+        width: 255
+        height: 255
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 441fd8938e533cc10800000000000000
+      internalID: 2072559525034848580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RealCharacterWalkSheet_6
+      rect:
+        serializedVersion: 2
+        x: 1530
+        y: 825
+        width: 255
+        height: 255
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6adc1e52ad3978420800000000000000
+      internalID: 2632235072369053094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RealCharacterWalkSheet_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 570
+        width: 255
+        height: 255
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e333bca12981afda0800000000000000
+      internalID: -5910384545176538306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RealCharacterWalkSheet_8
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 570
+        width: 255
+        height: 255
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffbbbbc74c4930dd0800000000000000
+      internalID: -2521007794770166785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RealCharacterWalkSheet_9
+      rect:
+        serializedVersion: 2
+        x: 510
+        y: 570
+        width: 255
+        height: 255
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b5d24895edaf1f80800000000000000
+      internalID: -8133591200394193480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RealCharacterWalkSheet_10
+      rect:
+        serializedVersion: 2
+        x: 765
+        y: 570
+        width: 255
+        height: 255
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c86ec50f6dce55380800000000000000
+      internalID: -8983013473820809588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RealCharacterWalkSheet_11
+      rect:
+        serializedVersion: 2
+        x: 1020
+        y: 570
+        width: 255
+        height: 255
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a62ffea2ef75553f0800000000000000
+      internalID: -912726600318979478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RealCharacterWalkSheet_12
+      rect:
+        serializedVersion: 2
+        x: 1275
+        y: 570
+        width: 255
+        height: 255
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f73c7fe8df11c0780800000000000000
+      internalID: -8715571398145752193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RealCharacterWalkSheet_13
+      rect:
+        serializedVersion: 2
+        x: 1530
+        y: 570
+        width: 255
+        height: 255
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42e0b740949010fa0800000000000000
+      internalID: -5836373432883016156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RealCharacterWalkSheet_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 315
+        width: 255
+        height: 255
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a096cb8b73b783a0800000000000000
+      internalID: -6663159780463963993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RealCharacterWalkSheet_15
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 315
+        width: 255
+        height: 255
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 256d3588ab777ddb0800000000000000
+      internalID: -4767210037513562542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RealCharacterWalkSheet_16
+      rect:
+        serializedVersion: 2
+        x: 510
+        y: 315
+        width: 255
+        height: 255
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a56d624a9a4d62fd0800000000000000
+      internalID: -2366970729068046758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RealCharacterWalkSheet_17
+      rect:
+        serializedVersion: 2
+        x: 765
+        y: 315
+        width: 255
+        height: 255
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ac752135741bc2a0800000000000000
+      internalID: -6716251925724693337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RealCharacterWalkSheet_18
+      rect:
+        serializedVersion: 2
+        x: 1020
+        y: 315
+        width: 255
+        height: 255
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc4cbc3a74a7cf690800000000000000
+      internalID: -7567038825779968819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RealCharacterWalkSheet_19
+      rect:
+        serializedVersion: 2
+        x: 1275
+        y: 315
+        width: 255
+        height: 255
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f7d8162630bba9b0800000000000000
+      internalID: -5067763209061476364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RealCharacterWalkSheet_20
+      rect:
+        serializedVersion: 2
+        x: 1530
+        y: 315
+        width: 255
+        height: 255
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa7faa0aaa6f03330800000000000000
+      internalID: 3688719307516868522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RealCharacterWalkSheet_21
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 60
+        width: 255
+        height: 255
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9487c52e81f41d530800000000000000
+      internalID: 3877967722438228041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RealCharacterWalkSheet_22
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 60
+        width: 255
+        height: 255
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2eee2023d8f418d00800000000000000
+      internalID: 973146462336773858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RealCharacterWalkSheet_23
+      rect:
+        serializedVersion: 2
+        x: 510
+        y: 60
+        width: 255
+        height: 255
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c3cee2e1a46cd9d0800000000000000
+      internalID: -2748211026143034423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RealCharacterWalkSheet_24
+      rect:
+        serializedVersion: 2
+        x: 765
+        y: 60
+        width: 255
+        height: 255
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5abd3952b10df95b0800000000000000
+      internalID: -5359336216534459483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RealCharacterWalkSheet_25
+      rect:
+        serializedVersion: 2
+        x: 1020
+        y: 60
+        width: 255
+        height: 255
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6659c57ccaf8faf90800000000000000
+      internalID: -6940170528512764570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RealCharacterWalkSheet_26
+      rect:
+        serializedVersion: 2
+        x: 1275
+        y: 60
+        width: 255
+        height: 255
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68c4a6e9d57066830800000000000000
+      internalID: 4063943812419570822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RealCharacterWalkSheet_27
+      rect:
+        serializedVersion: 2
+        x: 1530
+        y: 60
+        width: 255
+        height: 255
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2413bd93da4e31390800000000000000
+      internalID: -7848678292925501118
       vertices: []
       indices: 
       edges: []
