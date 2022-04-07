@@ -23,7 +23,16 @@ public class RoomTeleport : MonoBehaviour
     void Start()
     {
         myPlayerControl = GameObject.FindObjectOfType<PlayerControl>().GetComponent<PlayerControl>();
-        cameraObject = GameObject.Find("MainCamera"); 
+        cameraObject = GameObject.Find("Main Camera"); 
+
+        if (cameraObject == null)
+        {
+            cameraObject = GameObject.Find("MainCamera"); 
+            if (cameraObject == null)
+            {
+                Debug.Log("Can't find Camera! Is it named 'Main Camera'?"); 
+            }
+        }
 
         roomFader.SetActive(false);
         buttonIndicator.SetActive(false);
@@ -83,6 +92,7 @@ public class RoomTeleport : MonoBehaviour
 
         yield return new WaitForSeconds(timeToWait);
 
+        Debug.Log("ending teleport"); 
         roomFader.SetActive(false);
         buttonIndicator.SetActive(false); 
         myPlayerControl.canMove = true;

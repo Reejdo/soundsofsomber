@@ -759,7 +759,7 @@ GameObject:
   - component: {fileID: 327763191}
   - component: {fileID: 327763190}
   - component: {fileID: 327763189}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Door 5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1031,7 +1031,7 @@ GameObject:
   - component: {fileID: 429772826}
   - component: {fileID: 429772825}
   - component: {fileID: 429772824}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Door 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1493,7 +1493,7 @@ GameObject:
   - component: {fileID: 666772450}
   - component: {fileID: 666772449}
   - component: {fileID: 666772448}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Door 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1862,7 +1862,7 @@ GameObject:
   - component: {fileID: 948018296}
   - component: {fileID: 948018295}
   - component: {fileID: 948018294}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Door 1 - From Entry Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2182,7 +2182,7 @@ GameObject:
   - component: {fileID: 1097620536}
   - component: {fileID: 1097620535}
   - component: {fileID: 1097620537}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Top Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2965,7 +2965,7 @@ GameObject:
   - component: {fileID: 1646825703}
   - component: {fileID: 1646825702}
   - component: {fileID: 1646825701}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Entry Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3155,7 +3155,7 @@ GameObject:
   - component: {fileID: 1758881694}
   - component: {fileID: 1758881693}
   - component: {fileID: 1758881692}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Door 6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3899,7 +3899,7 @@ GameObject:
   - component: {fileID: 1987389547}
   - component: {fileID: 1987389546}
   - component: {fileID: 1987389545}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Door 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3914,7 +3914,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1987389543}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.288, y: 1.29, z: 0}
+  m_LocalPosition: {x: -0.288, y: 1.32, z: 0}
   m_LocalScale: {x: 0.035923492, y: 1.6540351, z: 1}
   m_Children: []
   m_Father: {fileID: 1097620536}
@@ -4086,7 +4086,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2069610728}
   - component: {fileID: 2069610729}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: First Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
