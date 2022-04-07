@@ -5,7 +5,6 @@ using UnityEngine;
 public class AimedProjectile : MonoBehaviour
 {
     public float speed;
-    
     private Rigidbody2D rb;
     private GameObject target;
     private Vector2 moveDir;
@@ -14,6 +13,7 @@ public class AimedProjectile : MonoBehaviour
    
 
     void Start(){
+
         health = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>();
     	rb = GetComponent<Rigidbody2D>();
     	target = GameObject.FindGameObjectWithTag("Player");
