@@ -18,17 +18,18 @@ public class PlayerControl : MonoBehaviour
     [SerializeField]
     private LayerMask groundLayer;
 
-    public bool needKinematicOff = false; 
-
     //Used for inspector
-    [SerializeField] private bool displayIsGrounded;
-    [SerializeField] public float playerXVelocitiy; 
+    [SerializeField] public float displayXVelocitiy; 
 
     private Rigidbody2D myRigidBody;
     private Animator myAnim; 
 
 
     private Vector2 playerVelocity;
+    [SerializeField]
+    private bool isHousePlayer = false;
+    [SerializeField] private bool displayIsGrounded; //used for inspector
+    public bool needKinematicOff = false;
     public bool canMove;
     [SerializeField]
     private bool canJump = true;
@@ -51,7 +52,7 @@ public class PlayerControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        playerXVelocitiy = myRigidBody.velocity.x; 
+        displayXVelocitiy = myRigidBody.velocity.x; 
 
         //Used for inspector
         displayIsGrounded = IsGrounded();
@@ -84,15 +85,18 @@ public class PlayerControl : MonoBehaviour
 
     public void OnJump(InputAction.CallbackContext context)
     {
-        if (context.performed && IsGrounded() && canJump && canMove)
+        if (!isHousePlayer)
         {
-            myRigidBody.velocity = new Vector2(myRigidBody.velocity.x, jumpSpeed);
-            StartCoroutine(WaitToJump()); 
-        }
+            if (context.performed && IsGrounded() && canJump && canMove)
+            {
+                myRigidBody.velocity = new Vector2(myRigidBody.velocity.x, jumpSpeed);
+                StartCoroutine(WaitToJump());
+            }
 
-        if (context.canceled && myRigidBody.velocity.y > 0f)
-        {
-            myRigidBody.velocity = new Vector2(myRigidBody.velocity.x, 0); 
+            if (context.canceled && myRigidBody.velocity.y > 0f)
+            {
+                myRigidBody.velocity = new Vector2(myRigidBody.velocity.x, 0);
+            }
         }
     }
 
