@@ -15,7 +15,8 @@ public class CameraFollow : MonoBehaviour
 
 	[SerializeField] private float heightFloor;
 	private PlayerControl myPlayerControl;
-	private bool followPlayer, followOther; 
+	private bool followPlayer, followOther;
+	public bool needHeightFloor = false; 
 
 
 	void Start()
@@ -29,26 +30,38 @@ public class CameraFollow : MonoBehaviour
 
     private void Update()
     {
-		CheckFollowTarget(); 
+		if (needHeightFloor)
+        {
+			CheckFollowTarget();
+		}
+
     }
 
 
 	// Update is called once per frame
 	void FixedUpdate()
 	{
-		if (followOther)
+		if (needHeightFloor)
         {
-			LerpToTarget(floorTarget);
-		}
+			if (followOther)
+			{
+				LerpToTarget(floorTarget);
+			}
 
-        else if (followPlayer)
+			else if (followPlayer)
+			{
+				LerpToTarget(target);
+			}
+		}
+        else
         {
 			LerpToTarget(target);
-        }
+		}
 	}
 
 	void CheckFollowTarget()
     {
+
 		if (target.transform.position.y < heightFloor)
         {
 			followOther = true;
