@@ -37,13 +37,13 @@ public class LoadScene : MonoBehaviour
 
     public void LoadChapterOne()
     {
-        Debug.Log("Load Level One");
+        Debug.Log("Load Chapter One");
         SceneLoader.Load(SceneLoader.Scene.ChapterOne);
     }
 
     public void LoadChapterTwo()
     {
-        Debug.Log("Load Level Two");
+        Debug.Log("Load Chapter Two");
         SceneLoader.Load(SceneLoader.Scene.ChapterTwo);
     }
 

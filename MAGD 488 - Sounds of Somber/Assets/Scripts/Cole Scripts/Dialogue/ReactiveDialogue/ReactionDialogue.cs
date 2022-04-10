@@ -36,7 +36,7 @@ public class ReactionDialogue : MonoBehaviour
 
         index = 0;
 
-        Debug.Log(linesToSet.Count); 
+        //Debug.Log(linesToSet.Count); 
 
         for (int i = 0; i < linesToSet.Count; i++)
         {

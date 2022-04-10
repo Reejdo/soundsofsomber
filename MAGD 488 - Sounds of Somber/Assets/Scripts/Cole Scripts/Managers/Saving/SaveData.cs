@@ -13,7 +13,9 @@ public class SaveData : MonoBehaviour
     //private GameObject buttonToDisplay;
 
     private DataManager myDataManager;
-    private DataFileWrite myDataFile; 
+    private DataFileWrite myDataFile;
+    public GameObject saveIcon;
+    public float saveIconTime = 1f; 
 
     private void Awake()
     {
@@ -43,16 +45,18 @@ public class SaveData : MonoBehaviour
             myDataManager.SaveGame(currentScene, thisCheckPointNumber);
             myDataFile.UpdateFile(); 
             //buttonToDisplay.SetActive(true); 
+            if (!saveIcon.activeSelf)
+            {
+                StartCoroutine(SaveIcon()); 
+            }
         }
+    }
+    
+    IEnumerator SaveIcon()
+    {
+        saveIcon.SetActive(true);
+        yield return new WaitForSeconds(saveIconTime);
+        saveIcon.SetActive(false); 
     }
 
-    /*
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            //buttonToDisplay.SetActive(false);
-        }
-    }
-    */ 
 }

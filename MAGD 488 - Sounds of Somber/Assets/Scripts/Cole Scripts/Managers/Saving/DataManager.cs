@@ -18,6 +18,8 @@ public class DataManager : MonoBehaviour
 
     void Awake()
     {
+        myLoadScene = GetComponent<LoadScene>(); 
+
         if (instance == null)
         {
             instance = this;

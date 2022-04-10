@@ -46,6 +46,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentScene: 
   thisCheckPointNumber: 0
+  saveIcon: {fileID: 0}
+  saveIconTime: 2
 --- !u!61 &5415792691729456265
 BoxCollider2D:
   m_ObjectHideFlags: 0
