@@ -83,4 +83,25 @@ public class ReactionDialogue : MonoBehaviour
         }
     }
 
+    public void ClearDialogueForNew()
+    {
+        isTalking = false;
+        lines.Clear();
+        textComponent.text = string.Empty;
+        Debug.Log("Clear dialogue"); 
+    }
+
+    public void QueueAnotherDialogue(List<string> linesToSet)
+    {
+
+        int originalLength = lines.Count;
+        int fullLength = lines.Count + linesToSet.Count; 
+
+        for (int i = originalLength - 1; i < fullLength; i++)
+        {
+            lines.Add(linesToSet[i]);
+            Debug.Log("Added line"); 
+        }
+    }
+
 }
