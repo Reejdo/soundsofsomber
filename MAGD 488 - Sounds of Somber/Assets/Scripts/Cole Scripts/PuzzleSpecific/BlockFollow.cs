@@ -19,6 +19,8 @@ public class BlockFollow : MonoBehaviour
 
     public bool snapPlayer;
 
+    public bool isTetheredToPlayer = false; 
+
     // Start is called before the first frame update
 
     void Start()
@@ -40,27 +42,31 @@ public class BlockFollow : MonoBehaviour
     void Update()
     {
 
-        LineRenderer lineRenderer = GetComponent<LineRenderer>();
-
-        lineRenderer.SetPosition(0, gameObject.transform.position);
-        lineRenderer.SetPosition(1, playerTransform.position);
-
-        float distY = Mathf.Abs(playerTransform.position.y - gameObject.transform.position.y);
-        float distX = Mathf.Abs(playerTransform.position.x - gameObject.transform.position.x); 
-
-        if (CheckPlayerOverDistance())
+        if (isTetheredToPlayer)
         {
-            myPlayerControl.needKinematicOff = true; 
-            BlockMoveReverse(); 
-            snapPlayer = true; 
-            SnapBack(distX, distY); 
+            LineRenderer lineRenderer = GetComponent<LineRenderer>();
+
+            lineRenderer.SetPosition(0, gameObject.transform.position);
+            lineRenderer.SetPosition(1, playerTransform.position);
+
+            float distY = Mathf.Abs(playerTransform.position.y - gameObject.transform.position.y);
+            float distX = Mathf.Abs(playerTransform.position.x - gameObject.transform.position.x);
+
+            if (CheckPlayerOverDistance())
+            {
+                myPlayerControl.needKinematicOff = true;
+                BlockMoveReverse();
+                snapPlayer = true;
+                SnapBack(distX, distY);
+            }
+            else if (!CheckPlayerOverDistance())
+            {
+                myPlayerControl.needKinematicOff = false;
+                snapPlayer = false;
+                BlockMove();
+            }
         }
-        else if (!CheckPlayerOverDistance())
-        {
-            myPlayerControl.needKinematicOff = false; 
-            snapPlayer = false;
-            BlockMove();
-        }
+
     }
 
     void LineSettings()
@@ -70,6 +76,7 @@ public class BlockFollow : MonoBehaviour
         lineRenderer.material = new Material(Shader.Find("Sprites/Default"));
         lineRenderer.widthMultiplier = 0.2f;
         lineRenderer.positionCount = lengthOfLineRenderer;
+        lineRenderer.sortingLayerName = "Foreground"; 
         // A simple 2 color gradient with a fixed alpha of 1.0f.
         float alpha = 1.0f;
         Gradient gradient = new Gradient();
@@ -198,5 +205,10 @@ public class BlockFollow : MonoBehaviour
     void ZeroVelocity()
     {
         myRigidBody.velocity = new Vector2(0, 0);
+    }
+
+    public void SetTetherState(bool state)
+    {
+        isTetheredToPlayer = state; 
     }
 }

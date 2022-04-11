@@ -151,7 +151,7 @@ GameObject:
   - component: {fileID: 6305451380737138518}
   m_Layer: 0
   m_Name: noFrictCollider
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

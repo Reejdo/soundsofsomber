@@ -8,18 +8,6 @@ public class Switch : MonoBehaviour
 {
     public UnityEvent thisEvent;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     void ThisEvent()
     {
         thisEvent.Invoke(); 

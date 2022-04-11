@@ -6,7 +6,7 @@ public class DisappearingBlock : MonoBehaviour
 {
     public int counter = 0;
     public int itemCount;
-    public GameObject objectToDisable;
+    public GameObject[] objectsToDisable;
     public bool objectDisabled = false;
     public float timeToDiable;
     private Animator myAnim; 
@@ -31,8 +31,16 @@ public class DisappearingBlock : MonoBehaviour
 
     IEnumerator DisableObject()
     {
-        yield return new WaitForSeconds(timeToDiable); 
-        objectToDisable.SetActive(false);
+        yield return new WaitForSeconds(timeToDiable);
+        SetObjectStates(false); 
+    }
+
+    void SetObjectStates(bool state)
+    {
+        foreach (GameObject obj in objectsToDisable)
+        {
+            obj.SetActive(state);
+        }
     }
 
 }

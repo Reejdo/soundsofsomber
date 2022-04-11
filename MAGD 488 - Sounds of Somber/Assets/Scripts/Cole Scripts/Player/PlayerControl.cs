@@ -122,6 +122,12 @@ public class PlayerControl : MonoBehaviour
                 myRigidBody.isKinematic = false;
                 myRigidBody.velocity = new Vector2(horizontalValue * playerSpeed, myRigidBody.velocity.y);
             }
+
+            if (Mathf.Abs(myRigidBody.velocity.y) > jumpSpeed)
+            {
+                myRigidBody.velocity = new Vector2(myRigidBody.velocity.x, 0f); 
+            }
+
         }
         else
         {
