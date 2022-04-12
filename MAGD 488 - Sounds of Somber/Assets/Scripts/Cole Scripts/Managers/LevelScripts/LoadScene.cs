@@ -14,13 +14,19 @@ public class LoadScene : MonoBehaviour
     public void StartGame()
     {
         Debug.Log("Load Start Game scene");
-        SceneLoader.Load(SceneLoader.Scene.ColeTestTether);
+        SceneLoader.Load(SceneLoader.Scene.HouseOne);
     }
 
     public void LoadTutorial()
     {
         Debug.Log("Load Tutorial");
         SceneLoader.Load(SceneLoader.Scene.Tutorial);
+    }
+
+    public void LoadCutScene()
+    {
+        Debug.Log("Load CutScene scene");
+        SceneLoader.Load(SceneLoader.Scene.CutScene); 
     }
 
     public void LoadHouseOne()
