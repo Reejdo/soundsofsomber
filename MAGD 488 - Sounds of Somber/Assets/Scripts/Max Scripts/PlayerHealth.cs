@@ -50,7 +50,7 @@ public class PlayerHealth : MonoBehaviour
     	if (currentHealth >= 60 && currentHealth <= 100){
     		audio.clip = sfx[0];
     		if(!audio.isPlaying)
-    			audio.PlayOneShot(audio.clip, 0.1f);
+    			audio.PlayOneShot(audio.clip, 0.2f);
     	}
     	else{
     		audio.Stop();

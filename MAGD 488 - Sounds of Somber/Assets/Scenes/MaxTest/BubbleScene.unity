@@ -550,50 +550,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf53bfb2c32bc6946a11a614c33fade9, type: 3}
---- !u!1 &568468322
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 568468324}
-  - component: {fileID: 568468323}
-  m_Layer: 0
-  m_Name: ShakeControl
-  m_TagString: ShakeTag
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &568468323
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 568468322}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c186c7e2f8727534f87e08ea9884d36a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  camAnim: {fileID: 1331398770}
---- !u!4 &568468324
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 568468322}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.8436033, y: 0.39410767, z: -0.59017617}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 11
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &645599020
 GameObject:
   m_ObjectHideFlags: 0
@@ -1943,11 +1899,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2454b40b9ef80f41803df842e32e3a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!95 &1331398770 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 3847851369520679864, guid: aa4c0140e76bcab44a3a46607b163c34, type: 3}
-  m_PrefabInstance: {fileID: 858632198}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1338459556
 GameObject:
   m_ObjectHideFlags: 0
