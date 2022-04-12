@@ -1213,6 +1213,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 4101812848274161652}
+  screenDark: {fileID: 0}
 --- !u!1 &2273522092567913028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1377,7 +1378,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5869904889799475699}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1453,8 +1454,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
-  - {fileID: 5869904890546163388}
   - {fileID: 7354076932412519822}
+  - {fileID: 5869904890546163388}
   - {fileID: 282837582476737474}
   - {fileID: 908771240}
   - {fileID: 815360181}
@@ -1819,7 +1820,7 @@ RectTransform:
   m_Children:
   - {fileID: 5869904890060430846}
   m_Father: {fileID: 5869904889799475699}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}

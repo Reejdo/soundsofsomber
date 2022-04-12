@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 335628583}
   - component: {fileID: 253282784}
   m_Layer: 0
-  m_Name: bubbleProjectile
+  m_Name: HurtBubbles
   m_TagString: Hurt
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
