@@ -123,10 +123,12 @@ public class PlayerControl : MonoBehaviour
                 myRigidBody.velocity = new Vector2(horizontalValue * playerSpeed, myRigidBody.velocity.y);
             }
 
-            if (Mathf.Abs(myRigidBody.velocity.y) > jumpSpeed)
+            /*
+            if (Mathf.Abs(myRigidBody.velocity.y) > (jumpSpeed + myRigidBody.gravityScale))
             {
                 myRigidBody.velocity = new Vector2(myRigidBody.velocity.x, 0f); 
             }
+            */ 
 
         }
         else
