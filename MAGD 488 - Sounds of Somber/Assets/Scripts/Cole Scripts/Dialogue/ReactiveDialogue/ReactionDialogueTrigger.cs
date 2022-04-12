@@ -27,8 +27,18 @@ public class ReactionDialogueTrigger : MonoBehaviour
     {
         if (collision.gameObject.CompareTag(playerTag) && !startDialogue)
         {
-            startDialogue = true;
-            myReactDialogue.StartDialogue(lines); 
+
+            if (myReactDialogue.isTalking && !startDialogue)
+            {
+                startDialogue = true;
+                myReactDialogue.QueueAnotherDialogue(lines); 
+            }
+            else
+            {
+                startDialogue = true;
+                myReactDialogue.StartDialogue(lines);
+            }
+
         }
     }
 }

@@ -47,6 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lastLevelLoaded: HouseOne
   lastCheckpoint: 0
+  pagesCollected: 0
   myLoadScene: {fileID: 6474569551039611037}
   LoadScene:
   - m_PersistentCalls:
@@ -109,7 +110,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 6474569551039611037}
         m_TargetAssemblyTypeName: LoadScene, Assembly-CSharp
-        m_MethodName: LoadLevelOne
+        m_MethodName: LoadChapterOne
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -123,7 +124,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 6474569551039611037}
         m_TargetAssemblyTypeName: LoadScene, Assembly-CSharp
-        m_MethodName: LoadLevelTwo
+        m_MethodName: LoadChapterTwo
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

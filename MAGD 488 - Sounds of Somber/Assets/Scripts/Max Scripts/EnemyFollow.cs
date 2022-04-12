@@ -11,12 +11,18 @@ public class EnemyFollow : MonoBehaviour
     private SpriteRenderer spriteRen;
     public float enemyPosX;
 	public float playerPosX;
+    
+    //for hit
+
+    private AudioSource audio;
+    private CamShake shake;
 
     void Start()
     {
     	health = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>();
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
-        
+        shake = GameObject.FindGameObjectWithTag("ShakeTag").GetComponent<CamShake>();
+        audio = gameObject.GetComponent<AudioSource>();
         spriteRen = gameObject.GetComponent<SpriteRenderer>();
     }
 
@@ -36,9 +42,18 @@ public class EnemyFollow : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other){
     	if(other.CompareTag("Player") && hit == false){
     		hit = true;
-    		health.IncreaseStress(30);
-    		Destroy(gameObject);
+            StartCoroutine(Hit());
     	}
     	
+    }
+
+    public IEnumerator Hit(){
+        shake.Shake();
+        audio.Play();
+        health.IncreaseStress(30);
+        this.spriteRen.enabled = false;
+        this.GetComponent<ParticleSystem>().enableEmission = false;
+        yield return new WaitForSeconds(audio.clip.length);
+        Destroy(gameObject);
     }
 }

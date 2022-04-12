@@ -8,7 +8,8 @@ public class DataManager : MonoBehaviour
     public static DataManager instance;
     public string lastLevelLoaded;
     public int lastCheckpoint;
-    public int pagesCollected; 
+    public int pagesCollected;
+    public int myCutSceneNumber; 
 
     [SerializeField]
     private LoadScene myLoadScene;
@@ -18,6 +19,8 @@ public class DataManager : MonoBehaviour
 
     void Awake()
     {
+        myLoadScene = GetComponent<LoadScene>(); 
+
         if (instance == null)
         {
             instance = this;
@@ -52,6 +55,11 @@ public class DataManager : MonoBehaviour
         lastCheckpoint = checkPoint; 
     }
 
+    public void LoadToCutscene(int cutSceneNumber)
+    {
+        myCutSceneNumber = cutSceneNumber;
+
+    }
 
     // Start is called before the first frame update
     void Start()

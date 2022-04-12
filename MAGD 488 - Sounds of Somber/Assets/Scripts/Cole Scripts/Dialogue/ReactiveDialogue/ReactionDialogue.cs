@@ -36,7 +36,7 @@ public class ReactionDialogue : MonoBehaviour
 
         index = 0;
 
-        Debug.Log(linesToSet.Count); 
+        //Debug.Log(linesToSet.Count); 
 
         for (int i = 0; i < linesToSet.Count; i++)
         {
@@ -80,6 +80,27 @@ public class ReactionDialogue : MonoBehaviour
             textComponent.text = string.Empty; 
             isTalking = false; 
             dialogueObject.SetActive(false); 
+        }
+    }
+
+    public void ClearDialogueForNew()
+    {
+        isTalking = false;
+        lines.Clear();
+        textComponent.text = string.Empty;
+        Debug.Log("Clear dialogue"); 
+    }
+
+    public void QueueAnotherDialogue(List<string> linesToSet)
+    {
+
+        int originalLength = lines.Count;
+        int fullLength = lines.Count + linesToSet.Count; 
+
+        for (int i = originalLength - 1; i < fullLength; i++)
+        {
+            lines.Add(linesToSet[i]);
+            Debug.Log("Added line"); 
         }
     }
 
