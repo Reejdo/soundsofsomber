@@ -28,7 +28,10 @@ public class SaveData : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        if (saveIcon == null)
+        {
+            saveIcon = GameObject.Find("saveIcon"); 
+        }
     }
 
     // Update is called once per frame

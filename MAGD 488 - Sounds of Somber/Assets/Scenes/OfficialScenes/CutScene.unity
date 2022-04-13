@@ -133,11 +133,10 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 3566821550387115276, guid: fb495fc8546a1a44ca672eeb547d3639, type: 3}
   m_PrefabInstance: {fileID: 6097148825422610419}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1213676
+--- !u!114 &1213676 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 436963960600765212, guid: fb495fc8546a1a44ca672eeb547d3639, type: 3}
+  m_PrefabInstance: {fileID: 6097148825422610419}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1213674}
   m_Enabled: 1

@@ -14,8 +14,8 @@ public class BlockInteract : MonoBehaviour
     [SerializeField]
     private Rigidbody2D playerRigidBody; 
     [SerializeField]
-    private PlayerControl myPlayerControl; 
-
+    private PlayerControl myPlayerControl;
+    private MoveBlockManager myBlockManager; 
     private Rigidbody2D myRigidBody; 
 
     // Start is called before the first frame update
@@ -24,7 +24,8 @@ public class BlockInteract : MonoBehaviour
         myRigidBody = gameObject.GetComponent<Rigidbody2D>();
         playerRigidBody = GameObject.FindGameObjectWithTag(playerTag).GetComponent<Rigidbody2D>();
         myPlayerControl = GameObject.FindGameObjectWithTag(playerTag).GetComponent<PlayerControl>();
-        playerTransform = GameObject.FindGameObjectWithTag(playerTag).GetComponent<Transform>(); 
+        playerTransform = GameObject.FindGameObjectWithTag(playerTag).GetComponent<Transform>();
+        myBlockManager = GameObject.FindObjectOfType<MoveBlockManager>().GetComponent<MoveBlockManager>(); 
     }
 
     // Update is called once per frame
@@ -41,7 +42,7 @@ public class BlockInteract : MonoBehaviour
         {
             if (playerTransform.position.y <= gameObject.transform.position.y)
             {
-                if (interactPressed && playerInRange)
+                if (interactPressed && playerInRange && myBlockManager.currentBlock == gameObject)
                 {
                     myRigidBody.constraints = RigidbodyConstraints2D.FreezeRotation;
                     gameObject.GetComponent<FixedJoint2D>().enabled = true;
@@ -74,6 +75,10 @@ public class BlockInteract : MonoBehaviour
         if (context.canceled)
         {
             interactPressed = false;
+            if (myBlockManager.currentBlock == gameObject)
+            {
+                myBlockManager.currentBlock = null; 
+            }
         }
     }
 
@@ -81,7 +86,16 @@ public class BlockInteract : MonoBehaviour
     {
         if (collision.gameObject.CompareTag(playerTag))
         {
-            playerInRange = true;
+            if (myBlockManager.currentBlock == null)
+            {
+                myBlockManager.currentBlock = gameObject;
+                myBlockManager.moveIconUI.SetActive(true); 
+                playerInRange = true;
+            }
+            if (myBlockManager.currentBlock = gameObject)
+            {
+                playerInRange = true;
+            }
         }
     }
 
@@ -89,6 +103,11 @@ public class BlockInteract : MonoBehaviour
     {
         if (collision.gameObject.CompareTag(playerTag))
         {
+            if (myBlockManager.currentBlock == gameObject && !interactPressed)
+            {
+                myBlockManager.currentBlock = null;
+                myBlockManager.moveIconUI.SetActive(false);
+            }
             playerInRange = false;
         }
     }
