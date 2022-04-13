@@ -10,6 +10,7 @@ TagManager:
   - Button
   - MoveBlock
   - ShakeTag
+  - saveIcon
   layers:
   - Default
   - TransparentFX

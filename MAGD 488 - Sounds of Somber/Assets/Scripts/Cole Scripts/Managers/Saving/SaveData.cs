@@ -30,7 +30,8 @@ public class SaveData : MonoBehaviour
     {
         if (saveIcon == null)
         {
-            saveIcon = GameObject.Find("saveIcon"); 
+            saveIcon = GameObject.FindGameObjectWithTag("saveIcon");
+            Debug.Log("trying to find save icon!"); 
         }
     }
 

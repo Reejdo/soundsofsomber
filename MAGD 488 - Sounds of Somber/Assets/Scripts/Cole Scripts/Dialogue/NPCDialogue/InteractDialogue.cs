@@ -21,7 +21,7 @@ public class InteractDialogue : MonoBehaviour
     [SerializeField] private bool isPressed;
     public bool isDiaryPage;
     private bool startedReading;
-    private DiaryManager myDiaryManager; 
+    private DiaryManager myDiaryManager;
 
     // Start is called before the first frame update
     void Start()

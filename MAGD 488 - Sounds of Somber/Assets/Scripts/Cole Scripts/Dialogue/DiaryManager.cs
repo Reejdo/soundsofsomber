@@ -12,12 +12,20 @@ public class DiaryManager : MonoBehaviour
     [SerializeField] private GameObject[] clickablePages; 
     [SerializeField] private bool[] pageStates;
     private bool enabledLastPage = false;
-    private DialogueManager myDialogueManager; 
+    private DialogueManager myDialogueManager;
+    private DataManager myDataManager; 
 
     // Start is called before the first frame update
     void Start()
     {
-        myDialogueManager = GameObject.FindObjectOfType<DialogueManager>().GetComponent<DialogueManager>(); 
+        myDialogueManager = GameObject.FindObjectOfType<DialogueManager>().GetComponent<DialogueManager>();
+        myDataManager = GameObject.FindObjectOfType<DataManager>().GetComponent<DataManager>();
+
+        for (int i = 0; i < maxPageNumber; i++)
+        {
+            pageStates[i] = myDataManager.diaryStates[i]; 
+        }
+
 
         if (pageCount == maxPageNumber)
         {
@@ -82,6 +90,12 @@ public class DiaryManager : MonoBehaviour
                 pageButtons[i].SetActive(true);
                 break; 
             }
+        }
+
+        for (int i = 0; i < maxPageNumber; i++)
+        {
+            myDataManager.diaryStates[i] = pageStates[i];
+            Debug.Log("Updating data manager");
         }
     }
 

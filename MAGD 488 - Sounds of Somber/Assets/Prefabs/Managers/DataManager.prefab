@@ -47,7 +47,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lastLevelLoaded: HouseOne
   lastCheckpoint: 0
+  diaryStates: 0000000000
   pagesCollected: 0
+  myCutSceneNumber: 0
   myLoadScene: {fileID: 6474569551039611037}
   LoadScene:
   - m_PersistentCalls:
@@ -149,6 +151,7 @@ MonoBehaviour:
   fileName: /saveData.txt
   levelName: []
   checkpointNumber: []
+  diaryStates: []
   path: 
 --- !u!114 &6474569551039611037
 MonoBehaviour:

@@ -19,11 +19,12 @@ public class PlayerControl : MonoBehaviour
     private LayerMask groundLayer;
 
     //Used for inspector
-    [SerializeField] public float displayXVelocitiy; 
+    [SerializeField] public float displayXVelocitiy;
 
+    private AudioManager myAudioManager; 
     private Rigidbody2D myRigidBody;
-    private Animator myAnim; 
-
+    private Animator myAnim;
+    private bool playingMoveSound; 
 
     private Vector2 playerVelocity;
     [SerializeField]
@@ -43,7 +44,8 @@ public class PlayerControl : MonoBehaviour
         lastPosX = 1; //make sure the animator knows where to start
 
         myRigidBody = GetComponent<Rigidbody2D>();
-        myAnim = GetComponent<Animator>(); 
+        myAnim = GetComponent<Animator>();
+        myAudioManager = GameObject.FindObjectOfType<AudioManager>().GetComponent<AudioManager>(); 
 
         canMove = true; 
     }
@@ -58,7 +60,8 @@ public class PlayerControl : MonoBehaviour
         displayIsGrounded = IsGrounded();
 
         PlayerMove();
-        SetLastPosition(); 
+        SetLastPosition();
+        PlayerAudioPlay(); 
 
         myAnim.SetBool("isMoving", isMoving);
         myAnim.SetFloat("horVal", horizontalValue);
@@ -89,6 +92,7 @@ public class PlayerControl : MonoBehaviour
         {
             if (context.performed && IsGrounded() && canJump && canMove)
             {
+                myAudioManager.Play("Jump"); 
                 myRigidBody.velocity = new Vector2(myRigidBody.velocity.x, jumpSpeed);
                 StartCoroutine(WaitToJump());
             }
@@ -99,6 +103,21 @@ public class PlayerControl : MonoBehaviour
             }
         }
     }
+
+    void PlayerAudioPlay()
+    {
+        if (isMoving && IsGrounded() && !playingMoveSound)
+        {
+            myAudioManager.Play("MoveSnow");
+            playingMoveSound = true; 
+        }
+        else if (!isMoving || !IsGrounded())
+        {
+            myAudioManager.StopSound("MoveSnow");
+            playingMoveSound = false;
+        }
+    }
+
 
     void PlayerMove()
     {
@@ -122,14 +141,6 @@ public class PlayerControl : MonoBehaviour
                 myRigidBody.isKinematic = false;
                 myRigidBody.velocity = new Vector2(horizontalValue * playerSpeed, myRigidBody.velocity.y);
             }
-
-            /*
-            if (Mathf.Abs(myRigidBody.velocity.y) > (jumpSpeed + myRigidBody.gravityScale))
-            {
-                myRigidBody.velocity = new Vector2(myRigidBody.velocity.x, 0f); 
-            }
-            */ 
-
         }
         else
         {
@@ -145,7 +156,6 @@ public class PlayerControl : MonoBehaviour
         {
             isMoving = false;
         }
-
     }
 
     void SetLastPosition()

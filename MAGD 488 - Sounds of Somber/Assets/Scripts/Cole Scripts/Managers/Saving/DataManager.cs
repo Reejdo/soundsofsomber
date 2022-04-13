@@ -8,6 +8,7 @@ public class DataManager : MonoBehaviour
     public static DataManager instance;
     public string lastLevelLoaded;
     public int lastCheckpoint;
+    public List<bool> diaryStates; 
     public int pagesCollected;
     public int myCutSceneNumber; 
 

@@ -6,7 +6,7 @@ using System.IO;
 public class DataFileWrite : MonoBehaviour
 {
     public string fileName = "/saveData.txt";
-    public List<string> levelName, checkpointNumber;
+    public List<string> levelName, checkpointNumber, diaryStates; 
     public string path;
     private string[] allLines;
     private DataManager myDataManager; 
@@ -31,7 +31,12 @@ public class DataFileWrite : MonoBehaviour
         if (!File.Exists(path))
         {
             File.WriteAllText(path, "Save Data File:" + "\n");
-            File.AppendAllText(path, myDataManager.lastLevelLoaded + "," + myDataManager.lastCheckpoint);
+            File.AppendAllText(path, myDataManager.lastLevelLoaded + "," + myDataManager.lastCheckpoint + "\n");
+            for (int i = 0; i < myDataManager.diaryStates.Count; i++)
+            {
+                File.AppendAllText(path, myDataManager.diaryStates[i].ToString() + "\n"); 
+            }
+
             ReadFromFile();
 
         }
@@ -49,6 +54,12 @@ public class DataFileWrite : MonoBehaviour
         if (allLines.Length != 0)
         {
             allLines[1] = myDataManager.lastLevelLoaded + "," + myDataManager.lastCheckpoint;
+
+            for (int i = 2; i < allLines.Length; i++)
+            {
+                Debug.Log("Update file for diary states"); 
+                allLines[i] = myDataManager.diaryStates[i - 2].ToString();
+            }
             File.WriteAllLines(path, allLines);
         }
         else
@@ -64,10 +75,31 @@ public class DataFileWrite : MonoBehaviour
         //Start at 1 to skip intro line
         for (int i = 1; i < allLines.Length; i++)
         {
-            string[] thisString = allLines[i].Split(char.Parse(","));
-            //Debug.Log(thisString[0] + " " + thisString[1]); 
-            levelName.Add(thisString[0]);
-            checkpointNumber.Add(thisString[1]);
+            if (i == 1)
+            {
+                string[] thisString = allLines[i].Split(char.Parse(","));
+                //Debug.Log(thisString[0] + " " + thisString[1]); 
+                levelName.Add(thisString[0]);
+                checkpointNumber.Add(thisString[1]);
+            }
+            if (i >= 2)
+            {
+                Debug.Log("Reading to diary"); 
+                diaryStates.Add(allLines[i]);
+
+                //Updates Data Manager
+                if (diaryStates[i - 2] == "True")
+                {
+                    Debug.Log("True"); 
+                    myDataManager.diaryStates[i - 2] = true; 
+                } 
+                else
+                {
+                    Debug.Log("False");
+                    myDataManager.diaryStates[i - 2] = false; 
+                }
+
+            }
         }
 
         //Update the Data Manager
@@ -77,7 +109,11 @@ public class DataFileWrite : MonoBehaviour
 
     public void ResetFileToDefault()
     {
-        allLines[1] = "HouseOne" + "," + 0; 
+        allLines[1] = "HouseOne" + "," + 0;
+        for (int i = 2; i < allLines.Length; i++)
+        {
+            allLines[i] = "False"; 
+        }
         File.WriteAllLines(path, allLines);
     }
 
