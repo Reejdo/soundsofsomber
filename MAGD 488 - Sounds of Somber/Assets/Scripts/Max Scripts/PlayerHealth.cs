@@ -50,7 +50,7 @@ public class PlayerHealth : MonoBehaviour
     	if (currentHealth >= 60 && currentHealth <= 100){
     		audio.clip = sfx[0];
     		if(!audio.isPlaying)
-    			audio.PlayOneShot(audio.clip, 0.1f);
+    			audio.PlayOneShot(audio.clip, 0.2f);
     	}
     	else{
     		audio.Stop();
@@ -71,6 +71,9 @@ public class PlayerHealth : MonoBehaviour
    //increases stress when struck by hazard
 	public void IncreaseStress(float stress){
 		//StopCoroutine(CalmCooldown());
+		//audio.clip = sfx[1];
+		//audio.PlayOneShot(audio.clip, 0.5f);
+		//audio.clip = sfx[0];
 		calm = false;
 		cooldown = 3f;
     	currentHealth += stress;

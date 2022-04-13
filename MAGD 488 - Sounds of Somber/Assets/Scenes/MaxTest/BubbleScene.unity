@@ -134,6 +134,18 @@ PrefabInstance:
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 1254012056}
+    - target: {fileID: 138167184, guid: ce0f6aaad85b1244196e22c637da397a, type: 3}
+      propertyPath: sfx.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 138167184, guid: ce0f6aaad85b1244196e22c637da397a, type: 3}
+      propertyPath: sfx.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 79b851c3040baa84bbbe51c893f83823, type: 3}
+    - target: {fileID: 138167184, guid: ce0f6aaad85b1244196e22c637da397a, type: 3}
+      propertyPath: sfx.Array.data[2]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 6305451382187460641, guid: ce0f6aaad85b1244196e22c637da397a, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -1478,7 +1490,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5958622726612472554, guid: 630cf3a60981f5144a0da030fa3804a1, type: 3}
       propertyPath: m_Name
-      value: BubbleEnemy (1)
+      value: Despair (1)
       objectReference: {fileID: 0}
     - target: {fileID: 5958622726612472558, guid: 630cf3a60981f5144a0da030fa3804a1, type: 3}
       propertyPath: m_RootOrder
@@ -1705,6 +1717,11 @@ Transform:
   m_Father: {fileID: 316175932}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1161640989 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5097774820557973321, guid: aa4d4d1f91a5e784486c77d2b043b7a6, type: 3}
+  m_PrefabInstance: {fileID: 1254012055}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1222764036
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1718,11 +1735,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6226343889463804525, guid: 2ac59cdfa31ff0046bf836a3e438bbe8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.8829198
+      value: 2.88292
       objectReference: {fileID: 0}
     - target: {fileID: 6226343889463804525, guid: 2ac59cdfa31ff0046bf836a3e438bbe8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.9386072
+      value: 0.8761
       objectReference: {fileID: 0}
     - target: {fileID: 6226343889463804525, guid: 2ac59cdfa31ff0046bf836a3e438bbe8, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1758,7 +1775,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6226343889463804527, guid: 2ac59cdfa31ff0046bf836a3e438bbe8, type: 3}
       propertyPath: m_Name
-      value: FlyingEnemy (1)
+      value: Anguish
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2ac59cdfa31ff0046bf836a3e438bbe8, type: 3}
@@ -1769,6 +1786,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5097774820557973321, guid: aa4d4d1f91a5e784486c77d2b043b7a6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5806210105163720878, guid: aa4d4d1f91a5e784486c77d2b043b7a6, type: 3}
+      propertyPath: screenDark
+      value: 
+      objectReference: {fileID: 1161640989}
     - target: {fileID: 5869904889799475699, guid: aa4d4d1f91a5e784486c77d2b043b7a6, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -2276,11 +2301,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5958622726612472554, guid: 630cf3a60981f5144a0da030fa3804a1, type: 3}
       propertyPath: m_Name
-      value: BubbleEnemy
+      value: Despair
       objectReference: {fileID: 0}
     - target: {fileID: 5958622726612472558, guid: 630cf3a60981f5144a0da030fa3804a1, type: 3}
       propertyPath: m_RootOrder
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5958622726612472558, guid: 630cf3a60981f5144a0da030fa3804a1, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.04711854
       objectReference: {fileID: 0}
     - target: {fileID: 5958622726612472558, guid: 630cf3a60981f5144a0da030fa3804a1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2288,7 +2317,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5958622726612472558, guid: 630cf3a60981f5144a0da030fa3804a1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.26
+      value: 3.2827
       objectReference: {fileID: 0}
     - target: {fileID: 5958622726612472558, guid: 630cf3a60981f5144a0da030fa3804a1, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2377,7 +2406,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6226343889463804527, guid: 2ac59cdfa31ff0046bf836a3e438bbe8, type: 3}
       propertyPath: m_Name
-      value: FlyingEnemy
+      value: Anguish (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2ac59cdfa31ff0046bf836a3e438bbe8, type: 3}
