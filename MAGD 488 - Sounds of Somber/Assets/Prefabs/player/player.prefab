@@ -445,6 +445,7 @@ MonoBehaviour:
   healthBar: {fileID: 0}
   sfx:
   - {fileID: 8300000, guid: 429a0b4fd5b1eaa49a3649415400b710, type: 3}
+  - {fileID: 8300000, guid: 79b851c3040baa84bbbe51c893f83823, type: 3}
   - {fileID: 0}
 --- !u!82 &138167192
 AudioSource:
