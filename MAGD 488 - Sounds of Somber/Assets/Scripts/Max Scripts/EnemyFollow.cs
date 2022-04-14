@@ -10,8 +10,10 @@ public class EnemyFollow : MonoBehaviour
     private PlayerHealth health;
     private bool hit = false;
     private SpriteRenderer spriteRen;
-    public float enemyPosX;
-	public float playerPosX;
+    private float enemyPosX;
+	private float playerPosX;
+    private float originalSpeed;
+    private float distance;
     
     //for hit
 
@@ -25,6 +27,7 @@ public class EnemyFollow : MonoBehaviour
         shake = GameObject.FindGameObjectWithTag("ShakeTag").GetComponent<CamShake>();
         audio = gameObject.GetComponent<AudioSource>();
         spriteRen = gameObject.GetComponent<SpriteRenderer>();
+        originalSpeed = speed;
     }
 
     // Update is called once per frame
@@ -38,6 +41,13 @@ public class EnemyFollow : MonoBehaviour
     		spriteRen.flipX = false;
     	else if(playerPosX > enemyPosX)
     		spriteRen.flipX = true;
+
+        distance = playerPosX - enemyPosX;
+
+        if(distance >= 25)
+            speed = 0;
+        else
+            speed = originalSpeed;
     }
 
     void OnTriggerEnter2D(Collider2D other){

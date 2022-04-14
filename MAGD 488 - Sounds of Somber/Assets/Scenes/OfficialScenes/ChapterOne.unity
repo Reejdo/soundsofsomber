@@ -13201,12 +13201,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3352253943192831937, guid: bf53bfb2c32bc6946a11a614c33fade9, type: 3}
       propertyPath: spawnSelect.Array.size
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3352253943192831937, guid: bf53bfb2c32bc6946a11a614c33fade9, type: 3}
       propertyPath: spawnSelect.Array.data[0]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 97882032}
     - target: {fileID: 3352253943192831937, guid: bf53bfb2c32bc6946a11a614c33fade9, type: 3}
       propertyPath: spawnSelect.Array.data[1]
       value: 
@@ -20884,8 +20884,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1839626581}
   - component: {fileID: 1839626582}
+  - component: {fileID: 1839626583}
   m_Layer: 0
-  m_Name: sprite
+  m_Name: Struggleblock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20899,8 +20900,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1839626580}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.07, y: 0, z: 0}
-  m_LocalScale: {x: 5.8118, y: 5.8118, z: 5.8118}
+  m_LocalPosition: {x: 0.07000779, y: -0.025999986, z: 0}
+  m_LocalScale: {x: 0.25, y: 0.25, z: 5.8118}
   m_Children: []
   m_Father: {fileID: 1892049834}
   m_RootOrder: 1
@@ -20945,7 +20946,7 @@ SpriteRenderer:
   m_SortingLayerID: -504084227
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7028380891137293278, guid: a05c6102950b7c5418b6db6f96832044, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5c6be3de981401043961145a82fdb9e5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -20956,6 +20957,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &1839626583
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1839626580}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d4bc027a6a9c06741b3e996c1e4d9a9c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1842105142
 GameObject:
   m_ObjectHideFlags: 0
