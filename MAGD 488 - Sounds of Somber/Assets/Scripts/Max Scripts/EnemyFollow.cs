@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemyFollow : MonoBehaviour
 {
+    public float dmg;
     public float speed = 5;
     private Transform target;
     private PlayerHealth health;
@@ -50,7 +51,7 @@ public class EnemyFollow : MonoBehaviour
     public IEnumerator Hit(){
         shake.Shake();
         audio.Play();
-        health.IncreaseStress(30);
+        health.IncreaseStress(dmg);
         this.spriteRen.enabled = false;
         this.GetComponent<ParticleSystem>().enableEmission = false;
         yield return new WaitForSeconds(audio.clip.length);
