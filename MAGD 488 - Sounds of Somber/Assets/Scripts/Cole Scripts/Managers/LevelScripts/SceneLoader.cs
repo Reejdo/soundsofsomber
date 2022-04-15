@@ -15,11 +15,11 @@ public static class SceneLoader
         MainMenuOfficial,
         Loading,
         Tutorial,
-        CutScene,
         HouseOne, 
         HouseTwo,
         ChapterOne, 
         ChapterTwo,
+        CutScene,
     }
 
     private static Action onLoaderCallback; //delegate that returns void

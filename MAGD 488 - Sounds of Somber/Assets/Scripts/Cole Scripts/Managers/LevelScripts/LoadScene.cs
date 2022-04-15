@@ -4,29 +4,16 @@ using UnityEngine;
 
 public class LoadScene : MonoBehaviour
 {
-
     public void LoadMainMenu()
     {
         Debug.Log("Load Main Menu");
         SceneLoader.Load(SceneLoader.Scene.MainMenuOfficial);
     }
 
-    public void StartGame()
-    {
-        Debug.Log("Load Start Game scene");
-        SceneLoader.Load(SceneLoader.Scene.HouseOne);
-    }
-
     public void LoadTutorial()
     {
         Debug.Log("Load Tutorial");
         SceneLoader.Load(SceneLoader.Scene.Tutorial);
-    }
-
-    public void LoadCutScene()
-    {
-        Debug.Log("Load CutScene scene");
-        SceneLoader.Load(SceneLoader.Scene.CutScene); 
     }
 
     public void LoadHouseOne()
@@ -51,6 +38,12 @@ public class LoadScene : MonoBehaviour
     {
         Debug.Log("Load Chapter Two");
         SceneLoader.Load(SceneLoader.Scene.ChapterTwo);
+    }
+
+    public void LoadCutScene()
+    {
+        Debug.Log("Load CutScene scene");
+        SceneLoader.Load(SceneLoader.Scene.CutScene);
     }
 
     public void OnButtonQuit()

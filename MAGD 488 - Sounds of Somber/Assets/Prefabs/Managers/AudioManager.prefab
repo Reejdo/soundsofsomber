@@ -59,6 +59,13 @@ MonoBehaviour:
     loop: 0
     playOnAwake: 0
     source: {fileID: 0}
+  - name: HeartBeat
+    clip: {fileID: 8300000, guid: 429a0b4fd5b1eaa49a3649415400b710, type: 3}
+    volume: 0.2
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    source: {fileID: 0}
   soundEffectDefaultPitch: 1
   soundEffectPitchDeviation: 0.2
   currentBackground:

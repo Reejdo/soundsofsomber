@@ -75,7 +75,7 @@ public class AudioManager : MonoBehaviour
         {
             Debug.Log("Sound: " + name + " not found!!");
         }
-        else
+        else if (s != null)
         {
             s.source.Stop();
         }

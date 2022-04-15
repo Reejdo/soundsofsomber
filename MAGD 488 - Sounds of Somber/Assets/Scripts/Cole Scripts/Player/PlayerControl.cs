@@ -21,7 +21,7 @@ public class PlayerControl : MonoBehaviour
     //Used for inspector
     [SerializeField] public float displayXVelocitiy;
 
-    private AudioManager myAudioManager; 
+    public AudioManager myAudioManager; 
     private Rigidbody2D myRigidBody;
     private Animator myAnim;
     private bool playingMoveSound; 
@@ -54,6 +54,11 @@ public class PlayerControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (myAudioManager == null)
+        {
+            FindAudioManager();
+        }
+
         displayXVelocitiy = myRigidBody.velocity.x; 
 
         //Used for inspector
@@ -106,16 +111,20 @@ public class PlayerControl : MonoBehaviour
 
     void PlayerAudioPlay()
     {
-        if (isMoving && IsGrounded() && !playingMoveSound)
+        if (myAudioManager != null)
         {
-            myAudioManager.Play("MoveSnow");
-            playingMoveSound = true; 
+            if (isMoving && IsGrounded() && !playingMoveSound)
+            {
+                myAudioManager.Play("MoveSnow");
+                playingMoveSound = true;
+            }
+            else if (!isMoving || !IsGrounded())
+            {
+                myAudioManager.StopSound("MoveSnow");
+                playingMoveSound = false;
+            }
         }
-        else if (!isMoving || !IsGrounded())
-        {
-            myAudioManager.StopSound("MoveSnow");
-            playingMoveSound = false;
-        }
+
     }
 
 
@@ -179,6 +188,15 @@ public class PlayerControl : MonoBehaviour
         canJump = true;
         hasJumped = false; 
         //Debug.Log("Jump returned"); 
+    }
+
+    void FindAudioManager()
+    {
+        while (myAudioManager == null)
+        {
+            myAudioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
+            Debug.Log("finding audio manager"); 
+        }
     }
 
     private void OnDrawGizmosSelected()

@@ -7,6 +7,8 @@ using UnityEngine.Events;
 public class Switch : MonoBehaviour
 {
     public UnityEvent thisEvent;
+    public bool isTriggerSwitch;
+    private bool isInRange = false; 
 
     void ThisEvent()
     {
@@ -15,9 +17,31 @@ public class Switch : MonoBehaviour
 
     public void OnInteractKey(InputAction.CallbackContext context)
     {
-        if (context.performed)
+        if (context.performed && isInRange)
         {
             thisEvent.Invoke(); 
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            isInRange = true;
+            if (isTriggerSwitch)
+            {
+                thisEvent.Invoke(); 
+            }
+        }
+
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            isInRange = false;
         }
     }
 }

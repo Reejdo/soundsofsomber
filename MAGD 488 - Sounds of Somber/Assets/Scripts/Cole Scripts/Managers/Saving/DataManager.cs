@@ -43,6 +43,7 @@ public class DataManager : MonoBehaviour
         {
             if (lastLevelLoaded == sceneNames[i])
             {
+                Debug.Log(i); 
                 Debug.Log(lastLevelLoaded + " matches " + sceneNames[i]); 
                 LoadScene[i - 1].Invoke();
                 break; 

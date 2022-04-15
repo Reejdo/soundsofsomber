@@ -36,6 +36,10 @@ public class PlayerHealth : MonoBehaviour
     		destressTimer -= 1 * Time.deltaTime;
     		if(destressTimer <= 0){
     			currentHealth -= 5;
+                if (currentHealth < 0)
+                {
+                    currentHealth = 0; 
+                }
     			destressTimer = 1.5f;
     		}
 
