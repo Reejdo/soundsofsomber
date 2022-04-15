@@ -4,13 +4,16 @@ using UnityEngine;
 
 public class EnemyFollow : MonoBehaviour
 {
+    public float dmg;
     public float speed = 5;
     private Transform target;
     private PlayerHealth health;
     private bool hit = false;
     private SpriteRenderer spriteRen;
-    public float enemyPosX;
-	public float playerPosX;
+    private float enemyPosX;
+	private float playerPosX;
+    private float originalSpeed;
+    private float distance;
     
     //for hit
 
@@ -24,6 +27,7 @@ public class EnemyFollow : MonoBehaviour
         shake = GameObject.FindGameObjectWithTag("ShakeTag").GetComponent<CamShake>();
         audio = gameObject.GetComponent<AudioSource>();
         spriteRen = gameObject.GetComponent<SpriteRenderer>();
+        originalSpeed = speed;
     }
 
     // Update is called once per frame
@@ -37,6 +41,13 @@ public class EnemyFollow : MonoBehaviour
     		spriteRen.flipX = false;
     	else if(playerPosX > enemyPosX)
     		spriteRen.flipX = true;
+
+        distance = playerPosX - enemyPosX;
+
+        if(distance >= 25)
+            speed = 0;
+        else
+            speed = originalSpeed;
     }
 
     void OnTriggerEnter2D(Collider2D other){
@@ -50,7 +61,7 @@ public class EnemyFollow : MonoBehaviour
     public IEnumerator Hit(){
         shake.Shake();
         audio.Play();
-        health.IncreaseStress(30);
+        health.IncreaseStress(dmg);
         this.spriteRen.enabled = false;
         this.GetComponent<ParticleSystem>().enableEmission = false;
         yield return new WaitForSeconds(audio.clip.length);

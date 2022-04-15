@@ -71,8 +71,8 @@ SpriteShapeRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -459262763
+  m_SortingLayer: 4
   m_SortingOrder: 5
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_MaskInteraction: 0
@@ -88,8 +88,8 @@ SpriteShapeRenderer:
   - {fileID: 21300000, guid: 608e61deb05c54660bebf5a4dd2ee02d, type: 3}
   - {fileID: 21300000, guid: 608e61deb05c54660bebf5a4dd2ee02d, type: 3}
   m_LocalAABB:
-    m_Center: {x: 14.466806, y: 4.354408, z: 0}
-    m_Extent: {x: 22.93646, y: 5.3694053, z: 0}
+    m_Center: {x: 0.0021705627, y: -0.0013520718, z: 0}
+    m_Extent: {x: 4.0024147, y: 1.0026672, z: 0}
 --- !u!114 &2309151950315297245
 MonoBehaviour:
   m_ObjectHideFlags: 0
