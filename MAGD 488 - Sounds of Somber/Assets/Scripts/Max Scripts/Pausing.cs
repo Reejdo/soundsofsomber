@@ -8,8 +8,9 @@ public class Pausing : MonoBehaviour
     public static bool paused = false;
    	public GameObject PauseUI; 
     public static Pausing instance;
-    public bool canPause;
+    public bool canPause = true;
     MenuKeys action;
+
 
 
     private void Awake(){
@@ -29,8 +30,9 @@ public class Pausing : MonoBehaviour
     private void Start(){
     	//PauseUI = GameObject.Find("pausemenu");
     	action.Pause.PauseGame.performed += _ => DeterminePause();
+
         instance = this;
-        canPause = true;
+        //canPause = true;
     }
 
     private void DeterminePause(){
@@ -43,23 +45,32 @@ public class Pausing : MonoBehaviour
     
 
     public void ResumeGame(){
-    	PauseUI.SetActive(false);
-    	Time.timeScale = 1f;
-    	AudioListener.pause = false;
-    	paused = false;
+    	if(PauseUI != null){
+    		PauseUI.SetActive(false);
+    		//AudioListener.volume = 1;
+    		Time.timeScale = 1f;
+    		AudioListener.pause = false;
+    		paused = false;
+    	}
+    	
     }
 
     public void PauseGame(){
-    	PauseUI.SetActive(true);
-    	Time.timeScale = 0;
-    	AudioListener.pause = true;
-    	paused = true;
+    	if(PauseUI != null){
+    		PauseUI.SetActive(true);
+    		//AudioListener.volume = 0;
+    		Time.timeScale = 0f;
+    		AudioListener.pause = true;
+    		paused = true;
+    	}
+    	
     }
 
     //for pause screen buttons
     public void LoadMenu(){
     	Time.timeScale = 1f;
-    	SceneManager.LoadScene("MainMenu");
+    	AudioListener.pause = false;
+    	SceneManager.LoadScene("MainMenuOfficial");
     }
 
     public void QuitGame(){
@@ -67,7 +78,12 @@ public class Pausing : MonoBehaviour
     	Application.Quit();
     }
 
+
+
     public void noMorePause(){
-        canPause = false;
+    	if(canPause)
+        	canPause = false;
+        else
+        	canPause = true;
     }
 }

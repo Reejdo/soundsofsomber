@@ -249,7 +249,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8450457149293158269, guid: 91afdeda9aa0a124ca97819a8d709a6d, type: 3}
       propertyPath: lines.Array.data[0]
-      value: I see, I can only move so far away from the block
+      value: I see, I can only move so far away from this weird plant...
       objectReference: {fileID: 0}
     - target: {fileID: 8450457149293158269, guid: 91afdeda9aa0a124ca97819a8d709a6d, type: 3}
       propertyPath: lines.Array.data[1]
@@ -382,7 +382,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8450457149293158269, guid: 91afdeda9aa0a124ca97819a8d709a6d, type: 3}
       propertyPath: lines.Array.data[0]
-      value: "Thank god I\u2019m not attached to that block anymore"
+      value: Thank god that plant finally let me go...
       objectReference: {fileID: 0}
     - target: {fileID: 8450457149293158269, guid: 91afdeda9aa0a124ca97819a8d709a6d, type: 3}
       propertyPath: lines.Array.data[1]
@@ -26596,10 +26596,6 @@ PrefabInstance:
       propertyPath: EmissionModule.rateOverTime.scalar
       value: 4
       objectReference: {fileID: 0}
-    - target: {fileID: 6486031373719755604, guid: aa4c0140e76bcab44a3a46607b163c34, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7387130249724254213, guid: aa4c0140e76bcab44a3a46607b163c34, type: 3}
       propertyPath: m_Name
       value: MainCamera
@@ -33262,8 +33258,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1839626581}
   - component: {fileID: 1839626582}
+  - component: {fileID: 1839626583}
   m_Layer: 0
-  m_Name: sprite
+  m_Name: strugglevineenemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -33277,8 +33274,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1839626580}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.07, y: 0, z: 0}
-  m_LocalScale: {x: 5.8118, y: 5.8118, z: 5.8118}
+  m_LocalPosition: {x: 0.07, y: 0.00000028128, z: 0}
+  m_LocalScale: {x: 0.28137645, y: 0.28137645, z: 0.28137645}
   m_Children: []
   m_Father: {fileID: 1892049834}
   m_RootOrder: 1
@@ -33320,10 +33317,10 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -504084227
-  m_SortingLayer: 3
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 7028380891137293278, guid: a05c6102950b7c5418b6db6f96832044, type: 3}
+  m_SortingLayerID: 450158261
+  m_SortingLayer: 5
+  m_SortingOrder: 1
+  m_Sprite: {fileID: 21300000, guid: 5c6be3de981401043961145a82fdb9e5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -33334,6 +33331,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &1839626583
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1839626580}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d4bc027a6a9c06741b3e996c1e4d9a9c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1842105142
 GameObject:
   m_ObjectHideFlags: 0
