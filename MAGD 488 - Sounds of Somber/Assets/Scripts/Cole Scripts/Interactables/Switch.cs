@@ -8,7 +8,15 @@ public class Switch : MonoBehaviour
 {
     public UnityEvent thisEvent;
     public bool isTriggerSwitch;
-    private bool isInRange = false; 
+    private bool isInRange = false;
+    [SerializeField]
+    private GameObject interactButton;
+
+
+    private void Start()
+    {
+        interactButton.SetActive(false); 
+    }
 
     void ThisEvent()
     {
@@ -25,6 +33,11 @@ public class Switch : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (!isTriggerSwitch)
+        {
+            interactButton.SetActive(true);
+        }
+
 
         if (collision.gameObject.CompareTag("Player"))
         {
@@ -42,6 +55,7 @@ public class Switch : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             isInRange = false;
+            interactButton.SetActive(false);
         }
     }
 }
