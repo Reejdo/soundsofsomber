@@ -71,7 +71,7 @@ public class PlayerControl : MonoBehaviour
         myAnim.SetBool("isMoving", isMoving);
         myAnim.SetFloat("horVal", horizontalValue);
         myAnim.SetFloat("lastPosX", lastPosX);
-        myAnim.SetBool("isGrounded", IsGrounded()); 
+        //myAnim.SetBool("isGrounded", IsGrounded()); 
     }
 
     public bool IsGrounded()

@@ -19,7 +19,7 @@ public class InteractDialogueEvent : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (myDialogueManager.talking && !newEvent)
+        if (myDialogueManager.talking && !myDialogueManager.isDiaryPage && !newEvent)
         {
             newEvent = true;
         }

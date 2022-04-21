@@ -44,6 +44,11 @@ public class InteractDialogue : MonoBehaviour
         Debug.Log("Dialogue Interact Called"); 
         if (npcInteract.inRange && !dialogueManager.talking && gameObject.name == npcInteract.npcName)
         {
+            if (isDiaryPage)
+            {
+                dialogueManager.isDiaryPage = true; 
+            }
+
             if (!hasFinalDialogue && dialogueCounter > 0)
             {
                 if (typesOfDialogue > 1 && dialogueCounter >= typesOfDialogue)
