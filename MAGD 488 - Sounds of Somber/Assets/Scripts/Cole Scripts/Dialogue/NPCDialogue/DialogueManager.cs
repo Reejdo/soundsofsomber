@@ -13,6 +13,7 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private List<GameObject> UIElements;
     public bool talking;
     private PlayerControl myPlayerControl;
+    public bool isDiaryPage; 
 
     //private LevelManager lvlManage;
 
@@ -95,6 +96,8 @@ public class DialogueManager : MonoBehaviour
 
     public void EndDialogue()
     {
+        isDiaryPage = false; 
+
         foreach (GameObject obj in UIElements)
         {
             obj.SetActive(false);
