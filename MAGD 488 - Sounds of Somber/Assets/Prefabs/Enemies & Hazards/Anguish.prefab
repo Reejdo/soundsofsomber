@@ -102,8 +102,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dmg: 30
   speed: 1.5
-  enemyPosX: 0
-  playerPosX: 0
 --- !u!58 &6226343889463804531
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -316,7 +314,7 @@ ParticleSystem:
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
   looping: 1
-  prewarm: 0
+  prewarm: 1
   playOnAwake: 1
   useUnscaledTime: 0
   autoRandomSeed: 1

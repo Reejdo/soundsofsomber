@@ -30,6 +30,12 @@ public class BubbleEnemy : MonoBehaviour
 
     void OnTriggerEnter2D (Collider2D other){
     	if(other.gameObject.CompareTag("Player"))
-    		Destroy(gameObject);
+    		DesDeath();
+    }
+
+    public void DesDeath(){
+        timeBtwshots = 10f;
+        gameObject.GetComponent<Animator>().SetTrigger("death");
+        Destroy(gameObject, 2);
     }
 }
