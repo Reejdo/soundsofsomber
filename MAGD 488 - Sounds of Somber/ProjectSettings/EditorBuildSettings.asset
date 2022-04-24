@@ -21,6 +21,9 @@ EditorBuildSettings:
     path: Assets/Scenes/OfficialScenes/HouseOne.unity
     guid: e728b5de41e059e43a0880c680af3359
   - enabled: 1
+    path: Assets/Scenes/OfficialScenes/HousePostTutorial.unity
+    guid: ebebd839119772d4282ddbecba0658b1
+  - enabled: 1
     path: Assets/Scenes/OfficialScenes/HouseTwo.unity
     guid: f2ac02438d4896f4e92aff4949316ca4
   - enabled: 0

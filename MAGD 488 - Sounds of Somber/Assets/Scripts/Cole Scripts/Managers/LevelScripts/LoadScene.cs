@@ -22,6 +22,12 @@ public class LoadScene : MonoBehaviour
         SceneLoader.Load(SceneLoader.Scene.HouseOne);
     }
 
+    public void LoadHousePostTutorial()
+    {
+        Debug.Log("Load House Post Tutorial");
+        SceneLoader.Load(SceneLoader.Scene.HousePostTutorial); 
+    }
+
     public void LoadHouseTwo()
     {
         Debug.Log("Load House Two");

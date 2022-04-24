@@ -16,6 +16,7 @@ public static class SceneLoader
         Loading,
         Tutorial,
         HouseOne, 
+        HousePostTutorial, 
         HouseTwo,
         ChapterOne, 
         ChapterTwo,

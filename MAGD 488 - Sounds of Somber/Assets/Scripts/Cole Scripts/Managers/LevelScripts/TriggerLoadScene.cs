@@ -8,19 +8,23 @@ public class TriggerLoadScene : MonoBehaviour
     public UnityEvent LoadScene; 
 
     private LoadScene myLoadScene;
+    private PlayerControl myPlayerControl; 
+
     [SerializeField]
     private string playerTag = "Player";
     private bool loadOnce = false;
     [SerializeField]
-    private bool loadToCutscene = false;
+    private bool loadToCutscene = false, isTrigger = false;
     [SerializeField]
     private int cutSceneNumber = 0;
-    private DataManager myDataManager; 
+    private DataManager myDataManager;
+    public GameObject roomFader; 
 
     private void Awake()
     {
         myLoadScene = GetComponent<LoadScene>();
-        myDataManager = GameObject.FindObjectOfType<DataManager>().GetComponent<DataManager>(); 
+        myDataManager = GameObject.FindObjectOfType<DataManager>().GetComponent<DataManager>();
+        myPlayerControl = GameObject.FindObjectOfType<PlayerControl>().GetComponent<PlayerControl>(); 
     }
 
 
@@ -29,16 +33,36 @@ public class TriggerLoadScene : MonoBehaviour
         LoadScene.Invoke(); 
     }
 
+    public void LoadNextScene()
+    {
+        StartCoroutine(SceneLoading());
+        Debug.Log("Load next scene"); 
+    }
+
+    IEnumerator SceneLoading()
+    {
+        myPlayerControl.canMove = false; 
+        roomFader.SetActive(true);
+        yield return new WaitForSeconds(1f); //room fader fades in 1 second
+        CallLoadScene();
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        Debug.Log("trigger"); 
         if (collision.gameObject.CompareTag(playerTag) && !loadOnce)
         {
-            if (!loadToCutscene)
+            Debug.Log("player collide"); 
+            if (isTrigger)
             {
-                myDataManager.LoadToCutscene(cutSceneNumber); 
+                if (!loadToCutscene)
+                {
+                    myDataManager.LoadToCutscene(cutSceneNumber);
+                }
+                loadOnce = true;
+                LoadNextScene(); 
             }
-            loadOnce = true;
-            CallLoadScene();
+
         }            
     }
 

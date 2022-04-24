@@ -126,7 +126,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -459262763
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 3178396981626682285, guid: a8f145efdde642345927b7080278bab4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -290,6 +290,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   displayXVelocitiy: 0
+  myAudioManager: {fileID: 0}
   isHousePlayer: 1
   displayIsGrounded: 0
   needKinematicOff: 0
@@ -372,7 +373,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5601265322022997015}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.71, y: 6.12, z: 0}
+  m_LocalPosition: {x: 2.5, y: 17.9, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5601265321403998807}
