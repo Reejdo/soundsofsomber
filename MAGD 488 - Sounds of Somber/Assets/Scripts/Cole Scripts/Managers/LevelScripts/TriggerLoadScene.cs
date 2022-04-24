@@ -36,7 +36,7 @@ public class TriggerLoadScene : MonoBehaviour
     public void LoadNextScene()
     {
         StartCoroutine(SceneLoading());
-        Debug.Log("Load next scene"); 
+        //Debug.Log("Load next scene"); 
     }
 
     IEnumerator SceneLoading()
@@ -49,10 +49,10 @@ public class TriggerLoadScene : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("trigger"); 
+        //Debug.Log("trigger"); 
         if (collision.gameObject.CompareTag(playerTag) && !loadOnce)
         {
-            Debug.Log("player collide"); 
+            //Debug.Log("player collide"); 
             if (isTrigger)
             {
                 if (!loadToCutscene)

@@ -83,7 +83,8 @@ public class AudioManager : MonoBehaviour
 
     public void StopTheme()
     {
-        currentBackground.source.Stop();
+        StartCoroutine(BackgroundFade(currentBackground.source, 2, 0));
+        //currentBackground.source.Stop();
     }
 
     public void UpdateCurrentTheme()
@@ -99,9 +100,17 @@ public class AudioManager : MonoBehaviour
         StartCoroutine(BackgroundFade(currentBackground.source, 2, 1)); 
     }
 
+    public void FadeInFromSwitch()
+    {
+        Debug.Log("Fade in from Switch"); 
+        currentBackground.source.Play();
+        StartCoroutine(BackgroundFade(currentBackground.source, 2, 1));
+    }
+
+
     public static IEnumerator BackgroundFade(AudioSource audioSource, float duration, float targetVolume)
     {
-
+        Debug.Log("Background Fade"); 
         float currentTime = 0;
         float start = audioSource.volume;
         while (currentTime < duration)

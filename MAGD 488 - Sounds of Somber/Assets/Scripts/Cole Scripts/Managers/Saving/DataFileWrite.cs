@@ -84,18 +84,18 @@ public class DataFileWrite : MonoBehaviour
             }
             if (i >= 2)
             {
-                Debug.Log("Reading to diary"); 
+                //Debug.Log("Reading to diary"); 
                 diaryStates.Add(allLines[i]);
 
                 //Updates Data Manager
                 if (diaryStates[i - 2] == "True")
                 {
-                    Debug.Log("True"); 
+                    //Debug.Log("True"); 
                     myDataManager.diaryStates[i - 2] = true; 
                 } 
                 else
                 {
-                    Debug.Log("False");
+                    //Debug.Log("False");
                     myDataManager.diaryStates[i - 2] = false; 
                 }
 

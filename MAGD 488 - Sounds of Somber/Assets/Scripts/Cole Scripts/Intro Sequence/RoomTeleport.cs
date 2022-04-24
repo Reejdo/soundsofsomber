@@ -81,7 +81,7 @@ public class RoomTeleport : MonoBehaviour
 
     IEnumerator TeleportPlayer()
     {
-        Debug.Log("starting teleport");
+        //Debug.Log("starting teleport");
         myPlayerControl.canMove = false;
         roomFader.SetActive(true); 
 
@@ -92,7 +92,7 @@ public class RoomTeleport : MonoBehaviour
 
         yield return new WaitForSeconds(timeToWait);
 
-        Debug.Log("ending teleport"); 
+        //Debug.Log("ending teleport"); 
         roomFader.SetActive(false);
         buttonIndicator.SetActive(false); 
         myPlayerControl.canMove = true;
