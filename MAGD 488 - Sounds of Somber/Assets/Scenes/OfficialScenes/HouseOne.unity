@@ -291,7 +291,7 @@ GameObject:
   - component: {fileID: 30405098}
   - component: {fileID: 30405097}
   m_Layer: 0
-  m_Name: cellPhoneDialogue
+  m_Name: therapistDialogue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10471,9 +10471,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
     sentences:
-    - 'Hey, just checking to make sure you''re okay. '
-    - 'We can reschedule this week if you want some time to yourself. '
-    - Otherwise we're still on for 2 PM on Wednesday if you want.
+    - Hey, how are you doing?
+    - I heard the terrible news, let me know if you need anything.
+    - Don't hesitate to reach out!
   UIElements:
   - {fileID: 1160311925}
   dialogueText: {fileID: 2032108594}
