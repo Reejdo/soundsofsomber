@@ -9,12 +9,14 @@ public class DisappearingBlock : MonoBehaviour
     public GameObject[] objectsToDisable;
     public bool objectDisabled = false;
     public float timeToDiable;
-    private Animator myAnim; 
+    private Animator myAnim;
+    private AudioManager myAudioManager; 
 
     // Start is called before the first frame update
     void Start()
     {
-        myAnim = GetComponent<Animator>(); 
+        myAnim = GetComponent<Animator>();
+        myAudioManager = GameObject.FindObjectOfType<AudioManager>().GetComponent<AudioManager>(); 
     }
 
     // Update is called once per frame
@@ -31,6 +33,7 @@ public class DisappearingBlock : MonoBehaviour
 
     IEnumerator DisableObject()
     {
+        myAudioManager.Play("PuzzleSolve"); 
         yield return new WaitForSeconds(timeToDiable);
         SetObjectStates(false); 
     }

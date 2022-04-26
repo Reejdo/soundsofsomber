@@ -52,6 +52,20 @@ MonoBehaviour:
     loop: 1
     playOnAwake: 0
     source: {fileID: 0}
+  - name: MoveHouse
+    clip: {fileID: 8300000, guid: d463ca9287f6ad247a4726a93ee1ced1, type: 3}
+    volume: 0.3
+    pitch: 1
+    loop: 1
+    playOnAwake: 0
+    source: {fileID: 0}
+  - name: MoveDirt
+    clip: {fileID: 8300000, guid: fea2d8849e9538d4ca632f6f5717b747, type: 3}
+    volume: 0.3
+    pitch: 1
+    loop: 1
+    playOnAwake: 0
+    source: {fileID: 0}
   - name: Jump
     clip: {fileID: 8300000, guid: bd907d7bcac39cd4e9f9afe39098e815, type: 3}
     volume: 0.2
@@ -62,6 +76,13 @@ MonoBehaviour:
   - name: HeartBeat
     clip: {fileID: 8300000, guid: 429a0b4fd5b1eaa49a3649415400b710, type: 3}
     volume: 0.2
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    source: {fileID: 0}
+  - name: PuzzleSolve
+    clip: {fileID: 8300000, guid: 6f719b0a383868b4b838bbb48375967c, type: 3}
+    volume: 0.6
     pitch: 1
     loop: 0
     playOnAwake: 0

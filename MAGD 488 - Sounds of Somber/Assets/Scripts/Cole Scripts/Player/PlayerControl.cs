@@ -21,7 +21,8 @@ public class PlayerControl : MonoBehaviour
     //Used for inspector
     [SerializeField] public float displayXVelocitiy;
 
-    public AudioManager myAudioManager; 
+    public AudioManager myAudioManager;
+    private DataManager myDataManager; 
     private Rigidbody2D myRigidBody;
     private Animator myAnim;
     private bool playingMoveSound; 
@@ -45,7 +46,8 @@ public class PlayerControl : MonoBehaviour
 
         myRigidBody = GetComponent<Rigidbody2D>();
         myAnim = GetComponent<Animator>();
-        myAudioManager = GameObject.FindObjectOfType<AudioManager>().GetComponent<AudioManager>(); 
+        myAudioManager = GameObject.FindObjectOfType<AudioManager>().GetComponent<AudioManager>();
+        myDataManager = GameObject.FindObjectOfType<DataManager>().GetComponent<DataManager>(); 
 
         canMove = true; 
     }
@@ -115,16 +117,34 @@ public class PlayerControl : MonoBehaviour
 
     void PlayerAudioPlay()
     {
+        string thisMoveSound = ""; 
+
         if (myAudioManager != null)
         {
             if (isMoving && IsGrounded() && !playingMoveSound)
             {
-                myAudioManager.Play("MoveSnow");
-                playingMoveSound = true;
+                if (myDataManager.lastLevelLoaded == "ChapterOne" || myDataManager.lastLevelLoaded == "Tutorial")
+                {
+                    thisMoveSound = "MoveSnow"; 
+                    myAudioManager.Play(thisMoveSound);
+                    playingMoveSound = true;
+                }
+                else if (myDataManager.lastLevelLoaded == "ChapterTwo")
+                {
+                    thisMoveSound = "MoveDirt";
+                    myAudioManager.Play(thisMoveSound);
+                    playingMoveSound = true;
+                }
+                else
+                {
+                    thisMoveSound = "MoveHouse";
+                    myAudioManager.Play(thisMoveSound);
+                    playingMoveSound = true;
+                }
             }
             else if (!isMoving || !IsGrounded())
             {
-                myAudioManager.StopSound("MoveSnow");
+                myAudioManager.StopSound(thisMoveSound);
                 playingMoveSound = false;
             }
         }
