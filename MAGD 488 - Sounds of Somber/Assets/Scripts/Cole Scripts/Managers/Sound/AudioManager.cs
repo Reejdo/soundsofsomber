@@ -102,7 +102,7 @@ public class AudioManager : MonoBehaviour
 
     public void FadeInFromSwitch()
     {
-        Debug.Log("Fade in from Switch"); 
+        //Debug.Log("Fade in from Switch"); 
         currentBackground.source.Play();
         StartCoroutine(BackgroundFade(currentBackground.source, 2, 1));
     }
