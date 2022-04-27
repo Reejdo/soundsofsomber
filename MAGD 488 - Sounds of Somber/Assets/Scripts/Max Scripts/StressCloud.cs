@@ -7,6 +7,7 @@ public class StressCloud : MonoBehaviour
 	private PlayerHealth health;
     private bool hurtPlayer = true;
     private bool inCloud = false;
+    public float stressIncreaseNum = 5f; 
     // Start is called before the first frame update
     void Start()
     {
@@ -19,7 +20,8 @@ public class StressCloud : MonoBehaviour
     	if(inCloud){
         	if(hurtPlayer == true){
         		hurtPlayer = false;
-        		health.IncreaseStress(5); 
+                //put a variable for number because I'm using it in a context where it needs to be high
+        		health.IncreaseStress(stressIncreaseNum); 
         		StartCoroutine(HitCoolDown());
         	}
         }

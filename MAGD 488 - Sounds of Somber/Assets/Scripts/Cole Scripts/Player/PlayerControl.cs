@@ -152,7 +152,6 @@ public class PlayerControl : MonoBehaviour
 
     }
 
-
     void PlayerMove()
     {
         if (canMove)

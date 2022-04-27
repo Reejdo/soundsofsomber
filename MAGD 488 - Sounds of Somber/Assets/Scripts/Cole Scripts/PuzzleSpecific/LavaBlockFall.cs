@@ -6,7 +6,8 @@ public class LavaBlockFall : MonoBehaviour
 {
     private Rigidbody2D myRigidBody;
     private LavaBlockStart myBlockStart;
-    private GameObject playerObject; 
+    private GameObject playerObject;
+    public bool parentPlayer = true; 
 
     // Start is called before the first frame update
     void Start()
@@ -35,7 +36,7 @@ public class LavaBlockFall : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player") && parentPlayer)
         {
             playerObject.transform.SetParent(transform); 
         }
