@@ -35,6 +35,7 @@ public class ThisLevelMusic : MonoBehaviour
         AudioSource myCurrentTheme = myAudioManager.currentTheme.GetComponent<AudioSource>();
         myCurrentTheme.clip = thisLevelTheme.clip;
         myAudioManager.currentBackground.name = thisLevelTheme.clip.name;
+        myAudioManager.currentBackground.loop = true;
         myAudioManager.FadeInFromSwitch();
     }
 
@@ -51,6 +52,7 @@ public class ThisLevelMusic : MonoBehaviour
         }
         myCurrentTheme.clip = thisLevelTheme.clip;
         myAudioManager.currentBackground.name = thisLevelTheme.clip.name;
+        myAudioManager.currentBackground.loop = true; 
         myAudioManager.FadeInFromSwitch(); 
     }
 

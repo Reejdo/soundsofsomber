@@ -121,29 +121,30 @@ public class PlayerControl : MonoBehaviour
 
         if (myAudioManager != null)
         {
+            if (myDataManager.lastLevelLoaded == "ChapterOne" || myDataManager.lastLevelLoaded == "Tutorial")
+            {
+                Debug.Log("snow");
+                thisMoveSound = "MoveSnow";
+            }
+            else if (myDataManager.lastLevelLoaded == "ChapterTwo")
+            {
+                Debug.Log("dirt");
+                thisMoveSound = "MoveDirt";
+            }
+            else
+            {
+                Debug.Log("house");
+                thisMoveSound = "MoveHouse";
+            }
+
             if (isMoving && IsGrounded() && !playingMoveSound)
             {
-                if (myDataManager.lastLevelLoaded == "ChapterOne" || myDataManager.lastLevelLoaded == "Tutorial")
-                {
-                    thisMoveSound = "MoveSnow"; 
-                    myAudioManager.Play(thisMoveSound);
-                    playingMoveSound = true;
-                }
-                else if (myDataManager.lastLevelLoaded == "ChapterTwo")
-                {
-                    thisMoveSound = "MoveDirt";
-                    myAudioManager.Play(thisMoveSound);
-                    playingMoveSound = true;
-                }
-                else
-                {
-                    thisMoveSound = "MoveHouse";
-                    myAudioManager.Play(thisMoveSound);
-                    playingMoveSound = true;
-                }
+                myAudioManager.Play(thisMoveSound);
+                playingMoveSound = true;
             }
-            else if (!isMoving || !IsGrounded())
+            else if (!isMoving || !IsGrounded() && playingMoveSound)
             {
+                Debug.Log("this sound:" + thisMoveSound); 
                 myAudioManager.StopSound(thisMoveSound);
                 playingMoveSound = false;
             }

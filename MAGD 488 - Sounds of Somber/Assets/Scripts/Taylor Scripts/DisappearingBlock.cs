@@ -22,6 +22,11 @@ public class DisappearingBlock : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (myAudioManager == null)
+        {
+            FindAudioManager(); 
+        }
+
         myAnim.SetBool("disable", objectDisabled); 
 
        if (counter >= itemCount && !objectDisabled)
@@ -43,6 +48,14 @@ public class DisappearingBlock : MonoBehaviour
         foreach (GameObject obj in objectsToDisable)
         {
             obj.SetActive(state);
+        }
+    }
+
+    void FindAudioManager()
+    {
+        while (myAudioManager == null)
+        {
+            myAudioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
         }
     }
 

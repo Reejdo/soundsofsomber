@@ -52,15 +52,15 @@ MonoBehaviour:
     loop: 1
     playOnAwake: 0
     source: {fileID: 0}
-  - name: MoveHouse
-    clip: {fileID: 8300000, guid: d463ca9287f6ad247a4726a93ee1ced1, type: 3}
+  - name: MoveDirt
+    clip: {fileID: 8300000, guid: fea2d8849e9538d4ca632f6f5717b747, type: 3}
     volume: 0.3
     pitch: 1
     loop: 1
     playOnAwake: 0
     source: {fileID: 0}
-  - name: MoveDirt
-    clip: {fileID: 8300000, guid: fea2d8849e9538d4ca632f6f5717b747, type: 3}
+  - name: MoveHouse
+    clip: {fileID: 8300000, guid: d463ca9287f6ad247a4726a93ee1ced1, type: 3}
     volume: 0.3
     pitch: 1
     loop: 1
@@ -94,7 +94,7 @@ MonoBehaviour:
     clip: {fileID: 0}
     volume: 0
     pitch: 1
-    loop: 0
+    loop: 1
     playOnAwake: 0
     source: {fileID: 0}
   currentTheme: {fileID: 4367428389441481003}

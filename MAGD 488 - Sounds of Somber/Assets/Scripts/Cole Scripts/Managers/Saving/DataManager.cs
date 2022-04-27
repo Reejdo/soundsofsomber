@@ -63,15 +63,15 @@ public class DataManager : MonoBehaviour
 
     }
 
-    // Start is called before the first frame update
-    void Start()
+    public void StartNewGame()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        Debug.Log("Start New Game"); 
+        LoadToCutscene(0); 
+        lastLevelLoaded = "HouseOne";
+        lastCheckpoint = 0; 
+        for (int i = 0; i < diaryStates.Count; i++)
+        {
+            diaryStates[i] = false; 
+        }
     }
 }

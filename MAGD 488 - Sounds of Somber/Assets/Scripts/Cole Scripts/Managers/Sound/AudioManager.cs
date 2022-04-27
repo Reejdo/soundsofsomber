@@ -58,6 +58,7 @@ public class AudioManager : MonoBehaviour
         }
         else
         {
+            Debug.Log("play " + name); 
             float highPitch = soundEffectDefaultPitch + soundEffectPitchDeviation;
             float lowPitch = soundEffectDefaultPitch - soundEffectPitchDeviation;
             float newPitch = Random.Range(lowPitch, highPitch);

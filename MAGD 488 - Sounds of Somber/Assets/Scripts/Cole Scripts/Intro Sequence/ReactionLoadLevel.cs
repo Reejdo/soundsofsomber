@@ -22,7 +22,8 @@ public class ReactionLoadLevel : MonoBehaviour
     void Start()
     {
         myPlayerControl = GameObject.FindObjectOfType<PlayerControl>().GetComponent<PlayerControl>(); 
-        buttonIndicator.SetActive(false); 
+        buttonIndicator.SetActive(false);
+        myReactDialogue = GameObject.FindObjectOfType<ReactionDialogue>().GetComponent<ReactionDialogue>(); 
     }
 
     // Update is called once per frame
