@@ -19,7 +19,7 @@ public class DespawnEntities : MonoBehaviour
     }
 
     void OnTriggerEnter2D(Collider2D other){
-    	if(other.CompareTag("Player")){
+    	if(other.CompareTag("MainPlayer")){
     		for(int i = 0; i < despawnSelect.Length; i++){ //spawns everything in its array
     			if(despawnSelect[i] != null)
     				despawnSelect[i].SetActive(false);

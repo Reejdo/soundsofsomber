@@ -8,7 +8,7 @@ public class PlayerHealth : MonoBehaviour
 	public float minHealth = 0; //health = stress.
 	public float maxHealth = 100;
 	public float currentHealth;
-	private AudioSource audio;
+	private AudioSource audi;
 	public HealthBar healthBar;
 	public AudioClip[] sfx = new AudioClip[1];
 	private bool calm = true;
@@ -22,8 +22,8 @@ public class PlayerHealth : MonoBehaviour
     {
     	if(healthBar == null)
     		this.enabled = false;
-    	audio = gameObject.GetComponent<AudioSource>();
-    	audio.dopplerLevel = 0f;
+    	audi = gameObject.GetComponent<AudioSource>();
+    	audi.dopplerLevel = 0f;
     	calm = true;
         currentHealth = minHealth;
         healthBar.SetMinHealth(minHealth);
@@ -57,7 +57,7 @@ public class PlayerHealth : MonoBehaviour
     			//audio.PlayOneShot(audio.clip, 0.2f);
     	}
     	else{
-    		audio.Stop();
+    		audi.Stop();
     	}
     }
 
@@ -75,7 +75,7 @@ public class PlayerHealth : MonoBehaviour
     	//StartCoroutine(CalmCooldown());
     	if(currentHealth >= 100){
     		currentHealth = 100;
-    		Application.LoadLevel(Application.loadedLevel);
+    		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     	}
     }
     

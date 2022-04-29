@@ -11,27 +11,29 @@ public class AimedProjectile : MonoBehaviour
     private PlayerHealth health;
     private bool hit = false;
 
+    private ParticleSystem emis;
     private SpriteRenderer spriteRen;
-    private AudioSource audio;
+    private AudioSource audi;
     private CamShake shake;
    
 
     void Start(){
 
         health = GameObject.FindGameObjectWithTag("MainPlayer").GetComponent<PlayerHealth>();
+        emis = gameObject.GetComponent<ParticleSystem>();
     	rb = GetComponent<Rigidbody2D>();
         spriteRen = gameObject.GetComponent<SpriteRenderer>();
     	target = GameObject.FindGameObjectWithTag("MainPlayer");
     	moveDir = (target.transform.position - transform.position).normalized * speed;
         shake = GameObject.FindGameObjectWithTag("ShakeTag").GetComponent<CamShake>();
-        audio = gameObject.GetComponent<AudioSource>();
+        audi = gameObject.GetComponent<AudioSource>();
     	rb.velocity = new Vector2(moveDir.x, moveDir.y);
     	Destroy(gameObject, 8.5f);
     }
 
 
     void OnTriggerEnter2D(Collider2D other){
-    	if(other.CompareTag("Player") && hit == false){
+    	if(other.CompareTag("MainPlayer") && hit == false){
             hit = true;
             //health.IncreaseStress(20);
             StartCoroutine(Hit());
@@ -43,11 +45,11 @@ public class AimedProjectile : MonoBehaviour
 
     public IEnumerator Hit(){
         shake.Shake();
-        audio.Play();
+        audi.Play();
         health.IncreaseStress(30);
         this.spriteRen.enabled = false;
-        this.GetComponent<ParticleSystem>().enableEmission = false;
-        yield return new WaitForSeconds(audio.clip.length);
+        emis.Stop();
+        yield return new WaitForSeconds(audi.clip.length);
         Destroy(gameObject);
     }
 

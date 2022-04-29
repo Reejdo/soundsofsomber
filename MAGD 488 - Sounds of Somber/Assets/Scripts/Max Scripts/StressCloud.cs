@@ -11,7 +11,7 @@ public class StressCloud : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        health = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>();
+        health = GameObject.FindGameObjectWithTag("MainPlayer").GetComponent<PlayerHealth>();
     }
 
     // Update is called once per frame
@@ -28,14 +28,14 @@ public class StressCloud : MonoBehaviour
     }
 
     void OnTriggerEnter2D(Collider2D other){
-    	if(other.CompareTag("Player")){
+    	if(other.CompareTag("MainPlayer")){
             inCloud = true;
         }
     	
     }
 
     void OnTriggerExit2D(Collider2D other){
-    	if(other.CompareTag("Player")){
+    	if(other.CompareTag("MainPlayer")){
             inCloud = false;
         }
     	

@@ -6,15 +6,15 @@ public class SpikeEnemy : MonoBehaviour
 {
 	public float dmg = 25;
 	private bool hit = false;
-	private AudioSource audio;
+	private AudioSource audi;
     private CamShake shake;
     private PlayerHealth health;
     // Start is called before the first frame update
     void Start()
     {
-        health = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>();
+        health = GameObject.FindGameObjectWithTag("MainPlayer").GetComponent<PlayerHealth>();
         shake = GameObject.FindGameObjectWithTag("ShakeTag").GetComponent<CamShake>();
-        audio = gameObject.GetComponent<AudioSource>();
+        audi = gameObject.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -24,7 +24,7 @@ public class SpikeEnemy : MonoBehaviour
     }
 
     void OnTriggerEnter2D(Collider2D other){
-    	if(other.CompareTag("Player") && hit == false){
+    	if(other.CompareTag("MainPlayer") && hit == false){
     		hit = true;
             StartCoroutine(Hurting());
     	}
@@ -32,7 +32,7 @@ public class SpikeEnemy : MonoBehaviour
 
     public IEnumerator Hurting(){
         shake.Shake();
-        audio.Play();
+        audi.Play();
         health.IncreaseStress(dmg);
         //this.spriteRen.enabled = false;
         //this.GetComponent<ParticleSystem>().enableEmission = false;

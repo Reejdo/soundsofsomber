@@ -14659,50 +14659,22 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 782078507}
-    - target: {fileID: 8391261590190033579, guid: 625ddffa3a803e148bd1c0a02275c49d, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ClickBookButton
-      objectReference: {fileID: 0}
-    - target: {fileID: 8391261590198277362, guid: 625ddffa3a803e148bd1c0a02275c49d, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8391261590232492815, guid: 625ddffa3a803e148bd1c0a02275c49d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 782078507}
-    - target: {fileID: 8391261590232492815, guid: 625ddffa3a803e148bd1c0a02275c49d, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ClickPageButton
-      objectReference: {fileID: 0}
     - target: {fileID: 8391261590585078346, guid: 625ddffa3a803e148bd1c0a02275c49d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 782078507}
-    - target: {fileID: 8391261590585078346, guid: 625ddffa3a803e148bd1c0a02275c49d, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ClickPageButton
-      objectReference: {fileID: 0}
     - target: {fileID: 8391261590726400664, guid: 625ddffa3a803e148bd1c0a02275c49d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 782078507}
-    - target: {fileID: 8391261590726400664, guid: 625ddffa3a803e148bd1c0a02275c49d, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ClickPageButton
-      objectReference: {fileID: 0}
     - target: {fileID: 8391261590763885442, guid: 625ddffa3a803e148bd1c0a02275c49d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 782078507}
-    - target: {fileID: 8391261590763885442, guid: 625ddffa3a803e148bd1c0a02275c49d, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ClickPageButton
-      objectReference: {fileID: 0}
-    - target: {fileID: 8391261590763885442, guid: 625ddffa3a803e148bd1c0a02275c49d, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 8391261590808738512, guid: 625ddffa3a803e148bd1c0a02275c49d, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -14791,66 +14763,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: HouseCanvas
       objectReference: {fileID: 0}
-    - target: {fileID: 8391261590894582748, guid: 625ddffa3a803e148bd1c0a02275c49d, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -2.5
-      objectReference: {fileID: 0}
     - target: {fileID: 8391261590973706678, guid: 625ddffa3a803e148bd1c0a02275c49d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 782078507}
-    - target: {fileID: 8391261590973706678, guid: 625ddffa3a803e148bd1c0a02275c49d, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ClickPageButton
-      objectReference: {fileID: 0}
     - target: {fileID: 8391261590976741938, guid: 625ddffa3a803e148bd1c0a02275c49d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 782078507}
-    - target: {fileID: 8391261590976741938, guid: 625ddffa3a803e148bd1c0a02275c49d, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ClickPageButton
-      objectReference: {fileID: 0}
     - target: {fileID: 8391261591206496172, guid: 625ddffa3a803e148bd1c0a02275c49d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 782078507}
-    - target: {fileID: 8391261591206496172, guid: 625ddffa3a803e148bd1c0a02275c49d, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ClickPageButton
-      objectReference: {fileID: 0}
     - target: {fileID: 8391261591281562126, guid: 625ddffa3a803e148bd1c0a02275c49d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 782078507}
-    - target: {fileID: 8391261591281562126, guid: 625ddffa3a803e148bd1c0a02275c49d, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ClickPageButton
-      objectReference: {fileID: 0}
     - target: {fileID: 8391261591461538556, guid: 625ddffa3a803e148bd1c0a02275c49d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 782078507}
-    - target: {fileID: 8391261591461538556, guid: 625ddffa3a803e148bd1c0a02275c49d, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ClickPageButton
-      objectReference: {fileID: 0}
-    - target: {fileID: 8391261591464343207, guid: 625ddffa3a803e148bd1c0a02275c49d, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -4.4282227
-      objectReference: {fileID: 0}
-    - target: {fileID: 8391261591464343207, guid: 625ddffa3a803e148bd1c0a02275c49d, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 1.6394653
-      objectReference: {fileID: 0}
     - target: {fileID: 8391261591658726794, guid: 625ddffa3a803e148bd1c0a02275c49d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 782078507}
-    - target: {fileID: 8391261591658726794, guid: 625ddffa3a803e148bd1c0a02275c49d, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ClickPageButton
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 625ddffa3a803e148bd1c0a02275c49d, type: 3}
 --- !u!114 &2032108594 stripped

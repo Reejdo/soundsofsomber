@@ -19,7 +19,7 @@ public class SpawnEntities : MonoBehaviour
     }
 
     void OnTriggerEnter2D(Collider2D other){
-    	if(other.CompareTag("Player")){
+    	if(other.CompareTag("MainPlayer")){
     		for(int i = 0; i < spawnSelect.Length; i++){ //spawns everything in its array
     			spawnSelect[i].SetActive(true);
     		}

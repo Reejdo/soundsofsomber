@@ -9,6 +9,7 @@ public class EnemyFollow : MonoBehaviour
     private Transform target;
     private PlayerHealth health;
     private bool hit = false;
+    private ParticleSystem emis;
     private SpriteRenderer spriteRen;
     private float enemyPosX;
 	private float playerPosX;
@@ -17,15 +18,16 @@ public class EnemyFollow : MonoBehaviour
     
     //for hit
 
-    private AudioSource audio;
+    private AudioSource audi;
     private CamShake shake;
 
     void Start()
     {
+        emis = gameObject.GetComponent<ParticleSystem>();
     	health = GameObject.FindGameObjectWithTag("MainPlayer").GetComponent<PlayerHealth>();
         target = GameObject.FindGameObjectWithTag("MainPlayer").GetComponent<Transform>();
         shake = GameObject.FindGameObjectWithTag("ShakeTag").GetComponent<CamShake>();
-        audio = gameObject.GetComponent<AudioSource>();
+        audi = gameObject.GetComponent<AudioSource>();
         spriteRen = gameObject.GetComponent<SpriteRenderer>();
         originalSpeed = speed;
     }
@@ -33,10 +35,12 @@ public class EnemyFollow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
 
         enemyPosX = this.transform.position.x;
     	playerPosX = target.transform.position.x;
+        
         if(playerPosX <= enemyPosX)
     		spriteRen.flipX = false;
     	else if(playerPosX > enemyPosX)
@@ -51,7 +55,7 @@ public class EnemyFollow : MonoBehaviour
     }
 
     void OnTriggerEnter2D(Collider2D other){
-    	if(other.CompareTag("Player") && hit == false){
+    	if(other.CompareTag("MainPlayer") && hit == false){
     		hit = true;
             StartCoroutine(Hit());
     	}
@@ -59,12 +63,14 @@ public class EnemyFollow : MonoBehaviour
     }
 
     public IEnumerator Hit(){
+        
+
         shake.Shake();
-        audio.Play();
+        audi.Play();
         health.IncreaseStress(dmg);
         this.spriteRen.enabled = false;
-        this.GetComponent<ParticleSystem>().enableEmission = false;
-        yield return new WaitForSeconds(audio.clip.length);
+        emis.Stop();
+        yield return new WaitForSeconds(audi.clip.length);
         Destroy(gameObject);
     }
 }
