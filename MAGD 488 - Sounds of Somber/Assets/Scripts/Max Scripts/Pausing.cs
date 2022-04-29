@@ -55,7 +55,7 @@ public class Pausing : MonoBehaviour
     	
     }
 
-    public void PauseGame(){
+    public void PauseGame(){ //pauses the game
     	if(PauseUI != null){
     		PauseUI.SetActive(true);
     		//AudioListener.volume = 0;
@@ -67,20 +67,20 @@ public class Pausing : MonoBehaviour
     }
 
     //for pause screen buttons
-    public void LoadMenu(){
+    public void LoadMenu(){ //loads back to the main menu
     	Time.timeScale = 1f;
     	AudioListener.pause = false;
     	SceneManager.LoadScene("MainMenuOfficial");
     }
 
-    public void QuitGame(){
+    public void QuitGame(){ //quits the game
     	Debug.Log("Quitting...");
     	Application.Quit();
     }
 
 
 
-    public void noMorePause(){
+    public void noMorePause(){ //disabled pausing (if needed)
     	if(canPause)
         	canPause = false;
         else
