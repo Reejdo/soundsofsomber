@@ -11,7 +11,8 @@ public class BlockFollow : MonoBehaviour
     public Transform playerTransform;
     public Rigidbody2D playerRigidBody;
     private Rigidbody2D myRigidBody;
-    private PlayerControl myPlayerControl; 
+    private PlayerControl myPlayerControl;
+    public GameObject userPlayer; 
 
     public Color c1;
     public Color c2;
@@ -26,10 +27,10 @@ public class BlockFollow : MonoBehaviour
     void Start()
     {
         myRigidBody = GetComponent<Rigidbody2D>();
-        GameObject userPlayer = GameObject.FindGameObjectWithTag("Player"); 
+        userPlayer = GameObject.FindWithTag("MainPlayer"); 
 
         if (userPlayer != null)
-        {
+        { 
             playerTransform = userPlayer.transform;  
             playerRigidBody = userPlayer.GetComponent<Rigidbody2D>();
             myPlayerControl = userPlayer.GetComponent<PlayerControl>(); 

@@ -53191,12 +53191,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9782184125a5ba943a78fcdb9f3f6174, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxDistance: 8.5
+  maxDistance: 9
   snapForce: 60
   additionalJumpSpeed: 5
   additionalMoveSpeed: 1
   playerTransform: {fileID: 0}
   playerRigidBody: {fileID: 0}
+  userPlayer: {fileID: 0}
   c1: {r: 0, g: 0, b: 0, a: 1}
   c2: {r: 0, g: 0, b: 0, a: 1}
   lengthOfLineRenderer: 2

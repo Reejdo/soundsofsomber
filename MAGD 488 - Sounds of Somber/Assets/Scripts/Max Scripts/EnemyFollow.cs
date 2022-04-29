@@ -22,8 +22,8 @@ public class EnemyFollow : MonoBehaviour
 
     void Start()
     {
-    	health = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>();
-        target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+    	health = GameObject.FindGameObjectWithTag("MainPlayer").GetComponent<PlayerHealth>();
+        target = GameObject.FindGameObjectWithTag("MainPlayer").GetComponent<Transform>();
         shake = GameObject.FindGameObjectWithTag("ShakeTag").GetComponent<CamShake>();
         audio = gameObject.GetComponent<AudioSource>();
         spriteRen = gameObject.GetComponent<SpriteRenderer>();

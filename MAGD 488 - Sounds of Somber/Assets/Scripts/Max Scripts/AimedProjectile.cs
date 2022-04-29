@@ -18,10 +18,10 @@ public class AimedProjectile : MonoBehaviour
 
     void Start(){
 
-        health = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>();
+        health = GameObject.FindGameObjectWithTag("MainPlayer").GetComponent<PlayerHealth>();
     	rb = GetComponent<Rigidbody2D>();
         spriteRen = gameObject.GetComponent<SpriteRenderer>();
-    	target = GameObject.FindGameObjectWithTag("Player");
+    	target = GameObject.FindGameObjectWithTag("MainPlayer");
     	moveDir = (target.transform.position - transform.position).normalized * speed;
         shake = GameObject.FindGameObjectWithTag("ShakeTag").GetComponent<CamShake>();
         audio = gameObject.GetComponent<AudioSource>();
