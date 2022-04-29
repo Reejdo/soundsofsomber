@@ -15,22 +15,29 @@ public class BlockInteract : MonoBehaviour
     private Rigidbody2D playerRigidBody; 
     [SerializeField]
     private PlayerControl myPlayerControl;
-    private MoveBlockManager myBlockManager; 
+    public MoveBlockManager myBlockManager; 
     private Rigidbody2D myRigidBody; 
 
     // Start is called before the first frame update
     void Start()
     {
         myRigidBody = gameObject.GetComponent<Rigidbody2D>();
-        playerRigidBody = GameObject.FindGameObjectWithTag(playerTag).GetComponent<Rigidbody2D>();
-        myPlayerControl = GameObject.FindGameObjectWithTag(playerTag).GetComponent<PlayerControl>();
-        playerTransform = GameObject.FindGameObjectWithTag(playerTag).GetComponent<Transform>();
-        myBlockManager = GameObject.FindObjectOfType<MoveBlockManager>().GetComponent<MoveBlockManager>(); 
+        playerRigidBody = GameObject.FindObjectOfType<PlayerControl>().GetComponent<Rigidbody2D>();
+        myPlayerControl = GameObject.FindObjectOfType<PlayerControl>().GetComponent<PlayerControl>();
+        playerTransform = GameObject.FindObjectOfType<PlayerControl>().GetComponent<Transform>();
+        
+        FindBlockManager(); 
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (myBlockManager == null)
+        {
+            Debug.LogError("Finding block manager"); 
+            FindBlockManager(); 
+        }
+
         BoxInteraction();
 
         myRigidBody.velocity = new Vector2(myRigidBody.velocity.x, -5f); 
@@ -64,6 +71,16 @@ public class BlockInteract : MonoBehaviour
 
     }
 
+    void FindBlockManager()
+    {
+        Debug.Log("FIND BLOCK MANAGER"); 
+
+        while (myBlockManager == null)
+        {
+            myBlockManager = GameObject.FindObjectOfType<MoveBlockManager>().GetComponent<MoveBlockManager>();
+        }
+    }
+
     public void OnInteractKey(InputAction.CallbackContext context)
     {
         if (context.performed)
@@ -89,7 +106,6 @@ public class BlockInteract : MonoBehaviour
             if (myBlockManager.currentBlock == null)
             {
                 myBlockManager.currentBlock = gameObject;
-                myBlockManager.moveIconUI.SetActive(true); 
                 playerInRange = true;
             }
             if (myBlockManager.currentBlock = gameObject)

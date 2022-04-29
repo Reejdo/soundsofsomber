@@ -21,11 +21,21 @@ public class CameraFollow : MonoBehaviour
 
 	void Start()
 	{
-		target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+
 		myPlayerControl = target.gameObject.GetComponent<PlayerControl>(); 
 
-		floorTarget = GameObject.FindGameObjectWithTag(followTag).GetComponent<Transform>();
+
 		targetPos = transform.position;
+
+		if (target == null)
+        {
+			target = GameObject.FindGameObjectWithTag("MainPlayer").GetComponent<Transform>();
+		}
+
+		if (floorTarget == null)
+        {
+			floorTarget = GameObject.FindGameObjectWithTag(followTag).GetComponent<Transform>();
+		}
 	}
 
     private void Update()

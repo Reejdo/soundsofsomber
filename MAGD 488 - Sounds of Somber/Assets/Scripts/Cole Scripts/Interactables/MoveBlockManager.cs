@@ -20,5 +20,9 @@ public class MoveBlockManager : MonoBehaviour
         {
             moveIconUI.SetActive(false);
         }
+        else
+        {
+            moveIconUI.SetActive(true);
+        }
     }
 }

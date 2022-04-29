@@ -11,6 +11,7 @@ TagManager:
   - MoveBlock
   - ShakeTag
   - saveIcon
+  - MainPlayer
   layers:
   - Default
   - TransparentFX
