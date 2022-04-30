@@ -73,7 +73,7 @@ public class BlockInteract : MonoBehaviour
 
     void FindBlockManager()
     {
-        Debug.Log("FIND BLOCK MANAGER"); 
+        //Debug.Log("FIND BLOCK MANAGER"); 
 
         while (myBlockManager == null)
         {

@@ -36,7 +36,7 @@ public class PlayerControl : MonoBehaviour
     [SerializeField]
     private bool canJump = true;
     public bool hasJumped = false; //used in other scripts
-    private bool isMoving; 
+    private bool isMoving, isKnocked; 
 
 
     // Start is called before the first frame update
@@ -123,17 +123,17 @@ public class PlayerControl : MonoBehaviour
         {
             if (myDataManager.lastLevelLoaded == "ChapterOne" || myDataManager.lastLevelLoaded == "Tutorial")
             {
-                Debug.Log("snow");
+                //Debug.Log("snow");
                 thisMoveSound = "MoveSnow";
             }
             else if (myDataManager.lastLevelLoaded == "ChapterTwo")
             {
-                Debug.Log("dirt");
+                //Debug.Log("dirt");
                 thisMoveSound = "MoveDirt";
             }
             else
             {
-                Debug.Log("house");
+                //Debug.Log("house");
                 thisMoveSound = "MoveHouse";
             }
 
@@ -144,7 +144,7 @@ public class PlayerControl : MonoBehaviour
             }
             else if (!isMoving || !IsGrounded() && playingMoveSound)
             {
-                Debug.Log("this sound:" + thisMoveSound); 
+                //Debug.Log("this sound:" + thisMoveSound); 
                 myAudioManager.StopSound(thisMoveSound);
                 playingMoveSound = false;
             }
@@ -158,15 +158,24 @@ public class PlayerControl : MonoBehaviour
         {
             if (!needKinematicOff)
             {
-                if (IsGrounded() && Mathf.Abs(horizontalValue) < 1 && !hasJumped)
+                //for knockback section
+                if (!isKnocked)
                 {
-                    myRigidBody.velocity = new Vector2(0f, 0f);
-                    myRigidBody.isKinematic = true;
+                    if (IsGrounded() && Mathf.Abs(horizontalValue) < 1 && !hasJumped)
+                    {
+                        myRigidBody.velocity = new Vector2(0f, 0f);
+                        myRigidBody.isKinematic = true;
+                    }
+                    else
+                    {
+                        myRigidBody.velocity = new Vector2(horizontalValue * playerSpeed, myRigidBody.velocity.y);
+                        myRigidBody.isKinematic = false;
+                    }
                 }
                 else
                 {
-                    myRigidBody.velocity = new Vector2(horizontalValue * playerSpeed, myRigidBody.velocity.y);
                     myRigidBody.isKinematic = false;
+                    myRigidBody.velocity = new Vector2(myRigidBody.velocity.x, myRigidBody.velocity.y);
                 }
             }
             if (needKinematicOff)
@@ -228,4 +237,14 @@ public class PlayerControl : MonoBehaviour
         Gizmos.color = Color.white;
         Gizmos.DrawWireSphere(groundCheck.position, groundCheckRadius); 
     }
+
+    public IEnumerator AddForce(int direction, float forceToAdd)
+    {
+        isKnocked = true; 
+        Debug.Log("Add force");
+        myRigidBody.AddForce(transform.right * direction * forceToAdd);
+        yield return new WaitForSeconds(0.5f);
+        isKnocked = false; 
+    }
+
 }
