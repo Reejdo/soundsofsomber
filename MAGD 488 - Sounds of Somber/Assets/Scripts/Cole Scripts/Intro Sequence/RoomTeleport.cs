@@ -7,7 +7,8 @@ public class RoomTeleport : MonoBehaviour
 {
     // Start is called before the first frame update
     private PlayerControl myPlayerControl;
-    private GameObject cameraObject; 
+    private GameObject cameraObject;
+    private ReactionDialogue myReactDialogue; 
 
     [SerializeField]
     private Transform teleportLocation;
@@ -23,7 +24,8 @@ public class RoomTeleport : MonoBehaviour
     void Start()
     {
         myPlayerControl = GameObject.FindObjectOfType<PlayerControl>().GetComponent<PlayerControl>();
-        cameraObject = GameObject.Find("Main Camera"); 
+        cameraObject = GameObject.Find("Main Camera");
+        myReactDialogue = GameObject.FindObjectOfType<ReactionDialogue>().GetComponent<ReactionDialogue>(); 
 
         if (cameraObject == null)
         {
@@ -70,7 +72,7 @@ public class RoomTeleport : MonoBehaviour
     {
         if (context.performed)
         {
-            if (playerInRange && !teleportStarted)
+            if (playerInRange && !teleportStarted && !myReactDialogue.isTalking)
             {
                 teleportStarted = true;
                 StartCoroutine(TeleportPlayer());
