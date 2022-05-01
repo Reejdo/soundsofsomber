@@ -6735,10 +6735,10 @@ RectTransform:
   m_Father: {fileID: 8391261590894582748}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.08956585, y: 0.31}
-  m_AnchorMax: {x: 0.9086955, y: 0.71800005}
-  m_AnchoredPosition: {x: -4.4282227, y: 1.6394653}
-  m_SizeDelta: {x: 10.123291, y: 0.2774048}
+  m_AnchorMin: {x: 0.083000004, y: 0.27356595}
+  m_AnchorMax: {x: 0.91130453, y: 0.71800005}
+  m_AnchoredPosition: {x: -1.4282227, y: 0.5238037}
+  m_SizeDelta: {x: -3.8767004, y: 2.5087004}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8391261591464343209
 CanvasRenderer:
@@ -6771,8 +6771,8 @@ MonoBehaviour:
   m_text: 'This is just test text. It doesn''t matter in the grand scheme of anything,
     it''s just for size. '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 156ed684ac4540a4bb798d93b87194e3, type: 2}
+  m_sharedMaterial: {fileID: 2803319030249171493, guid: 156ed684ac4540a4bb798d93b87194e3, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -6796,8 +6796,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 60
-  m_fontSizeBase: 60
+  m_fontSize: 50
+  m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

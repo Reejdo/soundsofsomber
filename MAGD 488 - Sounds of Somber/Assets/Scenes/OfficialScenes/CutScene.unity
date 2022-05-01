@@ -140,6 +140,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1548494657}
     m_Modifications:
+    - target: {fileID: 1379198489, guid: fb495fc8546a1a44ca672eeb547d3639, type: 3}
+      propertyPath: m_TargetCamera
+      value: 
+      objectReference: {fileID: 1756110609}
     - target: {fileID: 3566821550387115276, guid: fb495fc8546a1a44ca672eeb547d3639, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -739,6 +743,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1548494657}
     m_Modifications:
+    - target: {fileID: 1379198489, guid: fb495fc8546a1a44ca672eeb547d3639, type: 3}
+      propertyPath: m_TargetCamera
+      value: 
+      objectReference: {fileID: 1756110609}
     - target: {fileID: 3566821550387115276, guid: fb495fc8546a1a44ca672eeb547d3639, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -948,6 +956,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1548494657}
     m_Modifications:
+    - target: {fileID: 1379198489, guid: fb495fc8546a1a44ca672eeb547d3639, type: 3}
+      propertyPath: m_VideoClip
+      value: 
+      objectReference: {fileID: 32900000, guid: 37b9fbfc7f7988c4496a67bb968bb0d9, type: 3}
     - target: {fileID: 1379198489, guid: fb495fc8546a1a44ca672eeb547d3639, type: 3}
       propertyPath: m_TargetCamera
       value: 

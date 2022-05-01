@@ -26,14 +26,18 @@ public class Switch : MonoBehaviour
 
     void ThisEvent()
     {
-        if (mySpriteRender.sprite == switchSprites[0])
+        if (switchSprites.Length != 0)
         {
-            mySpriteRender.sprite = switchSprites[1]; 
+            if (mySpriteRender.sprite == switchSprites[0])
+            {
+                mySpriteRender.sprite = switchSprites[1];
+            }
+            else
+            {
+                mySpriteRender.sprite = switchSprites[0];
+            }
         }
-        else
-        {
-            mySpriteRender.sprite = switchSprites[0]; 
-        }
+
         thisEvent.Invoke(); 
     }
 

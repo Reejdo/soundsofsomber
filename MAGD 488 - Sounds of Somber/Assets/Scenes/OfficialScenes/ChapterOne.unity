@@ -61178,6 +61178,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChapterCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 5106977139396997378, guid: 9c4a6b45524481c4f82e364aca91c72d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7099560088374794696, guid: 9c4a6b45524481c4f82e364aca91c72d, type: 3}
       propertyPath: m_IsActive
       value: 0
