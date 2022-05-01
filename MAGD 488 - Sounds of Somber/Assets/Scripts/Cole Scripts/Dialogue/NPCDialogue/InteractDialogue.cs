@@ -21,6 +21,7 @@ public class InteractDialogue : MonoBehaviour
     [SerializeField] private bool isPressed;
     public bool isDiaryPage;
     private bool startedReading;
+    private bool endedDialogue; //prevents spamming of canMove state
     private DiaryManager myDiaryManager;
 
     // Start is called before the first frame update
@@ -118,11 +119,13 @@ public class InteractDialogue : MonoBehaviour
         if (npcInteract.inRange && gameObject.name == npcInteract.npcName)
         {
             buttonDisplay.SetActive(true);
+            endedDialogue = false; 
         }
 
-        else if (!npcInteract.inRange)
+        else if (!npcInteract.inRange && !endedDialogue)
         {
             buttonDisplay.SetActive(false);
+            endedDialogue = true; 
             dialogueManager.EndDialogue();
         }
 

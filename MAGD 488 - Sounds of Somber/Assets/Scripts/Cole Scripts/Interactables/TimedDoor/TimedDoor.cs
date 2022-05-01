@@ -8,16 +8,23 @@ public class TimedDoor : MonoBehaviour
     public float heightToMove;
     public float moveDuration;
     public float forceToPlayer; 
-    public float speedToMove, speedDropMultiplier; 
-    public bool startedMove, moveUp, moveDown;
+    public float speedToMove, speedDropMultiplier;
+
+    public GameObject disableDoor;
+    private SpriteRenderer disableDoorSR; 
+    private bool startedMove, moveUp, moveDown;
+
     private PlayerControl myPlayerControl;
-    private Transform playerTrans; 
+    private Transform playerTrans;
+    private AudioManager myAudioManager; 
 
     // Start is called before the first frame update
     void Start()
     {
         myPlayerControl = GameObject.FindObjectOfType<PlayerControl>().GetComponent<PlayerControl>();
-        playerTrans = GameObject.FindWithTag("MainPlayer").GetComponent<Transform>(); 
+        playerTrans = GameObject.FindWithTag("MainPlayer").GetComponent<Transform>();
+        myAudioManager = GameObject.FindObjectOfType<AudioManager>().GetComponent<AudioManager>(); 
+        disableDoorSR = disableDoor.GetComponentInChildren<SpriteRenderer>(); 
 
         originalPosition = transform.position;
         newPosition = new Vector3(transform.position.x, transform.position.y + heightToMove, transform.position.z); 
@@ -51,15 +58,32 @@ public class TimedDoor : MonoBehaviour
         }
     }
 
+
+
     IEnumerator DoorMove()
     {
+        disableDoor.SetActive(true);
+        if (disableDoorSR.color.a == 0)
+        {
+            StartCoroutine(FadeIn(0.5f));
+        }
+
         moveUp = true; 
         yield return new WaitForSeconds(moveDuration);
         moveUp = false; 
         moveDown = true;
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.75f);
+        myAudioManager.Play("DoorSlam");
+        yield return new WaitForSeconds(0.25f); 
         moveDown = false;
-        startedMove = false; 
+        startedMove = false;
+
+
+        StartCoroutine(FadeOut(0.5f));
+        yield return new WaitForSeconds(0.5f); 
+        disableDoor.SetActive(false); 
+
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -68,7 +92,7 @@ public class TimedDoor : MonoBehaviour
         {
             if (moveDown)
             {
-                Debug.Log("Door hit player");
+                //Debug.Log("Door hit player");
                 if (playerTrans.position.x <= transform.position.x)
                 {
                     StartCoroutine(myPlayerControl.AddForce(-1, forceToPlayer));
@@ -80,4 +104,31 @@ public class TimedDoor : MonoBehaviour
             }
         }
     }
+
+    IEnumerator FadeOut(float fadeTime)
+    {
+        float elapsedTime = 0.0f;
+        Color c = disableDoorSR.color;
+        while (elapsedTime < fadeTime)
+        {
+            yield return null;
+            elapsedTime += Time.deltaTime;
+            c.a = 1.0f - Mathf.Clamp01(elapsedTime / fadeTime);
+            disableDoorSR.color = c;
+        }
+    }
+
+    IEnumerator FadeIn(float fadeTime)
+    {
+        float elapsedTime = 0.0f;
+        Color c = disableDoorSR.color;
+        while (elapsedTime < fadeTime)
+        {
+            yield return null;
+            elapsedTime += Time.deltaTime;
+            c.a = Mathf.Clamp01(elapsedTime / fadeTime);
+            disableDoorSR.color = c;
+        }
+    }
+
 }

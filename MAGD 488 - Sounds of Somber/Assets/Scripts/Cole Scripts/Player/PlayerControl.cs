@@ -241,10 +241,16 @@ public class PlayerControl : MonoBehaviour
     public IEnumerator AddForce(int direction, float forceToAdd)
     {
         isKnocked = true; 
-        Debug.Log("Add force");
+        //Debug.Log("Add force");
         myRigidBody.AddForce(transform.right * direction * forceToAdd);
         yield return new WaitForSeconds(0.5f);
         isKnocked = false; 
+    }
+
+    public void SetMoveState(bool state)
+    {
+        Debug.Log("adjusting can move");  
+        canMove = state; 
     }
 
 }

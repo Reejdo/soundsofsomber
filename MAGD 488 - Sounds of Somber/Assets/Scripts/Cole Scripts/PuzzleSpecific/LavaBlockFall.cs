@@ -36,11 +36,13 @@ public class LavaBlockFall : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Player") && parentPlayer)
+        if ((collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("MainPlayer")) && parentPlayer)
         {
             playerObject.transform.SetParent(transform); 
         }
     }
+
+
 
     /*
     private void OnCollisionExit2D(Collision2D collision)

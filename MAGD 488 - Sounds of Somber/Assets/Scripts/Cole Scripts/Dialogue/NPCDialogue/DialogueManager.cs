@@ -37,7 +37,7 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue(Dialogue dialogue, List<GameObject> newUIElements, TMP_Text newDialogueText)
     {
-        myPlayerControl.canMove = false; 
+        myPlayerControl.SetMoveState(false); 
 
         //Debug.Log("Starting conversation");
         talking = true;
@@ -107,7 +107,7 @@ public class DialogueManager : MonoBehaviour
 
         talking = false;
 
-        myPlayerControl.canMove = true;
+        myPlayerControl.SetMoveState(true);
 
     }
 

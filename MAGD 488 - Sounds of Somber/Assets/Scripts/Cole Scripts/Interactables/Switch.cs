@@ -8,18 +8,32 @@ public class Switch : MonoBehaviour
 {
     public UnityEvent thisEvent;
     public bool isTriggerSwitch;
-    private bool isInRange = false;
+    public bool isInRange = false;
     [SerializeField]
     private GameObject interactButton;
-
+    public Sprite[] switchSprites;
+    private SpriteRenderer mySpriteRender; 
 
     private void Start()
     {
-        interactButton.SetActive(false); 
+        mySpriteRender = GetComponent<SpriteRenderer>(); 
+        if (interactButton != null)
+        {
+            interactButton.SetActive(false);
+        }
+
     }
 
     void ThisEvent()
     {
+        if (mySpriteRender.sprite == switchSprites[0])
+        {
+            mySpriteRender.sprite = switchSprites[1]; 
+        }
+        else
+        {
+            mySpriteRender.sprite = switchSprites[0]; 
+        }
         thisEvent.Invoke(); 
     }
 
@@ -27,27 +41,25 @@ public class Switch : MonoBehaviour
     {
         if (context.performed && isInRange)
         {
-            thisEvent.Invoke(); 
+            ThisEvent();  
         }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!isTriggerSwitch)
-        {
-            interactButton.SetActive(true);
-        }
-
-
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("MainPlayer"))
         {
             isInRange = true;
+
+            if (!isTriggerSwitch)
+            {
+                interactButton.SetActive(true);
+            }
             if (isTriggerSwitch)
             {
-                thisEvent.Invoke(); 
+                thisEvent.Invoke();
             }
         }
-
     }
 
     private void OnTriggerExit2D(Collider2D collision)

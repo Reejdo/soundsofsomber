@@ -21,8 +21,12 @@ public class ReactionLoadLevel : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        myPlayerControl = GameObject.FindObjectOfType<PlayerControl>().GetComponent<PlayerControl>(); 
-        buttonIndicator.SetActive(false);
+        myPlayerControl = GameObject.FindObjectOfType<PlayerControl>().GetComponent<PlayerControl>();
+
+        if (buttonIndicator != null)
+        {
+            buttonIndicator.SetActive(false);
+        }
         myReactDialogue = GameObject.FindObjectOfType<ReactionDialogue>().GetComponent<ReactionDialogue>(); 
     }
 
@@ -43,7 +47,10 @@ public class ReactionLoadLevel : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            buttonIndicator.SetActive(true);
+            if (buttonIndicator != null)
+            {
+                buttonIndicator.SetActive(true);
+            }
             playerInRange = true; 
         }
     }
@@ -52,7 +59,10 @@ public class ReactionLoadLevel : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            buttonIndicator.SetActive(false);
+            if (buttonIndicator != null)
+            {
+                buttonIndicator.SetActive(false);
+            }
             playerInRange = false; 
         }
     }
@@ -63,8 +73,11 @@ public class ReactionLoadLevel : MonoBehaviour
         {
             startDialogue = true;
             myReactDialogue.StartDialogue(lines);
-            myPlayerControl.canMove = false;
-            additionalObject.SetActive(false); 
+            myPlayerControl.SetMoveState(false);
+            if (additionalObject != null)
+            {
+                additionalObject.SetActive(false);
+            }
         }
 
     }

@@ -41,7 +41,7 @@ public class TriggerLoadScene : MonoBehaviour
 
     IEnumerator SceneLoading()
     {
-        myPlayerControl.canMove = false; 
+        myPlayerControl.SetMoveState(false); 
         roomFader.SetActive(true);
         yield return new WaitForSeconds(1f); //room fader fades in 1 second
         CallLoadScene();
