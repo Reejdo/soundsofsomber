@@ -1624,6 +1624,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PauseUI: {fileID: 0}
   canPause: 0
+  sceneToLoad:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &486910031
 GameObject:
   m_ObjectHideFlags: 0
@@ -2424,17 +2427,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 713186569}
   m_CullTransparentMesh: 1
---- !u!114 &784369344 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2394853238450661282, guid: 10028321024bae944874b0ea434f1d58, type: 3}
-  m_PrefabInstance: {fileID: 8261345973231065824}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 42a3f17004e8b564dbaafc3d491c49b9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &813843827
 GameObject:
   m_ObjectHideFlags: 0
@@ -15058,6 +15050,7 @@ GameObject:
   - component: {fileID: 1633676192}
   - component: {fileID: 1633676191}
   - component: {fileID: 1633676190}
+  - component: {fileID: 1633676193}
   m_Layer: 5
   m_Name: Continue
   m_TagString: Untagged
@@ -15129,9 +15122,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 784369344}
-        m_TargetAssemblyTypeName: DataManager, Assembly-CSharp
-        m_MethodName: ContinueGame
+      - m_Target: {fileID: 1633676193}
+        m_TargetAssemblyTypeName: ContinueGame, Assembly-CSharp
+        m_MethodName: LoadContinueGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -15179,6 +15172,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1633676188}
   m_CullTransparentMesh: 1
+--- !u!114 &1633676193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1633676188}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f60b4879f499b45429cf0ca8505766ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1643287096
 GameObject:
   m_ObjectHideFlags: 0
@@ -16492,17 +16497,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1994160922}
   m_CullTransparentMesh: 1
---- !u!114 &1995697489 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6474569551039611037, guid: 10028321024bae944874b0ea434f1d58, type: 3}
-  m_PrefabInstance: {fileID: 8261345973231065824}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c6a2596424c3f0441aec0ca0be4f560d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1995782562
 GameObject:
   m_ObjectHideFlags: 0
@@ -17167,50 +17161,6 @@ PrefabInstance:
     - target: {fileID: 2211925152196762702, guid: 10028321024bae944874b0ea434f1d58, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2394853238450661282, guid: 10028321024bae944874b0ea434f1d58, type: 3}
-      propertyPath: LoadScene.Array.size
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 2394853238450661282, guid: 10028321024bae944874b0ea434f1d58, type: 3}
-      propertyPath: LoadScene.Array.data[6].m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2394853238450661282, guid: 10028321024bae944874b0ea434f1d58, type: 3}
-      propertyPath: LoadScene.Array.data[6].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2394853238450661282, guid: 10028321024bae944874b0ea434f1d58, type: 3}
-      propertyPath: LoadScene.Array.data[6].m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1995697489}
-    - target: {fileID: 2394853238450661282, guid: 10028321024bae944874b0ea434f1d58, type: 3}
-      propertyPath: LoadScene.Array.data[6].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2394853238450661282, guid: 10028321024bae944874b0ea434f1d58, type: 3}
-      propertyPath: LoadScene.Array.data[3].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: LoadHousePostTutorial
-      objectReference: {fileID: 0}
-    - target: {fileID: 2394853238450661282, guid: 10028321024bae944874b0ea434f1d58, type: 3}
-      propertyPath: LoadScene.Array.data[4].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: LoadHouseTwo
-      objectReference: {fileID: 0}
-    - target: {fileID: 2394853238450661282, guid: 10028321024bae944874b0ea434f1d58, type: 3}
-      propertyPath: LoadScene.Array.data[5].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: LoadChapterOne
-      objectReference: {fileID: 0}
-    - target: {fileID: 2394853238450661282, guid: 10028321024bae944874b0ea434f1d58, type: 3}
-      propertyPath: LoadScene.Array.data[6].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: LoadChapterTwo
-      objectReference: {fileID: 0}
-    - target: {fileID: 2394853238450661282, guid: 10028321024bae944874b0ea434f1d58, type: 3}
-      propertyPath: LoadScene.Array.data[6].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: LoadScene, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 2394853238450661282, guid: 10028321024bae944874b0ea434f1d58, type: 3}
-      propertyPath: LoadScene.Array.data[6].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 4882070656606281785, guid: 10028321024bae944874b0ea434f1d58, type: 3}
       propertyPath: m_Name

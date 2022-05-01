@@ -14,21 +14,13 @@ public class StressBlock : MonoBehaviour
     void Start()
     {
         health = GameObject.FindGameObjectWithTag("MainPlayer").GetComponent<PlayerHealth>();
-        myAudioManager = GameObject.FindObjectOfType<AudioManager>().GetComponent<AudioManager>();
-        FindBlockManager(); 
-
-        //incase breathing still playing on level reload
-        myAudioManager.StopSound("PlayerBreathing");
-
+        FindBlockManager();
+        FindAudioManager(); 
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (myAudioManager == null)
-        {
-            Debug.Log("Audio manager null"); 
-        }
 
         if (inRange)
         {
@@ -80,5 +72,17 @@ public class StressBlock : MonoBehaviour
         {
             myBlockManager = GameObject.FindObjectOfType<MoveBlockManager>().GetComponent<MoveBlockManager>();
         }
+    }
+
+    void FindAudioManager()
+    {
+        while (myAudioManager == null)
+        {
+            myAudioManager = GameObject.FindObjectOfType<AudioManager>().GetComponent<AudioManager>();
+            Debug.Log("Audio manager null");
+        }
+
+        //incase breathing still playing
+        myAudioManager.StopSound("PlayerBreathing");
     }
 }

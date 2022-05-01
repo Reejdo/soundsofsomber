@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Events; 
 
 public class Pausing : MonoBehaviour
 {
@@ -10,7 +11,7 @@ public class Pausing : MonoBehaviour
     public static Pausing instance;
     public bool canPause = true;
     MenuKeys action;
-
+    public UnityEvent sceneToLoad; 
 
 
     private void Awake(){
@@ -70,7 +71,8 @@ public class Pausing : MonoBehaviour
     public void LoadMenu(){ //loads back to the main menu
     	Time.timeScale = 1f;
     	AudioListener.pause = false;
-    	SceneManager.LoadScene("MainMenuOfficial");
+        //SceneManager.LoadScene("MainMenuOfficial");
+        sceneToLoad.Invoke(); //had to change this because it was breaking the continue button
     }
 
     public void QuitGame(){ //quits the game
