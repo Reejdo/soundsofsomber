@@ -54,7 +54,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: MoveDirt
     clip: {fileID: 8300000, guid: fea2d8849e9538d4ca632f6f5717b747, type: 3}
-    volume: 0.3
+    volume: 0.2
     pitch: 1
     loop: 1
     playOnAwake: 0
