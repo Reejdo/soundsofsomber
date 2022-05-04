@@ -86,7 +86,7 @@ public class BlockInteract : MonoBehaviour
         if (context.performed)
         {
             interactPressed = true;
-            Debug.Log("pressed");
+            //Debug.Log("pressed");
         }
 
         if (context.canceled)

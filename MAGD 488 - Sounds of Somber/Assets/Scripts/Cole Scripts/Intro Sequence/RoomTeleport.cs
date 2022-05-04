@@ -51,7 +51,7 @@ public class RoomTeleport : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("MainPlayer"))
         {
             playerInRange = true;
             buttonIndicator.SetActive(true); 
@@ -60,7 +60,7 @@ public class RoomTeleport : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("MainPlayer"))
         {
             playerInRange = false;
             buttonIndicator.SetActive(false); 
