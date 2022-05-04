@@ -1,22 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro; 
 
 public class StartCollectathon : MonoBehaviour
 {
     private bool collectathonStarted;
     [SerializeField]
-    private float collectathonTime;
+    private int collectathonTime = 15;
     [SerializeField]
     private GameObject[] coinsToCollect;
     [SerializeField]
-    private DisappearingBlock myDisappearingBlock; 
+    private DisappearingBlock myDisappearingBlock;
+    public TMP_Text myTimerText;
+    public GameObject timerUI; 
 
     // Start is called before the first frame update
     void Start()
     {
+        timerUI.SetActive(false); 
         SetCoinState(false);
-        myDisappearingBlock = GameObject.Find("DoorToDisable").GetComponent<DisappearingBlock>();
         myDisappearingBlock.itemCount = coinsToCollect.Length; 
     }
 
@@ -37,8 +40,15 @@ public class StartCollectathon : MonoBehaviour
 
     IEnumerator Collectathon()
     {
+        timerUI.SetActive(true); 
         SetCoinState(true);
-        yield return new WaitForSeconds(collectathonTime);
+        for (int i = collectathonTime; i > 0; i--)
+        {
+            myTimerText.text = i + " s"; 
+            yield return new WaitForSeconds(1f);
+        }
+
+        timerUI.SetActive(false);
         myDisappearingBlock.counter = 0; 
         SetCoinState(false);
         collectathonStarted = false; 

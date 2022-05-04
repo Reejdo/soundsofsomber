@@ -8,7 +8,7 @@ public class CollectCoin : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        myDisappearingBlock = GameObject.Find("DoorToDisable").GetComponent<DisappearingBlock>(); 
+
     }
 
     // Update is called once per frame

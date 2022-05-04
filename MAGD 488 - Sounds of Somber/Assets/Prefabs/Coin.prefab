@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 183654325828728274}
   - component: {fileID: 7325117199991204019}
   - component: {fileID: 4454864517322165354}
-  - component: {fileID: 1322444867745605065}
+  - component: {fileID: 4220274543594730626}
   m_Layer: 0
   m_Name: Coin
   m_TagString: Untagged
@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 6263073193648553323}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.31488788, y: 5.771852, z: -73.49049}
-  m_LocalScale: {x: 0.03980859, y: 0.03980859, z: 0.03980859}
+  m_LocalScale: {x: 0.26958254, y: 0.26958254, z: 0.26958254}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -84,9 +84,9 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -504084227
-  m_SortingLayer: 4
+  m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 28d5f9051fc7c0e46a8817e9313656f1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f29d79668c82c0e46a4d14c5dbc415c6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -97,7 +97,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &1322444867745605065
+--- !u!58 &4220274543594730626
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -107,9 +107,9 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.0000019073486}
   serializedVersion: 2
-  m_Radius: 9.6
+  m_Radius: 1.695

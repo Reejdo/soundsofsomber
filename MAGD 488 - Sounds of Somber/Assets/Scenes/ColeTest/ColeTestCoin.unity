@@ -1261,7 +1261,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.098000005, y: 0.75200003}
   m_AnchorMax: {x: 0.8968751, y: 1}
-  m_AnchoredPosition: {x: -1.87677, y: -0.5}
+  m_AnchoredPosition: {x: -1.876709, y: -0.5}
   m_SizeDelta: {x: -0.71829987, y: -7.4400024}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &502010244
@@ -2649,8 +2649,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   counter: 0
   itemCount: 0
-  objectToDisable: {fileID: 656743348}
+  objectsToDisable: []
   objectDisabled: 0
+  timeToDiable: 0
 --- !u!4 &1042355975
 Transform:
   m_ObjectHideFlags: 0
@@ -4375,6 +4376,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 361174104808379946, guid: be6a82928f9ee634cbfcd6aff2568cf5, type: 3}
+      propertyPath: thisEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 361174104808379946, guid: be6a82928f9ee634cbfcd6aff2568cf5, type: 3}
       propertyPath: thisEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
