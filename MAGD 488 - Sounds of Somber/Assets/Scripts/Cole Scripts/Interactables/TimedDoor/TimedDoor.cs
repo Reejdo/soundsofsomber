@@ -13,6 +13,7 @@ public class TimedDoor : MonoBehaviour
     public GameObject disableDoor;
     private SpriteRenderer disableDoorSR; 
     private bool startedMove, moveUp, moveDown;
+    bool canStartDoor = true; 
 
     private PlayerControl myPlayerControl;
     private Transform playerTrans;
@@ -38,8 +39,9 @@ public class TimedDoor : MonoBehaviour
 
     public void StartDoorMove()
     {
-        if (!moveDown && !startedMove)
+        if (canStartDoor && !startedMove)
         {
+            canStartDoor = false; 
             startedMove = true; 
             StartCoroutine(DoorMove());
         }
@@ -81,9 +83,8 @@ public class TimedDoor : MonoBehaviour
 
         StartCoroutine(FadeOut(0.5f));
         yield return new WaitForSeconds(0.5f); 
-        disableDoor.SetActive(false); 
-
-
+        disableDoor.SetActive(false);
+        canStartDoor = true; 
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
