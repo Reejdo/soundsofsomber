@@ -43,6 +43,7 @@ public class TriggerLoadScene : MonoBehaviour
     {
         if (loadToCutscene)
         {
+            Debug.Log("Loaded " + cutSceneNumber + " to cutscene DataManager"); 
             myDataManager.LoadToCutscene(cutSceneNumber);
         }
 
