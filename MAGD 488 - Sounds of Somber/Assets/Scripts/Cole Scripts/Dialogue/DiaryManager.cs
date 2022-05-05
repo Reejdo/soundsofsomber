@@ -21,10 +21,14 @@ public class DiaryManager : MonoBehaviour
         myDialogueManager = GameObject.FindObjectOfType<DialogueManager>().GetComponent<DialogueManager>();
         myDataManager = GameObject.FindObjectOfType<DataManager>().GetComponent<DataManager>();
 
+
         for (int i = 0; i < maxPageNumber; i++)
         {
             pageStates[i] = myDataManager.diaryStates[i]; 
         }
+
+        UpdatePageCount();
+
 
 
         if (pageCount == maxPageNumber)
@@ -47,7 +51,7 @@ public class DiaryManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (pageCount == maxPageNumber && !enabledLastPage)
+        if (pageCount == (maxPageNumber - 1) && !enabledLastPage)
         {
             enabledLastPage = true;
             diaryPages[maxPageNumber - 1].SetActive(true);
@@ -79,13 +83,28 @@ public class DiaryManager : MonoBehaviour
         }
     }
 
+    void UpdatePageCount()
+    {
+        Debug.Log("Updating Page Count"); 
+        int thisPageCount = 0;
+        foreach (bool myBool in pageStates)
+        {
+            if (myBool == true)
+            {
+                Debug.Log("Adding to page count"); 
+                thisPageCount++; 
+            }
+        }
+        pageCount = thisPageCount; 
+    }
+
     public void UpdateDiaryPage(string name)
     {
         for (int i = 0; i < maxPageNumber; i++)
         {
             if (diaryPages[i].gameObject.name == name)
             {
-                pageCount++; 
+                UpdatePageCount(); 
                 pageStates[i] = true;
                 pageButtons[i].SetActive(true);
                 break; 
