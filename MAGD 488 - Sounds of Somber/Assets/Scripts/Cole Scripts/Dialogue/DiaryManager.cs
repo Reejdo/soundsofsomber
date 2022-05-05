@@ -85,13 +85,11 @@ public class DiaryManager : MonoBehaviour
 
     void UpdatePageCount()
     {
-        Debug.Log("Updating Page Count"); 
         int thisPageCount = 0;
         foreach (bool myBool in pageStates)
         {
             if (myBool == true)
             {
-                Debug.Log("Adding to page count"); 
                 thisPageCount++; 
             }
         }
