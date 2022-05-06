@@ -10,9 +10,11 @@ public class PlayerControl : MonoBehaviour
     [SerializeField] 
     private float horizontalValue;
     [SerializeField]
-    private float lastPosX; 
+    private float lastPosX;
     [SerializeField]
-    private float jumpSpeed = 1.0f, timeBetweenJumps = 0.5f, groundCheckRadius = 0.2f;
+    private float jumpSpeed = 1.0f, timeBetweenJumps = 0.5f;
+    [SerializeField]
+    private Vector2 groundCheckValues; 
     [SerializeField]
     private Transform groundCheck; 
     [SerializeField]
@@ -82,7 +84,9 @@ public class PlayerControl : MonoBehaviour
 
     public bool IsGrounded()
     {
-        return Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
+        bool isGrounded = Physics2D.OverlapBox(groundCheck.position, groundCheckValues, 0f, groundLayer);
+
+        return isGrounded; 
     }
 
     public void OnMove(InputAction.CallbackContext context)
@@ -102,7 +106,7 @@ public class PlayerControl : MonoBehaviour
         if (!isHousePlayer)
         {
             if (context.performed && IsGrounded() && canJump && canMove)
-            {
+            { 
                 myAudioManager.Play("Jump"); 
                 myRigidBody.velocity = new Vector2(myRigidBody.velocity.x, jumpSpeed);
                 StartCoroutine(WaitToJump());
@@ -235,7 +239,8 @@ public class PlayerControl : MonoBehaviour
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.white;
-        Gizmos.DrawWireSphere(groundCheck.position, groundCheckRadius); 
+        Gizmos.DrawWireCube(groundCheck.position, groundCheckValues); 
+        //Gizmos.DrawWireSphere(groundCheck.position, groundCheckRadius); 
     }
 
     public IEnumerator AddForce(int direction, float forceToAdd)
@@ -249,7 +254,7 @@ public class PlayerControl : MonoBehaviour
 
     public void SetMoveState(bool state)
     {
-        Debug.Log("adjusting can move");  
+        //Debug.Log("adjusting can move");  
         canMove = state; 
     }
 
