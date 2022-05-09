@@ -744,6 +744,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1548494657}
     m_Modifications:
     - target: {fileID: 1379198489, guid: fb495fc8546a1a44ca672eeb547d3639, type: 3}
+      propertyPath: m_VideoClip
+      value: 
+      objectReference: {fileID: 32900000, guid: 84459283da882824c9a997a9f949d948, type: 3}
+    - target: {fileID: 1379198489, guid: fb495fc8546a1a44ca672eeb547d3639, type: 3}
       propertyPath: m_TargetCamera
       value: 
       objectReference: {fileID: 1756110609}
@@ -837,7 +841,7 @@ PrefabInstance:
       objectReference: {fileID: 1020098057}
     - target: {fileID: 6676660417972458867, guid: fb495fc8546a1a44ca672eeb547d3639, type: 3}
       propertyPath: timeBetweenImages
-      value: 9.5
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 6676660417972458867, guid: fb495fc8546a1a44ca672eeb547d3639, type: 3}
       propertyPath: myImages.Array.size
