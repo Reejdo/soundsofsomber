@@ -382,7 +382,7 @@ MonoBehaviour:
   myAudioManager: {fileID: 0}
   isHousePlayer: 0
   displayIsGrounded: 0
-  needKinematicOff: 0
+  needKinematicOff: 1
   canMove: 1
   canJump: 1
   hasJumped: 0

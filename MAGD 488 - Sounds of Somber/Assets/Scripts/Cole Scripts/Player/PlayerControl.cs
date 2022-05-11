@@ -176,7 +176,7 @@ public class PlayerControl : MonoBehaviour
                         myRigidBody.isKinematic = false;
                     }
                 }
-                else
+                else //if isKnocked
                 {
                     myRigidBody.isKinematic = false;
                     myRigidBody.velocity = new Vector2(myRigidBody.velocity.x, myRigidBody.velocity.y);
@@ -254,7 +254,6 @@ public class PlayerControl : MonoBehaviour
 
     public void SetMoveState(bool state)
     {
-        //Debug.Log("adjusting can move");  
         canMove = state; 
     }
 
