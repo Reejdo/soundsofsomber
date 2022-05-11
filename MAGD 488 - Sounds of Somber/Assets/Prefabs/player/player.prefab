@@ -373,7 +373,7 @@ MonoBehaviour:
   lastPosX: 0
   jumpSpeed: 14
   timeBetweenJumps: 0
-  groundCheckValues: {x: 0.35, y: 0.1}
+  groundCheckValues: {x: 0.27, y: 0.1}
   groundCheck: {fileID: 6305451381349865462}
   groundLayer:
     serializedVersion: 2

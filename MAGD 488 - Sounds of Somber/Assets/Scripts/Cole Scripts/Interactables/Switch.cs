@@ -57,7 +57,11 @@ public class Switch : MonoBehaviour
 
             if (!isTriggerSwitch)
             {
-                interactButton.SetActive(true);
+                if (interactButton != null)
+                {
+                    interactButton.SetActive(true);
+                }
+
             }
             if (isTriggerSwitch)
             {
@@ -71,7 +75,10 @@ public class Switch : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             isInRange = false;
-            interactButton.SetActive(false);
+            if (interactButton != null)
+            {
+                interactButton.SetActive(false);
+            }
         }
     }
 }

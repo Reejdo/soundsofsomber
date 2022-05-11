@@ -85,4 +85,10 @@ public class StressBlock : MonoBehaviour
         //incase breathing still playing
         myAudioManager.StopSound("PlayerBreathing");
     }
+
+    public void StopStressSound()
+    {
+        //incase breathing still playing
+        myAudioManager.StopSound("PlayerBreathing");
+    }
 }
